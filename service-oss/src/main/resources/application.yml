@@ -9,6 +9,8 @@ spring:
     username: root
     password: 123456aB
     driver-class-name: com.mysql.jdbc.Driver
+  profiles:
+    active: dev
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

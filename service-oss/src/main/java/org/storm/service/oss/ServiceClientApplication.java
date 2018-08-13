@@ -1,4 +1,4 @@
-package org.storm.service.client;
+package org.storm.service.oss;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;

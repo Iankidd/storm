@@ -1,0 +1,19 @@
+server:
+  port: 8762
+
+spring:
+  application:
+    name: service-oss
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/storm_oss
+    username: root
+    password: 123456aB
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

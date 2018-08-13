@@ -1,4 +1,4 @@
-package org.storm.service.client;
+package org.storm.service.oss;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

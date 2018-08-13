@@ -7,7 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-server" />
-        <module name="service-client" />
+        <module name="service-oss" />
         <module name="storm" />
       </profile>
     </annotationProcessing>

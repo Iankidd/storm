@@ -25,17 +25,11 @@ public interface BaseService<Te> {
 	public Long save(Te paramT);
 	
 	/**
-	 * 保存
+	 * 批量保存
 	 * 
 	 * @param list
 	 */
-	public boolean saveBatch(List<Te> list);
-
-	/**
-	 * 2000分批提交一次session
-	 * @param list
-	 */
-	public void saveBatchPiece(List<Te> list);
+	public void saveBatch(List<Te> list);
 
 	/**
 	 * 修改
@@ -51,13 +45,7 @@ public interface BaseService<Te> {
 	 * @param list
 	 * @return
 	 */
-	public boolean updateBatch(List<Te> list) ;
-	
-	/**
-	 * 2000分批提交一次session
-	 * @param list
-	 */
-	public void updateBatchPiece(List<Te> list) ;
+	public void updateBatch(List<Te> list) ;
 
 	/**
 	 * 删除
@@ -138,7 +126,4 @@ public interface BaseService<Te> {
 	 */
 	public List<Te> getListBySql(String sql);
 	
-	
-	public List<Map<String,Object>> getListObjectBySql(String sql);
-
 }

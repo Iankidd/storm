@@ -21,7 +21,9 @@ public class ServiceClientApplication {
         SpringApplication.run(ServiceClientApplication.class, args);
     }
 
-    //配置mybatis的分页插件pageHelper
+    /**
+     * 配置mybatis的分页插件pageHelper
+     */
     @Bean
     public PageHelper pageHelper(){
 

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2abef353-240a-4c31-bc24-a4d280a9de18" name="Default" comment="封装底层数据操作">
+    <list default="true" id="2abef353-240a-4c31-bc24-a4d280a9de18" name="Default" comment="修改日志配置文件">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/service/oss/ServiceClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/service/oss/ServiceClientApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/logback-spring.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,7 +36,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="6" />
-          <entry key="java" value="43" />
+          <entry key="java" value="44" />
           <entry key="mvnw" value="1" />
           <entry key="xml" value="27" />
           <entry key="yml" value="13" />
@@ -44,7 +45,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="6" />
-          <entry key="JAVA" value="43" />
+          <entry key="JAVA" value="44" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="27" />
           <entry key="YAML" value="13" />
@@ -52,17 +53,17 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="204" />
-          <entry key="txt" value="12" />
-          <entry key="xml" value="244" />
+          <entry key="java" value="209" />
+          <entry key="txt" value="25" />
+          <entry key="xml" value="336" />
           <entry key="yml" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="204" />
-          <entry key="PLAIN_TEXT" value="12" />
-          <entry key="XML" value="244" />
+          <entry key="JAVA" value="209" />
+          <entry key="PLAIN_TEXT" value="25" />
+          <entry key="XML" value="336" />
           <entry key="YAML" value="48" />
         </counts>
       </usages-collector>
@@ -133,17 +134,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/logback-spring.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="116" column="25" selection-start-line="116" selection-start-column="25" selection-end-line="116" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+            <state relative-caret-position="140">
+              <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -169,6 +161,7 @@
       <find>main</find>
       <find>logger</find>
       <find>LOG</find>
+      <find>ERROR_FILE</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -194,12 +187,12 @@
         <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/model/Entity.java" />
         <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/mapper/BaseMapper.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/service/oss/ServiceClientApplication.java" />
         <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/service/BaseService.java" />
         <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/service/impl/BaseServiceImpl.java" />
         <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/util/RequestUtils.java" />
         <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/controller/BaseController.java" />
         <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/util/DateUtils.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/service/oss/ServiceClientApplication.java" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/logback-spring.xml" />
       </list>
     </option>
@@ -397,6 +390,12 @@
               <item name="framework" type="1f31426a:PackageElementNode" />
               <item name="base" type="1f31426a:PackageElementNode" />
             </path>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
+              <item name="org.storm" type="1f31426a:PackageElementNode" />
+              <item name="service.oss" type="1f31426a:PackageElementNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -545,7 +544,7 @@
       <workItem from="1534146951865" duration="172000" />
       <workItem from="1534147144528" duration="9845000" />
       <workItem from="1534210461091" duration="5620000" />
-      <workItem from="1534216204721" duration="7569000" />
+      <workItem from="1534216204721" duration="9631000" />
     </task>
     <task id="LOCAL-00001" summary="集成mybatis分页">
       <created>1534158730692</created>
@@ -561,11 +560,18 @@
       <option name="project" value="LOCAL" />
       <updated>1534215990311</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="修改日志配置文件">
+      <created>1534225220671</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1534225220671</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43682000" />
+    <option name="totallyTimeSpent" value="45744000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -610,7 +616,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="集成mybatis分页" />
     <MESSAGE value="封装底层数据操作" />
-    <option name="LAST_COMMIT_MESSAGE" value="封装底层数据操作" />
+    <MESSAGE value="修改日志配置文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改日志配置文件" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
@@ -755,9 +762,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/service/oss/ServiceClientApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="120">
+          <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
           <folding>
+            <element signature="e#733#734#0" expanded="true" />
             <element signature="e#808#809#0" expanded="true" />
           </folding>
         </state>
@@ -765,15 +773,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        <state relative-caret-position="280">
+          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/logback-spring.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="116" column="25" selection-start-line="116" selection-start-column="25" selection-end-line="116" selection-end-column="25" />
+        <state relative-caret-position="140">
+          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
         </state>
       </provider>
     </entry>

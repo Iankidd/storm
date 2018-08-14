@@ -5,13 +5,18 @@
 <configuration>
     <!-- 文件输出格式 -->
     <property name="PATTERN"
-              value="%-12(%d{yyyy-MM-dd HH:mm:ss.SSS}) |-%-5level [%thread] %c [%L] -| %msg%n" />
+              value="%red(%d{yyyy-MM-dd HH:mm:ss}) %green([%thread]) %highlight(%-5level) %boldMagenta(%logger) - %cyan(%msg%n)" />
+
+    <!-- 开发环境输出过滤日志级别 -->
+    <property name="DEV_LEVEL" value="DEBUG" />
 
     <!-- 测试环境输出文件路径 -->
     <property name="TEST_SYSTEM_PATH" value="/data/log/system.log" />
     <property name="TEST_SYSTEM_DAILY_PATH" value="/data/log/system_%d{yyyy-MM-dd}.%i.log" />
     <property name="TEST_ERROR_PATH" value="/data/log/error.log" />
     <property name="TEST_ERROR_DAILY_PATH" value="/data/log/error_%d{yyyy-MM-dd}.%i.log" />
+    <property name="TEST_DEBUG_PATH" value="/data/log/debug.log" />
+    <property name="TEST_DEBUG_DAILY_PATH" value="/data/log/debug_%d{yyyy-MM-dd}.%i.log" />
 
     <!-- 生产环境输出文件路径 -->
     <property name="PRD_SYSTEM_PATH" value="/data/log/system.log" />
@@ -29,7 +34,7 @@
         <!-- 下面配置一些第三方包的日志过滤级别，用于避免刷屏 -->
         <logger name="org.springframework" level="INFO" />
 
-        <root level="INFO">
+        <root level="${DEV_LEVEL}">
             <appender-ref ref="CONSOLE" />
         </root>
     </springProfile>
@@ -58,11 +63,26 @@
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
                 <fileNamePattern>${TEST_ERROR_DAILY_PATH}</fileNamePattern>
             </rollingPolicy>
-            <layout>
+            <encoder>
                 <pattern>${PATTERN}</pattern>
-            </layout>
+            </encoder>
             <filter class="ch.qos.logback.classic.filter.LevelFilter">
                 <level>ERROR</level>
+                <onMatch>ACCEPT</onMatch>
+                <onMismatch>DENY</onMismatch>
+            </filter>
+        </appender>
+
+        <appender name="DEBUG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${TEST_DEBUG_PATH}</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${TEST_DEBUG_DAILY_PATH}</fileNamePattern>
+            </rollingPolicy>
+            <encoder>
+                <pattern>${PATTERN}</pattern>
+            </encoder>
+            <filter class="ch.qos.logback.classic.filter.LevelFilter">
+                <level>DEBUG</level>
                 <onMatch>ACCEPT</onMatch>
                 <onMismatch>DENY</onMismatch>
             </filter>
@@ -73,6 +93,7 @@
         <root level="DEBUG">
             <appender-ref ref="ROLLING" />
             <appender-ref ref="ERROR_FILE" />
+            <appender-ref ref="DEBUG_FILE" />
         </root>
     </springProfile>
 
@@ -102,9 +123,9 @@
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
                 <fileNamePattern>${PRD_ERROR_DAILY_PATH}</fileNamePattern>
             </rollingPolicy>
-            <layout>
+            <encoder>
                 <pattern>${PATTERN}</pattern>
-            </layout>
+            </encoder>
             <filter class="ch.qos.logback.classic.filter.LevelFilter">
                 <level>ERROR</level>
                 <onMatch>ACCEPT</onMatch>

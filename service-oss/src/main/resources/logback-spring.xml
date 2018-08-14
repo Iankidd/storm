@@ -33,6 +33,11 @@
         </appender>
         <!-- 下面配置一些第三方包的日志过滤级别，用于避免刷屏 -->
         <logger name="org.springframework" level="INFO" />
+        <logger name="org.apache" level="INFO" />
+        <logger name="com.netflix" level="INFO" />
+        <logger name="org.hibernate" level="INFO" />
+        <logger name="com.zaxxer" level="INFO" />
+        <logger name="org.mybatis" level="INFO" />
 
         <root level="${DEV_LEVEL}">
             <appender-ref ref="CONSOLE" />

@@ -6,8 +6,18 @@
     <!-- 文件输出格式 -->
     <property name="PATTERN"
               value="%-12(%d{yyyy-MM-dd HH:mm:ss.SSS}) |-%-5level [%thread] %c [%L] -| %msg%n" />
-    <!-- 文件路径 -->
-    <!--<property name="FILE_PATH" value="D:/DevData/kmcmsLogs" /> -->
+
+    <!-- 测试环境输出文件路径 -->
+    <property name="TEST_SYSTEM_PATH" value="/data/log/system.log" />
+    <property name="TEST_SYSTEM_DAILY_PATH" value="/data/log/system_%d{yyyy-MM-dd}.%i.log" />
+    <property name="TEST_ERROR_PATH" value="/data/log/error.log" />
+    <property name="TEST_ERROR_DAILY_PATH" value="/data/log/error_%d{yyyy-MM-dd}.%i.log" />
+
+    <!-- 生产环境输出文件路径 -->
+    <property name="PRD_SYSTEM_PATH" value="/data/log/system.log" />
+    <property name="PRD_SYSTEM_DAILY_PATH" value="/data/log/system_%d{yyyy-MM-dd}.%i.log" />
+    <property name="PRD_ERROR_PATH" value="/data/log/error.log" />
+    <property name="PRD_ERROR_DAILY_PATH" value="/data/log/error_%d{yyyy-MM-dd}.%i.log" />
 
     <!-- 开发环境 -->
     <springProfile name="dev">
@@ -16,10 +26,10 @@
                 <pattern>${PATTERN}</pattern>
             </encoder>
         </appender>
+        <!-- 下面配置一些第三方包的日志过滤级别，用于避免刷屏 -->
+        <logger name="org.springframework" level="INFO" />
 
-        <logger name="org.storm" level="debug" />
-
-        <root level="info">
+        <root level="INFO">
             <appender-ref ref="CONSOLE" />
         </root>
     </springProfile>
@@ -29,12 +39,11 @@
         <appender name="ROLLING"
                   class="ch.qos.logback.core.rolling.RollingFileAppender">
             <!-- 文件路径 -->
-            <file>D:/github-workspace/kmapplet.log</file>
+            <file>${TEST_SYSTEM_PATH}</file>
             <rollingPolicy
                     class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
                 <!-- rollover daily -->
-                <fileNamePattern>D:/github-workspace/kmAppletLogs/kmapplet_%d{yyyy-MM-dd}.%i.log
-                </fileNamePattern>
+                <fileNamePattern>${TEST_SYSTEM_DAILY_PATH}</fileNamePattern>
                 <maxFileSize>1MB</maxFileSize>
                 <maxHistory>60</maxHistory>
                 <totalSizeCap>10MB</totalSizeCap>
@@ -44,22 +53,40 @@
             </encoder>
         </appender>
 
+        <appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${TEST_ERROR_PATH}</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${TEST_ERROR_DAILY_PATH}</fileNamePattern>
+            </rollingPolicy>
+            <layout>
+                <pattern>${PATTERN}</pattern>
+            </layout>
+            <filter class="ch.qos.logback.classic.filter.LevelFilter">
+                <level>ERROR</level>
+                <onMatch>ACCEPT</onMatch>
+                <onMismatch>DENY</onMismatch>
+            </filter>
+        </appender>
+        <!-- 下面配置一些第三方包的日志过滤级别，用于避免刷屏 -->
+        <logger name="org.springframework" level="INFO" />
+
         <root level="DEBUG">
             <appender-ref ref="ROLLING" />
+            <appender-ref ref="ERROR_FILE" />
         </root>
     </springProfile>
 
-    <!-- 生产环境 -->
-    <springProfile name="prod">
+
+    <!--生产环境  -->
+    <springProfile name="prd">
         <appender name="ROLLING"
                   class="ch.qos.logback.core.rolling.RollingFileAppender">
             <!-- 文件路径 -->
-            <file>/ftp/private/kmAppletLogs/kmapplet.log</file>
+            <file>${PRD_SYSTEM_PATH}</file>
             <rollingPolicy
                     class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
                 <!-- rollover daily -->
-                <fileNamePattern>/ftp/private/kmAppletLogs/kmapplet_%d{yyyy-MM-dd}.%i.log
-                </fileNamePattern>
+                <fileNamePattern>${PRD_SYSTEM_DAILY_PATH}</fileNamePattern>
                 <!-- 每个日志文件最大10MB, 保留30天的日志文件, 但是最多总文件大小为 5GB -->
                 <maxFileSize>10MB</maxFileSize>
                 <maxHistory>30</maxHistory>
@@ -70,9 +97,26 @@
             </encoder>
         </appender>
 
-        <!--这里控制日志输出级别 -->
-        <root level="DEBUG">
+        <appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${PRD_ERROR_PATH}</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${PRD_ERROR_DAILY_PATH}</fileNamePattern>
+            </rollingPolicy>
+            <layout>
+                <pattern>${PATTERN}</pattern>
+            </layout>
+            <filter class="ch.qos.logback.classic.filter.LevelFilter">
+                <level>ERROR</level>
+                <onMatch>ACCEPT</onMatch>
+                <onMismatch>DENY</onMismatch>
+            </filter>
+        </appender>
+        <!-- 下面配置一些第三方包的日志过滤级别，用于避免刷屏 -->
+        <logger name="org.springframework" level="WARN" />
+
+        <root level="INFO">
             <appender-ref ref="ROLLING" />
+            <appender-ref ref="ERROR_FILE" />
         </root>
     </springProfile>
 

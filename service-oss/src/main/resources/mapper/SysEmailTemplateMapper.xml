@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.storm.framework.sys.mapper.SysEmailTemplateMapper">
+
+    <resultMap id="sysEmailTemplateResultMap" type="org.storm.framework.sys.model.SysEmailTemplate">
+        <id property="id" column="ID" jdbcType="BIGINT"/>
+        <result property="type" column="TYPE" jdbcType="TINYINT"/>
+        <result property="content" column="CONTENT" jdbcType="VARCHAR"/>
+        <result property="status" column="STATUS" jdbcType="TINYINT"/>
+        <result property="createDatetime" column="CREATE_DATETIME" jdbcType="TIMESTAMP"/>
+        <result property="modifyDatetime" column="MODIFY_DATETIME" jdbcType="TIMESTAMP"/>
+        <result property="memo" column="MEMO" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <insert id="save" parameterType="org.storm.framework.sys.model.SysEmailTemplate" keyProperty="id"
+            useGeneratedKeys="true">
+		insert into SYS_EMAIL_TEMPLATE( 
+				TYPE,
+				CONTENT,
+				STATUS,
+				CREATE_DATETIME,
+				MODIFY_DATETIME,
+				MEMO
+	     )		 
+		values(
+				#{type, jdbcType=TINYINT},
+				#{content, jdbcType=VARCHAR},
+				#{status, jdbcType=TINYINT},
+				#{createDatetime, jdbcType=TIMESTAMP},
+				#{modifyDatetime, jdbcType=TIMESTAMP},
+				#{memo, jdbcType=VARCHAR}
+		)
+	   
+    </insert>
+
+
+    <update id="update" parameterType="org.storm.framework.sys.model.SysEmailTemplate">
+        update SYS_EMAIL_TEMPLATE
+        set
+        <trim prefix="" suffix="" suffixOverrides=",">
+            <if test="type != null">
+                TYPE = #{type, jdbcType=TINYINT},
+            </if>
+            <if test="content != null">
+                CONTENT = #{content, jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                STATUS = #{status, jdbcType=TINYINT},
+            </if>
+            <if test="createDatetime != null">
+                CREATE_DATETIME = #{createDatetime, jdbcType=TIMESTAMP},
+            </if>
+            <if test="modifyDatetime != null">
+                MODIFY_DATETIME = #{modifyDatetime, jdbcType=TIMESTAMP},
+            </if>
+            <if test="memo != null">
+                MEMO = #{memo, jdbcType=VARCHAR},
+            </if>
+        </trim>
+        where
+        ID = #{id, jdbcType=BIGINT}
+
+    </update>
+
+
+    <delete id="deleteById" parameterType="long">
+        delete from SYS_EMAIL_TEMPLATE
+        where ID = #{id}
+	</delete>
+
+
+    <delete id="deleteByIdList">
+        delete from SYS_EMAIL_TEMPLATE
+        where (
+        ID IN
+        <foreach item="x_id" index="index" collection="list"
+                 open="(" separator="," close=")">
+            #{x_id}
+        </foreach>
+        )
+    </delete>
+
+    <select id="getListBySql" parameterType="String" resultMap="sysEmailTemplateResultMap">
+		${sql}
+	</select>
+
+    <select id="getAll" resultMap="sysEmailTemplateResultMap">
+		select * from SYS_EMAIL_TEMPLATE 
+	</select>
+
+    <select id="getById" parameterType="long" resultMap="sysEmailTemplateResultMap">
+		select * from SYS_EMAIL_TEMPLATE where ID = #{id}
+	</select>
+
+
+    <select id="getList" resultMap="sysEmailTemplateResultMap">
+        select E.* from SYS_EMAIL_TEMPLATE E
+        <include refid="selectSysEmailTemplateSql"/>
+        <include refid="sortSysEmailTemplateSql"/>
+    </select>
+
+
+    <select id="getCount" resultType="long">
+        select count(*) from SYS_EMAIL_TEMPLATE E
+        <include refid="selectSysEmailTemplateSql"/>
+    </select>
+
+
+    <sql id="selectSysEmailTemplateSql">
+
+        <where>
+            1 = 1
+
+            <if test="type != null">
+                and E.TYPE = #{type}
+            </if>
+
+
+            <if test="content != null and content != '' ">
+                and E.CONTENT = #{content}
+            </if>
+
+            <if test="contentLike != null and contentLike != '' ">
+                and E.CONTENT like CONCAT("%",#{contentLike},"%")
+            </if>
+
+            <if test="status != null">
+                and E.STATUS = #{status}
+            </if>
+
+
+            <if test="createDatetimeGreaterThanOrEqual != null">
+                and E.CREATE_DATETIME &gt;= #{createDatetimeGreaterThanOrEqual}
+            </if>
+
+            <if test="createDatetimeLessThanOrEqual != null">
+                and E.CREATE_DATETIME &lt;= #{createDatetimeLessThanOrEqual}
+            </if>
+
+
+            <if test="modifyDatetimeGreaterThanOrEqual != null">
+                and E.MODIFY_DATETIME &gt;= #{modifyDatetimeGreaterThanOrEqual}
+            </if>
+
+            <if test="modifyDatetimeLessThanOrEqual != null">
+                and E.MODIFY_DATETIME &lt;= #{modifyDatetimeLessThanOrEqual}
+            </if>
+
+
+            <if test="memo != null and memo != '' ">
+                and E.MEMO = #{memo}
+            </if>
+
+            <if test="memoLike != null and memoLike != '' ">
+                and E.MEMO like CONCAT("%",#{memoLike},"%")
+            </if>
+            <if test="ids != null and ids.size != 0">
+                and E.ID IN
+                <foreach item="x_id" index="index" collection="ids"
+                         open="(" separator="," close=")">
+                    #{x_id}
+                </foreach>
+            </if>
+        </where>
+    </sql>
+
+    <sql id="sortSysEmailTemplateSql">
+        <choose>
+            <when test="sort != null and sort != '' ">
+                order by
+                <if test="sort == 'id'">
+                    id
+                </if>
+                <if test="sort == 'type'">
+                    E.TYPE
+                </if>
+                <if test="sort == 'content'">
+                    E.CONTENT
+                </if>
+                <if test="sort == 'status'">
+                    E.STATUS
+                </if>
+                <if test="sort == 'createDatetime'">
+                    E.CREATE_DATETIME
+                </if>
+                <if test="sort == 'modifyDatetime'">
+                    E.MODIFY_DATETIME
+                </if>
+                <if test="sort == 'memo'">
+                    E.MEMO
+                </if>
+                ${order}
+            </when>
+            <otherwise>
+                order by E.ID desc
+            </otherwise>
+        </choose>
+    </sql>
+
+</mapper>

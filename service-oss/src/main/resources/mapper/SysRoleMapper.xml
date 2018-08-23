@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.storm.framework.sys.mapper.SysRoleMapper">
+
+    <resultMap id="sysRoleResultMap" type="org.storm.framework.sys.model.SysRole">
+        <id property="id" column="ID" jdbcType="BIGINT"/>
+        <result property="code" column="CODE" jdbcType="VARCHAR"/>
+        <result property="name" column="NAME" jdbcType="VARCHAR"/>
+        <result property="status" column="STATUS" jdbcType="TINYINT"/>
+        <result property="createUser" column="CREATE_USER" jdbcType="BIGINT"/>
+        <result property="createDatetime" column="CREATE_DATETIME" jdbcType="TIMESTAMP"/>
+        <result property="modifyDatetime" column="MODIFY_DATETIME" jdbcType="TIMESTAMP"/>
+        <result property="memo" column="MEMO" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <insert id="save" parameterType="org.storm.framework.sys.model.SysRole" keyProperty="id" useGeneratedKeys="true">
+		insert into SYS_ROLE( 
+				CODE,
+				NAME,
+				STATUS,
+				CREATE_USER,
+				CREATE_DATETIME,
+				MODIFY_DATETIME,
+				MEMO
+	     )		 
+		values(
+				#{code, jdbcType=VARCHAR},
+				#{name, jdbcType=VARCHAR},
+				#{status, jdbcType=TINYINT},
+				#{createUser, jdbcType=BIGINT},
+				#{createDatetime, jdbcType=TIMESTAMP},
+				#{modifyDatetime, jdbcType=TIMESTAMP},
+				#{memo, jdbcType=VARCHAR}
+		)
+	   
+    </insert>
+
+
+    <update id="update" parameterType="org.storm.framework.sys.model.SysRole">
+        update SYS_ROLE
+        set
+        <trim prefix="" suffix="" suffixOverrides=",">
+            <if test="code != null">
+                CODE = #{code, jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                NAME = #{name, jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                STATUS = #{status, jdbcType=TINYINT},
+            </if>
+            <if test="createUser != null">
+                CREATE_USER = #{createUser, jdbcType=BIGINT},
+            </if>
+            <if test="createDatetime != null">
+                CREATE_DATETIME = #{createDatetime, jdbcType=TIMESTAMP},
+            </if>
+            <if test="modifyDatetime != null">
+                MODIFY_DATETIME = #{modifyDatetime, jdbcType=TIMESTAMP},
+            </if>
+            <if test="memo != null">
+                MEMO = #{memo, jdbcType=VARCHAR},
+            </if>
+        </trim>
+        where
+        ID = #{id, jdbcType=BIGINT}
+
+    </update>
+
+
+    <delete id="deleteById" parameterType="long">
+        delete from SYS_ROLE
+        where ID = #{id}
+	</delete>
+
+
+    <delete id="deleteByIdList">
+        delete from SYS_ROLE
+        where (
+        ID IN
+        <foreach item="x_id" index="index" collection="list"
+                 open="(" separator="," close=")">
+            #{x_id}
+        </foreach>
+        )
+    </delete>
+
+    <select id="getListBySql" parameterType="String" resultMap="sysRoleResultMap">
+		${sql}
+	</select>
+
+    <select id="getAll" resultMap="sysRoleResultMap">
+		select * from SYS_ROLE 
+	</select>
+
+    <select id="getById" parameterType="long" resultMap="sysRoleResultMap">
+		select * from SYS_ROLE where ID = #{id}
+	</select>
+
+
+    <select id="getList" resultMap="sysRoleResultMap">
+        select E.* from SYS_ROLE E
+        <include refid="selectSysRoleSql"/>
+        <include refid="sortSysRoleSql"/>
+    </select>
+
+
+    <select id="getCount" resultType="long">
+        select count(*) from SYS_ROLE E
+        <include refid="selectSysRoleSql"/>
+    </select>
+
+
+    <sql id="selectSysRoleSql">
+
+        <where>
+            1 = 1
+
+            <if test="code != null and code != '' ">
+                and E.CODE = #{code}
+            </if>
+
+            <if test="codeLike != null and codeLike != '' ">
+                and E.CODE like CONCAT("%",#{codeLike},"%")
+            </if>
+
+            <if test="name != null and name != '' ">
+                and E.NAME = #{name}
+            </if>
+
+            <if test="nameLike != null and nameLike != '' ">
+                and E.NAME like CONCAT("%",#{nameLike},"%")
+            </if>
+
+            <if test="status != null">
+                and E.STATUS = #{status}
+            </if>
+
+
+            <if test="createUser != null">
+                and E.CREATE_USER = #{createUser}
+            </if>
+
+
+            <if test="createDatetimeGreaterThanOrEqual != null">
+                and E.CREATE_DATETIME &gt;= #{createDatetimeGreaterThanOrEqual}
+            </if>
+
+            <if test="createDatetimeLessThanOrEqual != null">
+                and E.CREATE_DATETIME &lt;= #{createDatetimeLessThanOrEqual}
+            </if>
+
+
+            <if test="modifyDatetimeGreaterThanOrEqual != null">
+                and E.MODIFY_DATETIME &gt;= #{modifyDatetimeGreaterThanOrEqual}
+            </if>
+
+            <if test="modifyDatetimeLessThanOrEqual != null">
+                and E.MODIFY_DATETIME &lt;= #{modifyDatetimeLessThanOrEqual}
+            </if>
+
+
+            <if test="memo != null and memo != '' ">
+                and E.MEMO = #{memo}
+            </if>
+
+            <if test="memoLike != null and memoLike != '' ">
+                and E.MEMO like CONCAT("%",#{memoLike},"%")
+            </if>
+            <if test="ids != null and ids.size != 0">
+                and E.ID IN
+                <foreach item="x_id" index="index" collection="ids"
+                         open="(" separator="," close=")">
+                    #{x_id}
+                </foreach>
+            </if>
+        </where>
+    </sql>
+
+    <sql id="sortSysRoleSql">
+        <choose>
+            <when test="sort != null and sort != '' ">
+                order by
+                <if test="sort == 'id'">
+                    id
+                </if>
+                <if test="sort == 'code'">
+                    E.CODE
+                </if>
+                <if test="sort == 'name'">
+                    E.NAME
+                </if>
+                <if test="sort == 'status'">
+                    E.STATUS
+                </if>
+                <if test="sort == 'createUser'">
+                    E.CREATE_USER
+                </if>
+                <if test="sort == 'createDatetime'">
+                    E.CREATE_DATETIME
+                </if>
+                <if test="sort == 'modifyDatetime'">
+                    E.MODIFY_DATETIME
+                </if>
+                <if test="sort == 'memo'">
+                    E.MEMO
+                </if>
+                ${order}
+            </when>
+            <otherwise>
+                order by E.ID desc
+            </otherwise>
+        </choose>
+    </sql>
+
+</mapper>

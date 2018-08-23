@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.storm.framework.sys.mapper.SysEmailTaskMapper">
+
+    <resultMap id="sysEmailTaskResultMap" type="org.storm.framework.sys.model.SysEmailTask">
+        <id property="id" column="ID" jdbcType="BIGINT"/>
+        <result property="name" column="NAME" jdbcType="VARCHAR"/>
+        <result property="recipients" column="RECIPIENTS" jdbcType="VARCHAR"/>
+        <result property="content" column="CONTENT" jdbcType="VARCHAR"/>
+        <result property="status" column="STATUS" jdbcType="TINYINT"/>
+        <result property="sendDatetime" column="SEND_DATETIME" jdbcType="TIMESTAMP"/>
+        <result property="createDatetime" column="CREATE_DATETIME" jdbcType="TIMESTAMP"/>
+        <result property="modifyDatetime" column="MODIFY_DATETIME" jdbcType="TIMESTAMP"/>
+        <result property="memo" column="MEMO" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <insert id="save" parameterType="org.storm.framework.sys.model.SysEmailTask" keyProperty="id"
+            useGeneratedKeys="true">
+		insert into SYS_EMAIL_TASK( 
+				NAME,
+				RECIPIENTS,
+				CONTENT,
+				STATUS,
+				SEND_DATETIME,
+				CREATE_DATETIME,
+				MODIFY_DATETIME,
+				MEMO
+	     )		 
+		values(
+				#{name, jdbcType=VARCHAR},
+				#{recipients, jdbcType=VARCHAR},
+				#{content, jdbcType=VARCHAR},
+				#{status, jdbcType=TINYINT},
+				#{sendDatetime, jdbcType=TIMESTAMP},
+				#{createDatetime, jdbcType=TIMESTAMP},
+				#{modifyDatetime, jdbcType=TIMESTAMP},
+				#{memo, jdbcType=VARCHAR}
+		)
+	   
+    </insert>
+
+
+    <update id="update" parameterType="org.storm.framework.sys.model.SysEmailTask">
+        update SYS_EMAIL_TASK
+        set
+        <trim prefix="" suffix="" suffixOverrides=",">
+            <if test="name != null">
+                NAME = #{name, jdbcType=VARCHAR},
+            </if>
+            <if test="recipients != null">
+                RECIPIENTS = #{recipients, jdbcType=VARCHAR},
+            </if>
+            <if test="content != null">
+                CONTENT = #{content, jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                STATUS = #{status, jdbcType=TINYINT},
+            </if>
+            <if test="sendDatetime != null">
+                SEND_DATETIME = #{sendDatetime, jdbcType=TIMESTAMP},
+            </if>
+            <if test="createDatetime != null">
+                CREATE_DATETIME = #{createDatetime, jdbcType=TIMESTAMP},
+            </if>
+            <if test="modifyDatetime != null">
+                MODIFY_DATETIME = #{modifyDatetime, jdbcType=TIMESTAMP},
+            </if>
+            <if test="memo != null">
+                MEMO = #{memo, jdbcType=VARCHAR},
+            </if>
+        </trim>
+        where
+        ID = #{id, jdbcType=BIGINT}
+
+    </update>
+
+
+    <delete id="deleteById" parameterType="long">
+        delete from SYS_EMAIL_TASK
+        where ID = #{id}
+	</delete>
+
+
+    <delete id="deleteByIdList">
+        delete from SYS_EMAIL_TASK
+        where (
+        ID IN
+        <foreach item="x_id" index="index" collection="list"
+                 open="(" separator="," close=")">
+            #{x_id}
+        </foreach>
+        )
+    </delete>
+
+    <select id="getListBySql" parameterType="String" resultMap="sysEmailTaskResultMap">
+		${sql}
+	</select>
+
+    <select id="getAll" resultMap="sysEmailTaskResultMap">
+		select * from SYS_EMAIL_TASK 
+	</select>
+
+    <select id="getById" parameterType="long" resultMap="sysEmailTaskResultMap">
+		select * from SYS_EMAIL_TASK where ID = #{id}
+	</select>
+
+
+    <select id="getList" resultMap="sysEmailTaskResultMap">
+        select E.* from SYS_EMAIL_TASK E
+        <include refid="selectSysEmailTaskSql"/>
+        <include refid="sortSysEmailTaskSql"/>
+    </select>
+
+
+    <select id="getCount" resultType="long">
+        select count(*) from SYS_EMAIL_TASK E
+        <include refid="selectSysEmailTaskSql"/>
+    </select>
+
+
+    <sql id="selectSysEmailTaskSql">
+
+        <where>
+            1 = 1
+
+            <if test="name != null and name != '' ">
+                and E.NAME = #{name}
+            </if>
+
+            <if test="nameLike != null and nameLike != '' ">
+                and E.NAME like CONCAT("%",#{nameLike},"%")
+            </if>
+
+            <if test="recipients != null and recipients != '' ">
+                and E.RECIPIENTS = #{recipients}
+            </if>
+
+            <if test="recipientsLike != null and recipientsLike != '' ">
+                and E.RECIPIENTS like CONCAT("%",#{recipientsLike},"%")
+            </if>
+
+            <if test="content != null and content != '' ">
+                and E.CONTENT = #{content}
+            </if>
+
+            <if test="contentLike != null and contentLike != '' ">
+                and E.CONTENT like CONCAT("%",#{contentLike},"%")
+            </if>
+
+            <if test="status != null">
+                and E.STATUS = #{status}
+            </if>
+
+
+            <if test="sendDatetimeGreaterThanOrEqual != null">
+                and E.SEND_DATETIME &gt;= #{sendDatetimeGreaterThanOrEqual}
+            </if>
+
+            <if test="sendDatetimeLessThanOrEqual != null">
+                and E.SEND_DATETIME &lt;= #{sendDatetimeLessThanOrEqual}
+            </if>
+
+
+            <if test="createDatetimeGreaterThanOrEqual != null">
+                and E.CREATE_DATETIME &gt;= #{createDatetimeGreaterThanOrEqual}
+            </if>
+
+            <if test="createDatetimeLessThanOrEqual != null">
+                and E.CREATE_DATETIME &lt;= #{createDatetimeLessThanOrEqual}
+            </if>
+
+
+            <if test="modifyDatetimeGreaterThanOrEqual != null">
+                and E.MODIFY_DATETIME &gt;= #{modifyDatetimeGreaterThanOrEqual}
+            </if>
+
+            <if test="modifyDatetimeLessThanOrEqual != null">
+                and E.MODIFY_DATETIME &lt;= #{modifyDatetimeLessThanOrEqual}
+            </if>
+
+
+            <if test="memo != null and memo != '' ">
+                and E.MEMO = #{memo}
+            </if>
+
+            <if test="memoLike != null and memoLike != '' ">
+                and E.MEMO like CONCAT("%",#{memoLike},"%")
+            </if>
+            <if test="ids != null and ids.size != 0">
+                and E.ID IN
+                <foreach item="x_id" index="index" collection="ids"
+                         open="(" separator="," close=")">
+                    #{x_id}
+                </foreach>
+            </if>
+        </where>
+    </sql>
+
+    <sql id="sortSysEmailTaskSql">
+        <choose>
+            <when test="sort != null and sort != '' ">
+                order by
+                <if test="sort == 'id'">
+                    id
+                </if>
+                <if test="sort == 'name'">
+                    E.NAME
+                </if>
+                <if test="sort == 'recipients'">
+                    E.RECIPIENTS
+                </if>
+                <if test="sort == 'content'">
+                    E.CONTENT
+                </if>
+                <if test="sort == 'status'">
+                    E.STATUS
+                </if>
+                <if test="sort == 'sendDatetime'">
+                    E.SEND_DATETIME
+                </if>
+                <if test="sort == 'createDatetime'">
+                    E.CREATE_DATETIME
+                </if>
+                <if test="sort == 'modifyDatetime'">
+                    E.MODIFY_DATETIME
+                </if>
+                <if test="sort == 'memo'">
+                    E.MEMO
+                </if>
+                ${order}
+            </when>
+            <otherwise>
+                order by E.ID desc
+            </otherwise>
+        </choose>
+    </sql>
+
+</mapper>

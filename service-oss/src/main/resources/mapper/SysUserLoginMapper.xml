@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.storm.framework.sys.mapper.SysUserLoginMapper">
+
+    <resultMap id="sysUserLoginResultMap" type="org.storm.framework.sys.model.SysUserLogin">
+        <id property="id" column="ID" jdbcType="BIGINT"/>
+        <result property="userId" column="USER_ID" jdbcType="BIGINT"/>
+        <result property="userAgent" column="USER_AGENT" jdbcType="VARCHAR"/>
+        <result property="ip" column="IP" jdbcType="VARCHAR"/>
+        <result property="loginDatetime" column="LOGIN_DATETIME" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+
+    <insert id="save" parameterType="org.storm.framework.sys.model.SysUserLogin" keyProperty="id"
+            useGeneratedKeys="true">
+		insert into SYS_USER_LOGIN( 
+				USER_ID,
+				USER_AGENT,
+				IP,
+				LOGIN_DATETIME
+	     )		 
+		values(
+				#{userId, jdbcType=BIGINT},
+				#{userAgent, jdbcType=VARCHAR},
+				#{ip, jdbcType=VARCHAR},
+				#{loginDatetime, jdbcType=TIMESTAMP}
+		)
+	   
+    </insert>
+
+
+    <update id="update" parameterType="org.storm.framework.sys.model.SysUserLogin">
+        update SYS_USER_LOGIN
+        set
+        <trim prefix="" suffix="" suffixOverrides=",">
+            <if test="userId != null">
+                USER_ID = #{userId, jdbcType=BIGINT},
+            </if>
+            <if test="userAgent != null">
+                USER_AGENT = #{userAgent, jdbcType=VARCHAR},
+            </if>
+            <if test="ip != null">
+                IP = #{ip, jdbcType=VARCHAR},
+            </if>
+            <if test="loginDatetime != null">
+                LOGIN_DATETIME = #{loginDatetime, jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+        where
+        ID = #{id, jdbcType=BIGINT}
+
+    </update>
+
+
+    <delete id="deleteById" parameterType="long">
+        delete from SYS_USER_LOGIN
+        where ID = #{id}
+	</delete>
+
+
+    <delete id="deleteByIdList">
+        delete from SYS_USER_LOGIN
+        where (
+        ID IN
+        <foreach item="x_id" index="index" collection="list"
+                 open="(" separator="," close=")">
+            #{x_id}
+        </foreach>
+        )
+    </delete>
+
+    <select id="getListBySql" parameterType="String" resultMap="sysUserLoginResultMap">
+		${sql}
+	</select>
+
+    <select id="getAll" resultMap="sysUserLoginResultMap">
+		select * from SYS_USER_LOGIN 
+	</select>
+
+    <select id="getById" parameterType="long" resultMap="sysUserLoginResultMap">
+		select * from SYS_USER_LOGIN where ID = #{id}
+	</select>
+
+
+    <select id="getList" resultMap="sysUserLoginResultMap">
+        select E.* from SYS_USER_LOGIN E
+        <include refid="selectSysUserLoginSql"/>
+        <include refid="sortSysUserLoginSql"/>
+    </select>
+
+
+    <select id="getCount" resultType="long">
+        select count(*) from SYS_USER_LOGIN E
+        <include refid="selectSysUserLoginSql"/>
+    </select>
+
+
+    <sql id="selectSysUserLoginSql">
+
+        <where>
+            1 = 1
+
+            <if test="userId != null">
+                and E.USER_ID = #{userId}
+            </if>
+
+
+            <if test="userAgent != null and userAgent != '' ">
+                and E.USER_AGENT = #{userAgent}
+            </if>
+
+            <if test="userAgentLike != null and userAgentLike != '' ">
+                and E.USER_AGENT like CONCAT("%",#{userAgentLike},"%")
+            </if>
+
+            <if test="ip != null and ip != '' ">
+                and E.IP = #{ip}
+            </if>
+
+            <if test="ipLike != null and ipLike != '' ">
+                and E.IP like CONCAT("%",#{ipLike},"%")
+            </if>
+
+            <if test="loginDatetimeGreaterThanOrEqual != null">
+                and E.LOGIN_DATETIME &gt;= #{loginDatetimeGreaterThanOrEqual}
+            </if>
+
+            <if test="loginDatetimeLessThanOrEqual != null">
+                and E.LOGIN_DATETIME &lt;= #{loginDatetimeLessThanOrEqual}
+            </if>
+
+
+            <if test="ids != null and ids.size != 0">
+                and E.ID IN
+                <foreach item="x_id" index="index" collection="ids"
+                         open="(" separator="," close=")">
+                    #{x_id}
+                </foreach>
+            </if>
+        </where>
+    </sql>
+
+    <sql id="sortSysUserLoginSql">
+        <choose>
+            <when test="sort != null and sort != '' ">
+                order by
+                <if test="sort == 'id'">
+                    id
+                </if>
+                <if test="sort == 'userId'">
+                    E.USER_ID
+                </if>
+                <if test="sort == 'userAgent'">
+                    E.USER_AGENT
+                </if>
+                <if test="sort == 'ip'">
+                    E.IP
+                </if>
+                <if test="sort == 'loginDatetime'">
+                    E.LOGIN_DATETIME
+                </if>
+                ${order}
+            </when>
+            <otherwise>
+                order by E.ID desc
+            </otherwise>
+        </choose>
+    </sql>
+
+</mapper>

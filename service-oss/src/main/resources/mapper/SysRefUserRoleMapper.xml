@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.storm.framework.sys.mapper.SysRefUserRoleMapper">
+
+    <resultMap id="sysRefUserRoleResultMap" type="org.storm.framework.sys.model.SysRefUserRole">
+        <id property="id" column="ID" jdbcType="BIGINT"/>
+        <result property="sysUserId" column="SYS_USER_ID" jdbcType="BIGINT"/>
+        <result property="sysRoleId" column="SYS_ROLE_ID" jdbcType="BIGINT"/>
+    </resultMap>
+
+
+    <insert id="save" parameterType="org.storm.framework.sys.model.SysRefUserRole" keyProperty="id"
+            useGeneratedKeys="true">
+		insert into SYS_REF_USER_ROLE( 
+				SYS_USER_ID,
+				SYS_ROLE_ID
+	     )		 
+		values(
+				#{sysUserId, jdbcType=BIGINT},
+				#{sysRoleId, jdbcType=BIGINT}
+		)
+	   
+    </insert>
+
+
+    <update id="update" parameterType="org.storm.framework.sys.model.SysRefUserRole">
+        update SYS_REF_USER_ROLE
+        set
+        <trim prefix="" suffix="" suffixOverrides=",">
+            <if test="sysUserId != null">
+                SYS_USER_ID = #{sysUserId, jdbcType=BIGINT},
+            </if>
+            <if test="sysRoleId != null">
+                SYS_ROLE_ID = #{sysRoleId, jdbcType=BIGINT},
+            </if>
+        </trim>
+        where
+        ID = #{id, jdbcType=BIGINT}
+
+    </update>
+
+
+    <delete id="deleteById" parameterType="long">
+        delete from SYS_REF_USER_ROLE
+        where ID = #{id}
+	</delete>
+
+
+    <delete id="deleteByIdList">
+        delete from SYS_REF_USER_ROLE
+        where (
+        ID IN
+        <foreach item="x_id" index="index" collection="list"
+                 open="(" separator="," close=")">
+            #{x_id}
+        </foreach>
+        )
+    </delete>
+
+    <select id="getListBySql" parameterType="String" resultMap="sysRefUserRoleResultMap">
+		${sql}
+	</select>
+
+    <select id="getAll" resultMap="sysRefUserRoleResultMap">
+		select * from SYS_REF_USER_ROLE 
+	</select>
+
+    <select id="getById" parameterType="long" resultMap="sysRefUserRoleResultMap">
+		select * from SYS_REF_USER_ROLE where ID = #{id}
+	</select>
+
+
+    <select id="getList" resultMap="sysRefUserRoleResultMap">
+        select E.* from SYS_REF_USER_ROLE E
+        <include refid="selectSysRefUserRoleSql"/>
+        <include refid="sortSysRefUserRoleSql"/>
+    </select>
+
+
+    <select id="getCount" resultType="long">
+        select count(*) from SYS_REF_USER_ROLE E
+        <include refid="selectSysRefUserRoleSql"/>
+    </select>
+
+
+    <sql id="selectSysRefUserRoleSql">
+
+        <where>
+            1 = 1
+
+            <if test="sysUserId != null">
+                and E.SYS_USER_ID = #{sysUserId}
+            </if>
+
+
+            <if test="sysRoleId != null">
+                and E.SYS_ROLE_ID = #{sysRoleId}
+            </if>
+
+            <if test="ids != null and ids.size != 0">
+                and E.ID IN
+                <foreach item="x_id" index="index" collection="ids"
+                         open="(" separator="," close=")">
+                    #{x_id}
+                </foreach>
+            </if>
+        </where>
+    </sql>
+
+    <sql id="sortSysRefUserRoleSql">
+        <choose>
+            <when test="sort != null and sort != '' ">
+                order by
+                <if test="sort == 'id'">
+                    id
+                </if>
+                <if test="sort == 'sysUserId'">
+                    E.SYS_USER_ID
+                </if>
+                <if test="sort == 'sysRoleId'">
+                    E.SYS_ROLE_ID
+                </if>
+                ${order}
+            </when>
+            <otherwise>
+                order by E.ID desc
+            </otherwise>
+        </choose>
+    </sql>
+
+</mapper>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.storm.framework.sys.mapper.SysRefRoleMenuMapper">
+
+    <resultMap id="sysRefRoleMenuResultMap" type="org.storm.framework.sys.model.SysRefRoleMenu">
+        <id property="id" column="ID" jdbcType="BIGINT"/>
+        <result property="sysMenuId" column="SYS_MENU_ID" jdbcType="BIGINT"/>
+        <result property="sysRoleId" column="SYS_ROLE_ID" jdbcType="BIGINT"/>
+    </resultMap>
+
+
+    <insert id="save" parameterType="org.storm.framework.sys.model.SysRefRoleMenu" keyProperty="id"
+            useGeneratedKeys="true">
+		insert into SYS_REF_ROLE_MENU( 
+				SYS_MENU_ID,
+				SYS_ROLE_ID
+	     )		 
+		values(
+				#{sysMenuId, jdbcType=BIGINT},
+				#{sysRoleId, jdbcType=BIGINT}
+		)
+	   
+    </insert>
+
+
+    <update id="update" parameterType="org.storm.framework.sys.model.SysRefRoleMenu">
+        update SYS_REF_ROLE_MENU
+        set
+        <trim prefix="" suffix="" suffixOverrides=",">
+            <if test="sysMenuId != null">
+                SYS_MENU_ID = #{sysMenuId, jdbcType=BIGINT},
+            </if>
+            <if test="sysRoleId != null">
+                SYS_ROLE_ID = #{sysRoleId, jdbcType=BIGINT},
+            </if>
+        </trim>
+        where
+        ID = #{id, jdbcType=BIGINT}
+
+    </update>
+
+
+    <delete id="deleteById" parameterType="long">
+        delete from SYS_REF_ROLE_MENU
+        where ID = #{id}
+	</delete>
+
+
+    <delete id="deleteByIdList">
+        delete from SYS_REF_ROLE_MENU
+        where (
+        ID IN
+        <foreach item="x_id" index="index" collection="list"
+                 open="(" separator="," close=")">
+            #{x_id}
+        </foreach>
+        )
+    </delete>
+
+    <select id="getListBySql" parameterType="String" resultMap="sysRefRoleMenuResultMap">
+		${sql}
+	</select>
+
+    <select id="getAll" resultMap="sysRefRoleMenuResultMap">
+		select * from SYS_REF_ROLE_MENU 
+	</select>
+
+    <select id="getById" parameterType="long" resultMap="sysRefRoleMenuResultMap">
+		select * from SYS_REF_ROLE_MENU where ID = #{id}
+	</select>
+
+
+    <select id="getList" resultMap="sysRefRoleMenuResultMap">
+        select E.* from SYS_REF_ROLE_MENU E
+        <include refid="selectSysRefRoleMenuSql"/>
+        <include refid="sortSysRefRoleMenuSql"/>
+    </select>
+
+
+    <select id="getCount" resultType="long">
+        select count(*) from SYS_REF_ROLE_MENU E
+        <include refid="selectSysRefRoleMenuSql"/>
+    </select>
+
+
+    <sql id="selectSysRefRoleMenuSql">
+
+        <where>
+            1 = 1
+
+            <if test="sysMenuId != null">
+                and E.SYS_MENU_ID = #{sysMenuId}
+            </if>
+
+
+            <if test="sysRoleId != null">
+                and E.SYS_ROLE_ID = #{sysRoleId}
+            </if>
+
+            <if test="ids != null and ids.size != 0">
+                and E.ID IN
+                <foreach item="x_id" index="index" collection="ids"
+                         open="(" separator="," close=")">
+                    #{x_id}
+                </foreach>
+            </if>
+        </where>
+    </sql>
+
+    <sql id="sortSysRefRoleMenuSql">
+        <choose>
+            <when test="sort != null and sort != '' ">
+                order by
+                <if test="sort == 'id'">
+                    id
+                </if>
+                <if test="sort == 'sysMenuId'">
+                    E.SYS_MENU_ID
+                </if>
+                <if test="sort == 'sysRoleId'">
+                    E.SYS_ROLE_ID
+                </if>
+                ${order}
+            </when>
+            <otherwise>
+                order by E.ID desc
+            </otherwise>
+        </choose>
+    </sql>
+
+</mapper>

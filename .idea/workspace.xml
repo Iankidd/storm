@@ -2,8 +2,67 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2abef353-240a-4c31-bc24-a4d280a9de18" name="Default" comment="修改日志配置文件">
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysDepartmentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysDictoryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysEmailTaskMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysEmailTemplateMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysMenuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysOperateLogMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysRefRoleMenuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysRefUserRoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysRoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysServiceErrorLogMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysUserLoginMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysUserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/model/SysDepartment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/model/SysDictory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/model/SysEmailTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/model/SysEmailTemplate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/model/SysMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/model/SysOperateLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/model/SysRefRoleMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/model/SysRefUserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/model/SysRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/model/SysServiceErrorLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/model/SysUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/model/SysUserLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysDepartmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysDictoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysEmailTaskService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysEmailTemplateService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysMenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysOperateLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysRefRoleMenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysRefUserRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysServiceErrorLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysUserLoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysDepartmentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysDictoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysEmailTaskServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysEmailTemplateServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysMenuServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysOperateLogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysRefRoleMenuServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysRefUserRoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysRoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysServiceErrorLogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysUserLoginServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysUserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysDepartmentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysDictoryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysEmailTaskMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysEmailTemplateMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysMenuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysOperateLogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysRefRoleMenuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysRefUserRoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysRoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysServiceErrorLogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysUserLoginMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysUserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/logback-spring.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/eureka-server/target/" />
@@ -19,35 +78,36 @@
     <session id="-1572135592">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
-          <entry key="project.open.time.10" value="2" />
+          <entry key="project.closed" value="17" />
+          <entry key="project.open.time.10" value="3" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.114" value="1" />
           <entry key="project.open.time.253" value="1" />
           <entry key="project.open.time.344" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.509" value="1" />
-          <entry key="project.open.time.6" value="2" />
-          <entry key="project.open.time.8" value="3" />
+          <entry key="project.open.time.6" value="3" />
+          <entry key="project.open.time.8" value="4" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="6" />
-          <entry key="java" value="44" />
+          <entry key="java" value="99" />
           <entry key="mvnw" value="1" />
-          <entry key="xml" value="28" />
-          <entry key="yml" value="13" />
+          <entry key="xml" value="42" />
+          <entry key="yml" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="6" />
-          <entry key="JAVA" value="44" />
+          <entry key="JAVA" value="99" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="XML" value="28" />
-          <entry key="YAML" value="13" />
+          <entry key="XML" value="42" />
+          <entry key="YAML" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -129,12 +189,12 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/logback-spring.xml">
+        <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/service/oss/ServiceClientApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
+            <state relative-caret-position="340">
+              <caret line="29" column="49" lean-forward="true" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -169,30 +229,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
-        <option value="$PROJECT_DIR$/service-client/src/main/java/org/storm/service/client/ServiceClientApplication.java" />
-        <option value="$PROJECT_DIR$/eureka-server/src/main/java/org/storm/framework/base/mapper/BaseMapper.java" />
-        <option value="$PROJECT_DIR$/eureka-server/src/main/java/org/storm/framework/base/model/Happiness.java" />
-        <option value="$PROJECT_DIR$/eureka-server/src/main/java/org/storm/framework/base/mapper/HappinessMapper.java" />
-        <option value="$PROJECT_DIR$/eureka-server/src/main/java/org/storm/framework/base/service/impl/HappinessService.java" />
-        <option value="$PROJECT_DIR$/eureka-server/src/main/java/org/storm/framework/base/controller/HappinessController.java" />
-        <option value="$PROJECT_DIR$/eureka-server/src/main/resources/mapper/Happiness.xml" />
-        <option value="$PROJECT_DIR$/service-client/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/service-client/pom.xml" />
-        <option value="$PROJECT_DIR$/service-oss/pom.xml" />
-        <option value="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/eureka-server/src/main/java/org/storm/eureka/server/EurekaServerApplication.java" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/model/Entity.java" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/mapper/BaseMapper.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/service/BaseService.java" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/service/impl/BaseServiceImpl.java" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/util/RequestUtils.java" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/controller/BaseController.java" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/util/DateUtils.java" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/service/oss/ServiceClientApplication.java" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/resources/logback-spring.xml" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/model/SysServiceErrorLog.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/model/SysUser.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/model/SysUserLogin.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysUserMapper.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysDepartmentMapper.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysDictoryMapper.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysEmailTaskMapper.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysEmailTemplateMapper.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysMenuMapper.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysOperateLogMapper.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysRefRoleMenuMapper.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysRefUserRoleMapper.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysRoleMapper.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysServiceErrorLogMapper.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysUserLoginMapper.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysDepartmentMapper.xml" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysDictoryMapper.xml" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysEmailTaskMapper.xml" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysEmailTemplateMapper.xml" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysMenuMapper.xml" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysOperateLogMapper.xml" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysRefRoleMenuMapper.xml" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysRefUserRoleMapper.xml" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysRoleMapper.xml" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysServiceErrorLogMapper.xml" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysUserLoginMapper.xml" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysUserMapper.xml" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysDepartmentService.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysDictoryService.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysEmailTaskService.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysEmailTemplateService.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysMenuService.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysOperateLogService.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysRefRoleMenuService.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysRefUserRoleService.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysRoleService.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysServiceErrorLogService.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysUserLoginService.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysUserService.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysDepartmentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysDictoryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysEmailTaskServiceImpl.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysEmailTemplateServiceImpl.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysMenuServiceImpl.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysOperateLogServiceImpl.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysRefRoleMenuServiceImpl.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysRefUserRoleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysRoleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysServiceErrorLogServiceImpl.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysUserLoginServiceImpl.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysUserServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -223,35 +310,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
-              <item name="org.storm" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
-              <item name="org.storm" type="1f31426a:PackageElementNode" />
-              <item name="framework" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
-              <item name="org.storm" type="1f31426a:PackageElementNode" />
-              <item name="framework" type="1f31426a:PackageElementNode" />
-              <item name="base" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -263,6 +321,22 @@
               <item name="storm" type="b2602c69:ProjectViewProjectNode" />
               <item name="storm" type="462c0819:PsiDirectoryNode" />
               <item name="service-oss" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
+              <item name="org.storm" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
@@ -368,25 +442,6 @@
             </path>
             <path>
               <item name="storm" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="service-oss" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="org" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="storm" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="storm" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="service-oss" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="org" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="storm" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="framework" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="storm" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="storm" type="2674bda8:ScopeViewTreeModel$GroupNode" />
             </path>
           </expand>
@@ -403,6 +458,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/eureka-server/src/main/java/org/storm/eureka/server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../moxi-master" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -416,11 +472,11 @@
       <recent name="org.storm" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\github-workspace\storm\service-oss\src\main\java\org\storm\framework\base\util" />
-      <recent name="D:\github-workspace\storm\service-oss\src\main\java\org\storm\framework\base\controller" />
-      <recent name="D:\github-workspace\storm\service-oss\src\main\java\org\storm\framework\base\service\impl" />
-      <recent name="D:\github-workspace\storm\service-oss\src\main\java\org\storm\framework\base\service" />
-      <recent name="D:\github-workspace\storm\service-oss\src\main\java\org\storm\framework\base\mapper" />
+      <recent name="D:\github-workspace\storm\service-oss\src\main\java\org\storm\framework\sys\service\impl" />
+      <recent name="D:\github-workspace\storm\service-oss\src\main\java\org\storm\framework\sys\service" />
+      <recent name="D:\github-workspace\storm\service-oss\src\main\resources\mapper" />
+      <recent name="D:\github-workspace\storm\service-oss\src\main\java\org\storm\framework\sys\mapper" />
+      <recent name="D:\github-workspace\storm\service-oss\src\main\java\org\storm\framework\sys\model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -538,7 +594,11 @@
       <workItem from="1534147144528" duration="9845000" />
       <workItem from="1534210461091" duration="5620000" />
       <workItem from="1534216204721" duration="9700000" />
-      <workItem from="1534230796519" duration="3364000" />
+      <workItem from="1534230796519" duration="4882000" />
+      <workItem from="1534248116515" duration="47000" />
+      <workItem from="1534814966504" duration="4662000" />
+      <workItem from="1534834603602" duration="2020000" />
+      <workItem from="1534862368582" duration="802000" />
     </task>
     <task id="LOCAL-00001" summary="集成mybatis分页">
       <created>1534158730692</created>
@@ -568,17 +628,23 @@
       <option name="project" value="LOCAL" />
       <updated>1534228438309</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="修改日志配置文件">
+      <created>1534238279450</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1534238279450</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49177000" />
+    <option name="totallyTimeSpent" value="58226000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49779737" visible="true" weight="0.26541555" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49779737" visible="true" weight="0.23458445" />
       <window_info id="Structure" order="1" sideWeight="0.50073856" side_tool="true" weight="0.25737265" />
       <window_info id="Web" order="2" sideWeight="0.50220263" side_tool="true" weight="0.25536194" />
       <window_info id="Designer" order="3" />
@@ -586,7 +652,7 @@
       <window_info id="Favorites" order="5" sideWeight="0.50073856" side_tool="true" weight="0.25737265" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3318649" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.40675476" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -621,164 +687,360 @@
     <option name="LAST_COMMIT_MESSAGE" value="修改日志配置文件" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysDepartmentMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        <state relative-caret-position="200">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysDictoryMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="39" lean-forward="true" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        <state relative-caret-position="200">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-server/src/main/java/org/storm/framework/base/mapper/BaseMapper.java" />
-    <entry file="file://$PROJECT_DIR$/eureka-server/src/test/java/org/storm/eureka/server/EurekaServerApplicationTests.java">
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysEmailTaskMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="200">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-server/src/main/java/org/storm/framework/base/model/Happiness.java" />
-    <entry file="file://$PROJECT_DIR$/eureka-server/src/main/java/org/storm/framework/base/controller/HappinessController.java" />
-    <entry file="file://$PROJECT_DIR$/eureka-server/src/main/resources/mapper/Happiness.xml" />
-    <entry file="file://$PROJECT_DIR$/eureka-server/src/main/java/org/storm/framework/base/mapper/HappinessMapper.java" />
-    <entry file="file://$PROJECT_DIR$/eureka-server/src/main/java/org/storm/framework/base/service/impl/HappinessService.java" />
-    <entry file="file://$PROJECT_DIR$/eureka-server/pom.xml">
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysEmailTemplateMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+        <state relative-caret-position="200">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/mvnw">
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysMenuMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1620" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        <state relative-caret-position="200">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/mapper/Happiness.xml" />
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/model/Happiness.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar!/ch/qos/logback/core/rolling/SizeBasedTriggeringPolicy.class">
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysOperateLogMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysRefRoleMenuMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysRefUserRoleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysRoleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysServiceErrorLogMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysUserLoginMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/mapper/SysUserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysDepartmentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysDictoryMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysEmailTaskMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysEmailTemplateMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysMenuMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysOperateLogMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysRefRoleMenuMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysRefUserRoleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysRoleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysServiceErrorLogMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysUserLoginMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysUserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysDepartmentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysDictoryService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-server/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysEmailTaskService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        <state relative-caret-position="140">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eureka-server/src/main/java/org/storm/eureka/server/EurekaServerApplication.java">
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysEmailTemplateService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="140">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysMenuService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysOperateLogService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysRefRoleMenuService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysRefUserRoleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysRoleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysServiceErrorLogService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysUserLoginService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/SysUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysDepartmentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysDictoryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysEmailTaskServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysEmailTemplateServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysMenuServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysOperateLogServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysRefRoleMenuServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysRefUserRoleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysRoleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysServiceErrorLogServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysUserLoginServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysUserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pagehelper/pagehelper/4.1.6/pagehelper-4.1.6.jar!/com/github/pagehelper/Page.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-619">
-          <caret line="91" column="29" selection-start-line="91" selection-start-column="19" selection-end-line="91" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pagehelper/pagehelper/4.1.6/pagehelper-4.1.6.jar!/com/github/pagehelper/PageHelper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="96" column="19" lean-forward="true" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/model/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/service/BaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2380">
-          <caret line="119" column="55" lean-forward="true" selection-start-line="119" selection-start-column="55" selection-end-line="119" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.6/commons-lang-2.6.jar!/org/apache/commons/lang/StringUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/controller/BaseController.java" />
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/util/RequestUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3880">
-          <caret line="66" column="17" lean-forward="true" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/util/DateUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="261" column="7" lean-forward="true" selection-start-line="261" selection-start-column="7" selection-end-line="261" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/mapper/BaseMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/service/impl/BaseServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/service/oss/ServiceClientApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+        <state relative-caret-position="232">
+          <caret line="58" column="20" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        <state relative-caret-position="300">
+          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/logback-spring.xml">
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/service/oss/ServiceClientApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
+        <state relative-caret-position="340">
+          <caret line="29" column="49" lean-forward="true" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
         </state>
       </provider>
     </entry>

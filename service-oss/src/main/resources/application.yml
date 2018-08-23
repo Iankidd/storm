@@ -11,6 +11,12 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
   profiles:
     active: dev
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    cache: false
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

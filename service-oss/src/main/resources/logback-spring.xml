@@ -38,6 +38,7 @@
         <logger name="org.hibernate" level="INFO" />
         <logger name="com.zaxxer" level="INFO" />
         <logger name="org.mybatis" level="INFO" />
+        <logger name="org.thymeleaf" level="INFO" />
 
         <root level="${DEV_LEVEL}">
             <appender-ref ref="CONSOLE" />

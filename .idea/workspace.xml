@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2abef353-240a-4c31-bc24-a4d280a9de18" name="Default" comment="修改日志配置文件">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/controller/BaseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/exception/BusinessException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/util/DateJsonValueProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/util/EntityUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/util/ErrorUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/util/PageHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/util/ReflectUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/util/ResponseUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/util/SysConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/controller/IndexController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/service/oss/SystemProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/common.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/util/RequestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/base/util/RequestUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/service/oss/ServiceClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/java/org/storm/service/oss/ServiceClientApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/login.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/eureka-server/target/" />
@@ -35,8 +20,9 @@
     <session id="-1572135592">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="20" />
-          <entry key="project.open.time.0" value="2" />
+          <entry key="project.closed" value="21" />
+          <entry key="project.open.time.0" value="3" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.114" value="1" />
@@ -47,49 +33,51 @@
           <entry key="project.open.time.6" value="3" />
           <entry key="project.open.time.8" value="4" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="20" />
+          <entry key="project.opened" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="8" />
-          <entry key="html" value="4" />
+          <entry key="html" value="5" />
           <entry key="java" value="123" />
           <entry key="js" value="1" />
           <entry key="mvnw" value="1" />
           <entry key="properties" value="3" />
-          <entry key="xml" value="44" />
-          <entry key="yml" value="24" />
+          <entry key="xml" value="45" />
+          <entry key="yml" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="8" />
-          <entry key="HTML" value="4" />
+          <entry key="HTML" value="5" />
           <entry key="JAVA" value="123" />
           <entry key="JavaScript" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="3" />
-          <entry key="XML" value="44" />
-          <entry key="YAML" value="24" />
+          <entry key="XML" value="45" />
+          <entry key="YAML" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="6" />
+          <entry key="html" value="29" />
           <entry key="java" value="498" />
           <entry key="properties" value="25" />
           <entry key="txt" value="25" />
-          <entry key="xml" value="376" />
+          <entry key="xml" value="377" />
           <entry key="yml" value="125" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="HTML" value="29" />
           <entry key="JAVA" value="498" />
           <entry key="PLAIN_TEXT" value="31" />
           <entry key="Properties" value="25" />
-          <entry key="XML" value="376" />
+          <entry key="XML" value="377" />
           <entry key="YAML" value="125" />
         </counts>
       </usages-collector>
@@ -158,34 +146,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/service/oss/ServiceClientApplication.java">
+        <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="51" column="37" lean-forward="true" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
-              <folding>
-                <element signature="e#871#872#0" expanded="true" />
-                <element signature="e#946#947#0" expanded="true" />
-                <element signature="e#1561#1562#0" expanded="true" />
-                <element signature="e#1645#1646#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/service/impl/SysDepartmentServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+            <state relative-caret-position="300">
+              <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -224,8 +188,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysEmailTemplateMapper.xml" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysMenuMapper.xml" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysOperateLogMapper.xml" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysRefRoleMenuMapper.xml" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysRefUserRoleMapper.xml" />
@@ -275,6 +237,8 @@
         <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/controller/IndexController.java" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/service/oss/ServiceClientApplication.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/logback-spring.xml" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/login.html" />
       </list>
     </option>
   </component>
@@ -305,17 +269,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
+      <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
+              <item name="storm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="storm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
-              <item name="org.storm" type="1f31426a:PackageElementNode" />
+              <item name="storm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="storm" type="462c0819:PsiDirectoryNode" />
+              <item name="service-oss" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -497,17 +461,27 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
+      <pane id="PackagesPane">
         <subPane>
           <expand>
             <path>
-              <item name="storm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="storm" type="462c0819:PsiDirectoryNode" />
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
             </path>
             <path>
-              <item name="storm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="storm" type="462c0819:PsiDirectoryNode" />
-              <item name="service-oss" type="462c0819:PsiDirectoryNode" />
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
+              <item name="org.storm" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
+              <item name="static" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
+              <item name="templates" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
@@ -667,6 +641,8 @@
       <workItem from="1534984994353" duration="2200000" />
       <workItem from="1534994792388" duration="2097000" />
       <workItem from="1534997364752" duration="13232000" />
+      <workItem from="1535017927407" duration="1253000" />
+      <workItem from="1535020626059" duration="2395000" />
     </task>
     <task id="LOCAL-00001" summary="集成mybatis分页">
       <created>1534158730692</created>
@@ -707,13 +683,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75755000" />
+    <option name="totallyTimeSpent" value="79403000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49632892" visible="true" weight="0.24128686" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49632892" visible="true" weight="0.24798928" />
       <window_info id="Structure" order="1" sideWeight="0.50367105" side_tool="true" weight="0.24128686" />
       <window_info id="Web" order="2" sideWeight="0.50220263" side_tool="true" weight="0.25536194" />
       <window_info id="Designer" order="3" />
@@ -721,7 +697,7 @@
       <window_info id="Favorites" order="5" sideWeight="0.50073856" side_tool="true" weight="0.25737265" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35095447" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35095447" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39941263" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -756,13 +732,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="修改日志配置文件" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysUserLoginMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/mapper/SysUserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -1001,9 +970,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1011,9 +977,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1042,10 +1005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
           <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
-          <folding>
-            <element signature="e#1017#1018#0" expanded="true" />
-            <element signature="e#1051#1052#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1053,9 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1063,10 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="141" column="35" selection-start-line="141" selection-start-column="35" selection-end-line="141" selection-end-column="35" />
-          <folding>
-            <element signature="e#2093#2094#0" expanded="true" />
-            <element signature="e#2129#2130#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1074,18 +1026,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-          <folding>
-            <element signature="e#1825#1826#0" expanded="true" />
-            <element signature="e#1871#1872#0" expanded="true" />
-            <element signature="e#1935#1936#0" expanded="true" />
-            <element signature="e#1980#1981#0" expanded="true" />
-            <element signature="e#2044#2045#0" expanded="true" />
-            <element signature="e#2089#2090#0" expanded="true" />
-            <element signature="e#2154#2155#0" expanded="true" />
-            <element signature="e#2200#2201#0" expanded="true" />
-            <element signature="e#2265#2266#0" expanded="true" />
-            <element signature="e#2311#2312#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1110,13 +1050,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/framework/sys/controller/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1131,23 +1064,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/service/oss/ServiceClientApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+        <state relative-caret-position="217">
+          <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/java/org/storm/service/oss/ServiceClientApplication.java">
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="51" column="37" lean-forward="true" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
-          <folding>
-            <element signature="e#871#872#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#1561#1562#0" expanded="true" />
-            <element signature="e#1645#1646#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="100">
+          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/logback-spring.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-160">
+          <caret line="40" column="52" lean-forward="true" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
         </state>
       </provider>
     </entry>

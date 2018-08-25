@@ -6,15 +6,18 @@ server:
 spring:
   application:
     name: service-oss
+  #多模块配置文件引用
+  profiles:
+    active: framework,dev
+  #数据源配置
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/storm_oss
+    url: jdbc:mysql://127.0.0.1:3306/storm_oss?useSSL=false&useUnicode=true&characterEncoding=UTF-8
     username: root
     password: 123456aB
     driver-class-name: com.mysql.jdbc.Driver
-  profiles:
-    active: dev
+  #模板配置
   thymeleaf:
-    mode: HTML5
+    mode: HTML
     encoding: UTF-8
     servlet:
       content-type: text/html

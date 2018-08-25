@@ -6,6 +6,7 @@
 
     <groupId>storm</groupId>
     <artifactId>storm</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <parent>
@@ -18,6 +19,8 @@
     <modules>
         <module>eureka-server</module>
         <module>service-oss</module>
+        <module>service-shiro</module>
+        <module>storm-framework</module>
     </modules>
 
     <properties>

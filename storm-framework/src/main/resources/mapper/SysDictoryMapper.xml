@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.storm.framework.sys.mapper.SysDictoryMapper">
+
+    <resultMap id="sysDictoryResultMap" type="org.storm.framework.sys.model.SysDictory">
+        <id property="id" column="ID" jdbcType="BIGINT"/>
+        <result property="parentId" column="PARENT_ID" jdbcType="BIGINT"/>
+        <result property="code" column="CODE" jdbcType="VARCHAR"/>
+        <result property="name" column="NAME" jdbcType="VARCHAR"/>
+        <result property="dictoryValue" column="DICTORY_VALUE" jdbcType="VARCHAR"/>
+        <result property="status" column="STATUS" jdbcType="TINYINT"/>
+        <result property="sort" column="SORT" jdbcType="INTEGER"/>
+        <result property="memo" column="MEMO" jdbcType="VARCHAR"/>
+        <result property="createDatetime" column="CREATE_DATETIME" jdbcType="TIMESTAMP"/>
+        <result property="modifyDatetime" column="MODIFY_DATETIME" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+
+    <insert id="save" parameterType="org.storm.framework.sys.model.SysDictory" keyProperty="id" useGeneratedKeys="true">
+		insert into SYS_DICTORY( 
+				PARENT_ID,
+				CODE,
+				NAME,
+				DICTORY_VALUE,
+				STATUS,
+				SORT,
+				MEMO,
+				CREATE_DATETIME,
+				MODIFY_DATETIME
+	     )		 
+		values(
+				#{parentId, jdbcType=BIGINT},
+				#{code, jdbcType=VARCHAR},
+				#{name, jdbcType=VARCHAR},
+				#{dictoryValue, jdbcType=VARCHAR},
+				#{status, jdbcType=TINYINT},
+				#{sort, jdbcType=INTEGER},
+				#{memo, jdbcType=VARCHAR},
+				#{createDatetime, jdbcType=TIMESTAMP},
+				#{modifyDatetime, jdbcType=TIMESTAMP}
+		)
+	   
+    </insert>
+
+
+    <update id="update" parameterType="org.storm.framework.sys.model.SysDictory">
+        update SYS_DICTORY
+        set
+        <trim prefix="" suffix="" suffixOverrides=",">
+            <if test="parentId != null">
+                PARENT_ID = #{parentId, jdbcType=BIGINT},
+            </if>
+            <if test="code != null">
+                CODE = #{code, jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                NAME = #{name, jdbcType=VARCHAR},
+            </if>
+            <if test="dictoryValue != null">
+                DICTORY_VALUE = #{dictoryValue, jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                STATUS = #{status, jdbcType=TINYINT},
+            </if>
+            <if test="sort != null">
+                SORT = #{sort, jdbcType=INTEGER},
+            </if>
+            <if test="memo != null">
+                MEMO = #{memo, jdbcType=VARCHAR},
+            </if>
+            <if test="createDatetime != null">
+                CREATE_DATETIME = #{createDatetime, jdbcType=TIMESTAMP},
+            </if>
+            <if test="modifyDatetime != null">
+                MODIFY_DATETIME = #{modifyDatetime, jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+        where
+        ID = #{id, jdbcType=BIGINT}
+
+    </update>
+
+
+    <delete id="deleteById" parameterType="long">
+        delete from SYS_DICTORY
+        where ID = #{id}
+	</delete>
+
+
+    <delete id="deleteByIdList">
+        delete from SYS_DICTORY
+        where (
+        ID IN
+        <foreach item="x_id" index="index" collection="list"
+                 open="(" separator="," close=")">
+            #{x_id}
+        </foreach>
+        )
+    </delete>
+
+    <select id="getListBySql" parameterType="String" resultMap="sysDictoryResultMap">
+		${sql}
+	</select>
+
+    <select id="getAll" resultMap="sysDictoryResultMap">
+		select * from SYS_DICTORY 
+	</select>
+
+    <select id="getById" parameterType="long" resultMap="sysDictoryResultMap">
+		select * from SYS_DICTORY where ID = #{id}
+	</select>
+
+
+    <select id="getList" resultMap="sysDictoryResultMap">
+        select E.* from SYS_DICTORY E
+        <include refid="selectSysDictorySql"/>
+        <include refid="sortSysDictorySql"/>
+    </select>
+
+
+    <select id="getCount" resultType="long">
+        select count(*) from SYS_DICTORY E
+        <include refid="selectSysDictorySql"/>
+    </select>
+
+
+    <sql id="selectSysDictorySql">
+
+        <where>
+            1 = 1
+
+            <if test="parentId != null">
+                and E.PARENT_ID = #{parentId}
+            </if>
+
+
+            <if test="code != null and code != '' ">
+                and E.CODE = #{code}
+            </if>
+
+            <if test="codeLike != null and codeLike != '' ">
+                and E.CODE like CONCAT("%",#{codeLike},"%")
+            </if>
+
+            <if test="name != null and name != '' ">
+                and E.NAME = #{name}
+            </if>
+
+            <if test="nameLike != null and nameLike != '' ">
+                and E.NAME like CONCAT("%",#{nameLike},"%")
+            </if>
+
+            <if test="dictoryValue != null and dictoryValue != '' ">
+                and E.DICTORY_VALUE = #{dictoryValue}
+            </if>
+
+            <if test="dictoryValueLike != null and dictoryValueLike != '' ">
+                and E.DICTORY_VALUE like CONCAT("%",#{dictoryValueLike},"%")
+            </if>
+
+            <if test="status != null">
+                and E.STATUS = #{status}
+            </if>
+
+
+            <if test="sort != null">
+                and E.SORT = #{sort}
+            </if>
+
+
+            <if test="memo != null and memo != '' ">
+                and E.MEMO = #{memo}
+            </if>
+
+            <if test="memoLike != null and memoLike != '' ">
+                and E.MEMO like CONCAT("%",#{memoLike},"%")
+            </if>
+
+            <if test="createDatetimeGreaterThanOrEqual != null">
+                and E.CREATE_DATETIME &gt;= #{createDatetimeGreaterThanOrEqual}
+            </if>
+
+            <if test="createDatetimeLessThanOrEqual != null">
+                and E.CREATE_DATETIME &lt;= #{createDatetimeLessThanOrEqual}
+            </if>
+
+
+            <if test="modifyDatetimeGreaterThanOrEqual != null">
+                and E.MODIFY_DATETIME &gt;= #{modifyDatetimeGreaterThanOrEqual}
+            </if>
+
+            <if test="modifyDatetimeLessThanOrEqual != null">
+                and E.MODIFY_DATETIME &lt;= #{modifyDatetimeLessThanOrEqual}
+            </if>
+
+
+            <if test="ids != null and ids.size != 0">
+                and E.ID IN
+                <foreach item="x_id" index="index" collection="ids"
+                         open="(" separator="," close=")">
+                    #{x_id}
+                </foreach>
+            </if>
+        </where>
+    </sql>
+
+    <sql id="sortSysDictorySql">
+        <choose>
+            <when test="sort != null and sort != '' ">
+                order by
+                <if test="sort == 'id'">
+                    id
+                </if>
+                <if test="sort == 'parentId'">
+                    E.PARENT_ID
+                </if>
+                <if test="sort == 'code'">
+                    E.CODE
+                </if>
+                <if test="sort == 'name'">
+                    E.NAME
+                </if>
+                <if test="sort == 'dictoryValue'">
+                    E.DICTORY_VALUE
+                </if>
+                <if test="sort == 'status'">
+                    E.STATUS
+                </if>
+                <if test="sort == 'sort'">
+                    E.SORT
+                </if>
+                <if test="sort == 'memo'">
+                    E.MEMO
+                </if>
+                <if test="sort == 'createDatetime'">
+                    E.CREATE_DATETIME
+                </if>
+                <if test="sort == 'modifyDatetime'">
+                    E.MODIFY_DATETIME
+                </if>
+                ${order}
+            </when>
+            <otherwise>
+                order by E.ID desc
+            </otherwise>
+        </choose>
+    </sql>
+
+</mapper>

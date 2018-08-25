@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.storm.framework.sys.mapper.SysServiceErrorLogMapper">
+
+    <resultMap id="sysServiceErrorLogResultMap" type="org.storm.framework.sys.model.SysServiceErrorLog">
+        <id property="id" column="ID" jdbcType="BIGINT"/>
+        <result property="sysName" column="SYS_NAME" jdbcType="VARCHAR"/>
+        <result property="moduleName" column="MODULE_NAME" jdbcType="VARCHAR"/>
+        <result property="taskId" column="TASK_ID" jdbcType="BIGINT"/>
+        <result property="level" column="LEVEL" jdbcType="VARCHAR"/>
+        <result property="errorCode" column="ERROR_CODE" jdbcType="VARCHAR"/>
+        <result property="errorCause" column="ERROR_CAUSE" jdbcType="VARCHAR"/>
+        <result property="params" column="PARAMS" jdbcType="VARCHAR"/>
+        <result property="createDatetime" column="CREATE_DATETIME" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+
+    <insert id="save" parameterType="org.storm.framework.sys.model.SysServiceErrorLog" keyProperty="id"
+            useGeneratedKeys="true">
+		insert into SYS_SERVICE_ERROR_LOG( 
+				SYS_NAME,
+				MODULE_NAME,
+				TASK_ID,
+				LEVEL,
+				ERROR_CODE,
+				ERROR_CAUSE,
+				PARAMS,
+				CREATE_DATETIME
+	     )		 
+		values(
+				#{sysName, jdbcType=VARCHAR},
+				#{moduleName, jdbcType=VARCHAR},
+				#{taskId, jdbcType=BIGINT},
+				#{level, jdbcType=VARCHAR},
+				#{errorCode, jdbcType=VARCHAR},
+				#{errorCause, jdbcType=VARCHAR},
+				#{params, jdbcType=VARCHAR},
+				#{createDatetime, jdbcType=TIMESTAMP}
+		)
+	   
+    </insert>
+
+
+    <update id="update" parameterType="org.storm.framework.sys.model.SysServiceErrorLog">
+        update SYS_SERVICE_ERROR_LOG
+        set
+        <trim prefix="" suffix="" suffixOverrides=",">
+            <if test="sysName != null">
+                SYS_NAME = #{sysName, jdbcType=VARCHAR},
+            </if>
+            <if test="moduleName != null">
+                MODULE_NAME = #{moduleName, jdbcType=VARCHAR},
+            </if>
+            <if test="taskId != null">
+                TASK_ID = #{taskId, jdbcType=BIGINT},
+            </if>
+            <if test="level != null">
+                LEVEL = #{level, jdbcType=VARCHAR},
+            </if>
+            <if test="errorCode != null">
+                ERROR_CODE = #{errorCode, jdbcType=VARCHAR},
+            </if>
+            <if test="errorCause != null">
+                ERROR_CAUSE = #{errorCause, jdbcType=VARCHAR},
+            </if>
+            <if test="params != null">
+                PARAMS = #{params, jdbcType=VARCHAR},
+            </if>
+            <if test="createDatetime != null">
+                CREATE_DATETIME = #{createDatetime, jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+        where
+        ID = #{id, jdbcType=BIGINT}
+
+    </update>
+
+
+    <delete id="deleteById" parameterType="long">
+        delete from SYS_SERVICE_ERROR_LOG
+        where ID = #{id}
+	</delete>
+
+
+    <delete id="deleteByIdList">
+        delete from SYS_SERVICE_ERROR_LOG
+        where (
+        ID IN
+        <foreach item="x_id" index="index" collection="list"
+                 open="(" separator="," close=")">
+            #{x_id}
+        </foreach>
+        )
+    </delete>
+
+    <select id="getListBySql" parameterType="String" resultMap="sysServiceErrorLogResultMap">
+		${sql}
+	</select>
+
+    <select id="getAll" resultMap="sysServiceErrorLogResultMap">
+		select * from SYS_SERVICE_ERROR_LOG 
+	</select>
+
+    <select id="getById" parameterType="long" resultMap="sysServiceErrorLogResultMap">
+		select * from SYS_SERVICE_ERROR_LOG where ID = #{id}
+	</select>
+
+
+    <select id="getList" resultMap="sysServiceErrorLogResultMap">
+        select E.* from SYS_SERVICE_ERROR_LOG E
+        <include refid="selectSysServiceErrorLogSql"/>
+        <include refid="sortSysServiceErrorLogSql"/>
+    </select>
+
+
+    <select id="getCount" resultType="long">
+        select count(*) from SYS_SERVICE_ERROR_LOG E
+        <include refid="selectSysServiceErrorLogSql"/>
+    </select>
+
+
+    <sql id="selectSysServiceErrorLogSql">
+
+        <where>
+            1 = 1
+
+            <if test="sysName != null and sysName != '' ">
+                and E.SYS_NAME = #{sysName}
+            </if>
+
+            <if test="sysNameLike != null and sysNameLike != '' ">
+                and E.SYS_NAME like CONCAT("%",#{sysNameLike},"%")
+            </if>
+
+            <if test="moduleName != null and moduleName != '' ">
+                and E.MODULE_NAME = #{moduleName}
+            </if>
+
+            <if test="moduleNameLike != null and moduleNameLike != '' ">
+                and E.MODULE_NAME like CONCAT("%",#{moduleNameLike},"%")
+            </if>
+
+            <if test="taskId != null">
+                and E.TASK_ID = #{taskId}
+            </if>
+
+
+            <if test="level != null and level != '' ">
+                and E.LEVEL = #{level}
+            </if>
+
+            <if test="levelLike != null and levelLike != '' ">
+                and E.LEVEL like CONCAT("%",#{levelLike},"%")
+            </if>
+
+            <if test="errorCode != null and errorCode != '' ">
+                and E.ERROR_CODE = #{errorCode}
+            </if>
+
+            <if test="errorCodeLike != null and errorCodeLike != '' ">
+                and E.ERROR_CODE like CONCAT("%",#{errorCodeLike},"%")
+            </if>
+
+            <if test="errorCause != null and errorCause != '' ">
+                and E.ERROR_CAUSE = #{errorCause}
+            </if>
+
+            <if test="errorCauseLike != null and errorCauseLike != '' ">
+                and E.ERROR_CAUSE like CONCAT("%",#{errorCauseLike},"%")
+            </if>
+
+            <if test="params != null and params != '' ">
+                and E.PARAMS = #{params}
+            </if>
+
+            <if test="paramsLike != null and paramsLike != '' ">
+                and E.PARAMS like CONCAT("%",#{paramsLike},"%")
+            </if>
+
+            <if test="createDatetimeGreaterThanOrEqual != null">
+                and E.CREATE_DATETIME &gt;= #{createDatetimeGreaterThanOrEqual}
+            </if>
+
+            <if test="createDatetimeLessThanOrEqual != null">
+                and E.CREATE_DATETIME &lt;= #{createDatetimeLessThanOrEqual}
+            </if>
+
+
+            <if test="ids != null and ids.size != 0">
+                and E.ID IN
+                <foreach item="x_id" index="index" collection="ids"
+                         open="(" separator="," close=")">
+                    #{x_id}
+                </foreach>
+            </if>
+        </where>
+    </sql>
+
+    <sql id="sortSysServiceErrorLogSql">
+        <choose>
+            <when test="sort != null and sort != '' ">
+                order by
+                <if test="sort == 'id'">
+                    id
+                </if>
+                <if test="sort == 'sysName'">
+                    E.SYS_NAME
+                </if>
+                <if test="sort == 'moduleName'">
+                    E.MODULE_NAME
+                </if>
+                <if test="sort == 'taskId'">
+                    E.TASK_ID
+                </if>
+                <if test="sort == 'level'">
+                    E.LEVEL
+                </if>
+                <if test="sort == 'errorCode'">
+                    E.ERROR_CODE
+                </if>
+                <if test="sort == 'errorCause'">
+                    E.ERROR_CAUSE
+                </if>
+                <if test="sort == 'params'">
+                    E.PARAMS
+                </if>
+                <if test="sort == 'createDatetime'">
+                    E.CREATE_DATETIME
+                </if>
+                ${order}
+            </when>
+            <otherwise>
+                order by E.ID desc
+            </otherwise>
+        </choose>
+    </sql>
+
+</mapper>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.storm.framework.sys.mapper.SysMenuMapper">
+
+    <resultMap id="sysMenuResultMap" type="org.storm.framework.sys.model.SysMenu">
+        <id property="id" column="ID" jdbcType="BIGINT"/>
+        <result property="name" column="NAME" jdbcType="VARCHAR"/>
+        <result property="module" column="MODULE" jdbcType="VARCHAR"/>
+        <result property="url" column="URL" jdbcType="VARCHAR"/>
+        <result property="keyword" column="KEYWORD" jdbcType="VARCHAR"/>
+        <result property="icon" column="ICON" jdbcType="VARCHAR"/>
+        <result property="type" column="TYPE" jdbcType="TINYINT"/>
+        <result property="isLeaf" column="IS_LEAF" jdbcType="TINYINT"/>
+        <result property="isActive" column="IS_ACTIVE" jdbcType="TINYINT"/>
+        <result property="parentId" column="PARENT_ID" jdbcType="BIGINT"/>
+        <result property="sort" column="SORT" jdbcType="INTEGER"/>
+    </resultMap>
+
+
+    <insert id="save" parameterType="org.storm.framework.sys.model.SysMenu" keyProperty="id" useGeneratedKeys="true">
+		insert into SYS_MENU( 
+				NAME,
+				MODULE,
+				URL,
+				KEYWORD,
+				ICON,
+				TYPE,
+				IS_LEAF,
+				IS_ACTIVE,
+				PARENT_ID,
+				SORT
+	     )		 
+		values(
+				#{name, jdbcType=VARCHAR},
+				#{module, jdbcType=VARCHAR},
+				#{url, jdbcType=VARCHAR},
+				#{keyword, jdbcType=VARCHAR},
+				#{icon, jdbcType=VARCHAR},
+				#{type, jdbcType=TINYINT},
+				#{isLeaf, jdbcType=TINYINT},
+				#{isActive, jdbcType=TINYINT},
+				#{parentId, jdbcType=BIGINT},
+				#{sort, jdbcType=INTEGER}
+		)
+	   
+    </insert>
+
+
+    <update id="update" parameterType="org.storm.framework.sys.model.SysMenu">
+        update SYS_MENU
+        set
+        <trim prefix="" suffix="" suffixOverrides=",">
+            <if test="name != null">
+                NAME = #{name, jdbcType=VARCHAR},
+            </if>
+            <if test="module != null">
+                MODULE = #{module, jdbcType=VARCHAR},
+            </if>
+            <if test="url != null">
+                URL = #{url, jdbcType=VARCHAR},
+            </if>
+            <if test="keyword != null">
+                KEYWORD = #{keyword, jdbcType=VARCHAR},
+            </if>
+            <if test="icon != null">
+                ICON = #{icon, jdbcType=VARCHAR},
+            </if>
+            <if test="type != null">
+                TYPE = #{type, jdbcType=TINYINT},
+            </if>
+            <if test="isLeaf != null">
+                IS_LEAF = #{isLeaf, jdbcType=TINYINT},
+            </if>
+            <if test="isActive != null">
+                IS_ACTIVE = #{isActive, jdbcType=TINYINT},
+            </if>
+            <if test="parentId != null">
+                PARENT_ID = #{parentId, jdbcType=BIGINT},
+            </if>
+            <if test="sort != null">
+                SORT = #{sort, jdbcType=INTEGER},
+            </if>
+        </trim>
+        where
+        ID = #{id, jdbcType=BIGINT}
+
+    </update>
+
+
+    <delete id="deleteById" parameterType="long">
+        delete from SYS_MENU
+        where ID = #{id}
+	</delete>
+
+
+    <delete id="deleteByIdList">
+        delete from SYS_MENU
+        where (
+        ID IN
+        <foreach item="x_id" index="index" collection="list"
+                 open="(" separator="," close=")">
+            #{x_id}
+        </foreach>
+        )
+    </delete>
+
+    <select id="getListBySql" parameterType="String" resultMap="sysMenuResultMap">
+		${sql}
+	</select>
+
+    <select id="getAll" resultMap="sysMenuResultMap">
+		select * from SYS_MENU 
+	</select>
+
+    <select id="getById" parameterType="long" resultMap="sysMenuResultMap">
+		select * from SYS_MENU where ID = #{id}
+	</select>
+
+
+    <select id="getList" resultMap="sysMenuResultMap">
+        select E.* from SYS_MENU E
+        <include refid="selectSysMenuSql"/>
+        <include refid="sortSysMenuSql"/>
+    </select>
+
+
+    <select id="getCount" resultType="long">
+        select count(*) from SYS_MENU E
+        <include refid="selectSysMenuSql"/>
+    </select>
+
+
+    <sql id="selectSysMenuSql">
+
+        <where>
+            1 = 1
+
+            <if test="name != null and name != '' ">
+                and E.NAME = #{name}
+            </if>
+
+            <if test="nameLike != null and nameLike != '' ">
+                and E.NAME like CONCAT("%",#{nameLike},"%")
+            </if>
+
+            <if test="module != null and module != '' ">
+                and E.MODULE = #{module}
+            </if>
+
+            <if test="moduleLike != null and moduleLike != '' ">
+                and E.MODULE like CONCAT("%",#{moduleLike},"%")
+            </if>
+
+            <if test="url != null and url != '' ">
+                and E.URL = #{url}
+            </if>
+
+            <if test="urlLike != null and urlLike != '' ">
+                and E.URL like CONCAT("%",#{urlLike},"%")
+            </if>
+
+            <if test="keyword != null and keyword != '' ">
+                and E.KEYWORD = #{keyword}
+            </if>
+
+            <if test="keywordLike != null and keywordLike != '' ">
+                and E.KEYWORD like CONCAT("%",#{keywordLike},"%")
+            </if>
+
+            <if test="icon != null and icon != '' ">
+                and E.ICON = #{icon}
+            </if>
+
+            <if test="iconLike != null and iconLike != '' ">
+                and E.ICON like CONCAT("%",#{iconLike},"%")
+            </if>
+
+            <if test="type != null">
+                and E.TYPE = #{type}
+            </if>
+
+
+            <if test="isLeaf != null">
+                and E.IS_LEAF = #{isLeaf}
+            </if>
+
+
+            <if test="isActive != null">
+                and E.IS_ACTIVE = #{isActive}
+            </if>
+
+
+            <if test="parentId != null">
+                and E.PARENT_ID = #{parentId}
+            </if>
+
+
+            <if test="sort != null">
+                and E.SORT = #{sort}
+            </if>
+
+            <if test="ids != null and ids.size != 0">
+                and E.ID IN
+                <foreach item="x_id" index="index" collection="ids"
+                         open="(" separator="," close=")">
+                    #{x_id}
+                </foreach>
+            </if>
+        </where>
+    </sql>
+
+    <sql id="sortSysMenuSql">
+        <choose>
+            <when test="sort != null and sort != '' ">
+                order by
+                <if test="sort == 'id'">
+                    id
+                </if>
+                <if test="sort == 'name'">
+                    E.NAME
+                </if>
+                <if test="sort == 'module'">
+                    E.MODULE
+                </if>
+                <if test="sort == 'url'">
+                    E.URL
+                </if>
+                <if test="sort == 'keyword'">
+                    E.KEYWORD
+                </if>
+                <if test="sort == 'icon'">
+                    E.ICON
+                </if>
+                <if test="sort == 'type'">
+                    E.TYPE
+                </if>
+                <if test="sort == 'isLeaf'">
+                    E.IS_LEAF
+                </if>
+                <if test="sort == 'isActive'">
+                    E.IS_ACTIVE
+                </if>
+                <if test="sort == 'parentId'">
+                    E.PARENT_ID
+                </if>
+                <if test="sort == 'sort'">
+                    E.SORT
+                </if>
+                ${order}
+            </when>
+            <otherwise>
+                order by E.ID desc
+            </otherwise>
+        </choose>
+    </sql>
+
+</mapper>

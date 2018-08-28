@@ -131,6 +131,9 @@
         <include refid="selectSysMenuSql"/>
     </select>
 
+    <select id="getListByParentId" parameterType="long" resultMap="sysMenuResultMap">
+		select * from Sys_Menu where PARENT_ID = #{parentId}
+	</select>
 
     <sql id="selectSysMenuSql">
 

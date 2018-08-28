@@ -17,7 +17,7 @@ import java.util.Properties;
 @SpringBootApplication
 @EnableEurekaClient
 @RestController
-@ComponentScan({"org.storm.framework.sys","org.storm.service.oss"})
+@ComponentScan({"org.storm.framework.sys","org.storm.service"})
 @MapperScan({"org.storm.**.mapper"})
 public class ServiceClientApplication {
 

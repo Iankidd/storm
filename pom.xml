@@ -21,6 +21,7 @@
         <module>service-oss</module>
         <module>service-shiro</module>
         <module>storm-framework</module>
+        <module>service-redis</module>
     </modules>
 
     <properties>

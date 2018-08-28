@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-server" />
         <module name="service-oss" />
+        <module name="service-redis" />
         <module name="service-shiro" />
         <module name="storm-framework" />
       </profile>

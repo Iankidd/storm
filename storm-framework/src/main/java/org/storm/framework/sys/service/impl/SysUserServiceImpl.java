@@ -1,5 +1,6 @@
 package org.storm.framework.sys.service.impl;
 
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.storm.framework.base.mapper.BaseMapper;
@@ -49,8 +50,7 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUser> implements SysU
                 user = list.get(0);
             }
         } catch (Exception ex) {
-            ex.printStackTrace();
-            logger.error("error at " + this.getClass().getName() + ".checkLogin: " + ex.getMessage());
+            logger.error("error at " + this.getClass().getName() + ".checkLogin: " + ExceptionUtils.getFullStackTrace(ex));
         }
         return user;
     }
@@ -66,8 +66,7 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUser> implements SysU
                 user = list.get(0);
             }
         } catch (Exception ex) {
-            ex.printStackTrace();
-            logger.error("error at " + this.getClass().getName() + ".getUserByCode: " + ex.getMessage());
+            logger.error("error at " + this.getClass().getName() + ".getUserByCode: " + ExceptionUtils.getFullStackTrace(ex));
         }
         return user;
     }

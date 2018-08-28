@@ -100,6 +100,10 @@
 		select * from SYS_ROLE where ID = #{id}
 	</select>
 
+    <select id="getUserRoles" parameterType="long" resultMap="sysRoleResultMap">
+		select A.* from sys_role A left join sys_ref_user_role B
+			on A.id=B.sys_role_id where B.sys_user_id = #{userId}
+	</select>
 
     <select id="getList" resultMap="sysRoleResultMap">
         select E.* from SYS_ROLE E

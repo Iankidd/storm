@@ -1,5 +1,6 @@
 package org.storm.framework.sys.service.impl;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.storm.framework.base.mapper.BaseMapper;
@@ -10,10 +11,7 @@ import org.storm.framework.sys.model.SysMenu;
 import org.storm.framework.sys.model.SysRole;
 import org.storm.framework.sys.service.SysMenuService;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service("sysMenuService")
 public class SysMenuServiceImpl extends BaseServiceImpl<SysMenu> implements SysMenuService {
@@ -57,6 +55,20 @@ public class SysMenuServiceImpl extends BaseServiceImpl<SysMenu> implements SysM
             }
         }
         return getListByRoleIds(roleIds);
+    }
+
+    @Override
+    public Set<String> getPermissionSet(List<SysMenu> menuList) {
+        Set<String> permissionSet = new HashSet<>();
+        for (SysMenu menu : menuList) {
+            if (menu.getIsActive() == 0) {
+                String url = menu.getUrl();
+                if (StringUtils.isNotBlank(url) && !permissionSet.contains(url)) {
+                    permissionSet.add(url);
+                }
+            }
+        }
+        return permissionSet;
     }
 
     @Override

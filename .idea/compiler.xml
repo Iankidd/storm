@@ -8,10 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-server" />
         <module name="service-oss" />
+        <module name="service-quartz" />
         <module name="service-redis" />
         <module name="service-shiro" />
         <module name="storm-framework" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="tt" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -23,9 +23,38 @@
     </properties>
 
     <dependencies>
+        <!-- shiro spring -->
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-spring</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+
+        <!-- shiro core -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+
+        <!-- shiro web -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-web</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+
+        <!-- shiro ehcache -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-ehcache</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+
+        <!-- shiro guice -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-guice</artifactId>
             <version>${shiro.version}</version>
         </dependency>
 
@@ -42,6 +71,14 @@
             <artifactId>service-redis</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
+        <!-- 引入service-quartz模块 -->
+        <dependency>
+            <groupId>org.storm.service.quartz</groupId>
+            <artifactId>service-quartz</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 </project>

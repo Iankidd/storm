@@ -1,7 +1,11 @@
 package org.storm.framework.sys.controller;
 
 import net.sf.json.JSONArray;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.*;
+import org.apache.shiro.session.Session;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,8 +21,10 @@ import org.storm.framework.sys.model.SysUserLogin;
 import org.storm.framework.sys.service.*;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/sys/user")
@@ -59,46 +65,55 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
      * @param user
      * @param request
      * @param model
-     * @param httpSession
      * @return
      */
     @RequestMapping("/login.action")
-    public ModelAndView login(SysUser user, HttpServletRequest request, Model model, HttpSession httpSession) {
+    public ModelAndView login(SysUser user, HttpServletRequest request, Model model) {
         String code = user.getCode();
         String pwd = user.getPwd();
         if (code != null && pwd != null) {
+            Subject subject = SecurityUtils.getSubject();
+            Session session = subject.getSession();
             try {
-                user = this.sysUserService.checkLogin(code, pwd);
-            } catch (Exception ex) {
-                ex.printStackTrace();
+                UsernamePasswordToken token = new UsernamePasswordToken(code, pwd);
+                subject.login(token);
+                user = (SysUser) subject.getPrincipals();
+            } catch (IncorrectCredentialsException ex) {
+                user = null;
+                model.addAttribute("error", "用户名或密码不正确！");
+                logger.debug("debug at login: IncorrectCredentialsException");
+            } catch (DisabledAccountException ex) {
+                user = null;
+                model.addAttribute("error", "帐号被禁用,请联系管理员！");
+                logger.debug("debug at login: DisabledAccountException");
+            } catch (UnknownAccountException ex) {
+                user = null;
+                model.addAttribute("error", "帐号不存在！");
+                logger.debug("debug at login: UnknownAccountException");
+            } catch (ExcessiveAttemptsException ex) {
+                user = null;
+                model.addAttribute("error", "登录失败次数过多！");
+                logger.debug("debug at login: ExcessiveAttemptsException");
+            } catch (ExpiredCredentialsException ex) {
+                user = null;
+                model.addAttribute("error", "帐号登录过期！");
+                logger.debug("debug at login: ExpiredCredentialsException");
             }
             if (user != null) {
                 List<Long> roleIds = sysRefUserRoleService.getRolesIdByUserId(user.getId());
-                Map<String, Object> paramMap = null;
-                Set<String> permissionSet = new HashSet<>();
                 Map<String, SysMenu> operateMap = new HashMap<>();
                 JSONArray menuArray = new JSONArray();
                 try {
                     if (roleIds.size() > 0) {
-                        List<Long> refRoleResourceIdsList = sysRefRoleMenuService.getIdsByRoleIds(roleIds);
-                        if (refRoleResourceIdsList.size() > 0) {
-                            paramMap = new HashMap<>();
-                            paramMap.put("ids", refRoleResourceIdsList);
-                            List<SysMenu> sysMenuList = sysMenuService.getList(paramMap);
-                            for (SysMenu menu : sysMenuList) {
-                                if (menu.getIsActive() == 0) {
-                                    // 添加到权限对应的URL列表，用于在拦截器中的验证
-                                    String url = menu.getUrl();
-                                    if (StringUtils.isNotBlank(url) && !permissionSet.contains(url)) {
-                                        permissionSet.add(url);
-                                    }
-                                    // 添加到菜单列表
-                                    if (menu.getType() == SysConstants.EResourceType.Menu.ordinal()) {
-                                        menuArray.add(menu);
-                                    } else if (menu.getType() == SysConstants.EResourceType.Button.ordinal()) {
-                                        // 按钮为增删改操作
-                                        operateMap.put(menu.getUrl(), menu);
-                                    }
+                        List<SysMenu> sysMenuList = sysMenuService.getListByRoleIds(roleIds);
+                        for (SysMenu menu : sysMenuList) {
+                            if (menu.getIsActive() == 0) {
+                                // 添加到菜单列表
+                                if (menu.getType() == SysConstants.EResourceType.Menu.ordinal()) {
+                                    menuArray.add(menu);
+                                } else if (menu.getType() == SysConstants.EResourceType.Button.ordinal()) {
+                                    // 按钮为增删改操作
+                                    operateMap.put(menu.getUrl(), menu);
                                 }
                             }
                         }
@@ -108,10 +123,8 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
                     JSONArray menuTree = JsonMenuUtils.treeMenuList(menuArray, 0, "submenu");
                     long t2 = System.currentTimeMillis();
                     logger.info("组装菜单花费时间：" + (t2 - t1) + "ms");
-                    httpSession.setAttribute(SysConstants.SYS_LOGIN_KEY, user);
-                    httpSession.setAttribute(SysConstants.SYS_PERMISSION_KEY, permissionSet);
-                    httpSession.setAttribute(SysConstants.SYS_USER_MENU, menuTree);
-                    httpSession.setAttribute(SysConstants.SYS_OPERATE_KEY, operateMap);
+                    session.setAttribute(SysConstants.SYS_USER_MENU, menuTree);
+                    session.setAttribute(SysConstants.SYS_OPERATE_KEY, operateMap);
                     model.addAttribute(SysConstants.SYS_USER_MENU, menuTree);
                     Map<Long, String> loginUserMap = (Map<Long, String>) request.getServletContext()
                             .getAttribute(SysConstants.LOGIN_USER_MAP);
@@ -133,8 +146,6 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
                     return new ModelAndView("login");
                 }
 
-            } else {
-                model.addAttribute("error", "用户名或密码不正确！");
             }
             if (user == null) {
                 return new ModelAndView("login");
@@ -149,14 +160,12 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
     /**
      * 注销，退出系统
      *
-     * @param httpSession
      * @return
      */
     @RequestMapping("/logout.action")
-    public ModelAndView logout(HttpSession httpSession) {
-        httpSession.removeAttribute(SysConstants.SYS_LOGIN_KEY);
-        httpSession.removeAttribute(SysConstants.SYS_PERMISSION_KEY);
-        httpSession.removeAttribute(SysConstants.SYS_USER_MENU);
+    public ModelAndView logout() {
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
         return new ModelAndView("login");
     }
 }

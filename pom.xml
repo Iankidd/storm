@@ -22,6 +22,7 @@
         <module>service-shiro</module>
         <module>storm-framework</module>
         <module>service-redis</module>
+        <module>service-quartz</module>
     </modules>
 
     <properties>

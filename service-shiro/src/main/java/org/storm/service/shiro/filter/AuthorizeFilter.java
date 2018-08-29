@@ -29,7 +29,7 @@ public class AuthorizeFilter extends AccessControlFilter {
     protected boolean isAccessAllowed(ServletRequest servletRequest, ServletResponse servletResponse, Object o) throws Exception {
         Subject subject = getSubject(servletRequest, servletResponse);
         String url = getPathWithinApplication(servletRequest);
-        logger.info("当前用户正在访问的 url => " + url + " IsPermitted => " + subject.isPermitted(url));
+        logger.info("当前用户正在访问的 url => " + url + " [Is_Permitted] => " + subject.isPermitted(url));
         return false;
     }
 

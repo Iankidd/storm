@@ -1,6 +1,5 @@
 package org.storm.service.shiro.config;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationException;
@@ -20,7 +19,6 @@ import org.storm.framework.sys.service.SysMenuService;
 import org.storm.framework.sys.service.SysRoleService;
 import org.storm.framework.sys.service.SysUserService;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -53,26 +51,17 @@ public class AdminShiroRealm extends AuthorizingRealm {
         if (principals.getPrimaryPrincipal() instanceof SysUser) {
             SysUser user = (SysUser) principals.getPrimaryPrincipal();
             logger.debug("当前Admin: " + user.getCode());
-            Set<String> permissionSet = new HashSet<>();
             try {
                 //注入角色(查询所有的角色注入控制器）
                 String roleMsg = "";
                 List<SysRole> list = sysRoleService.getUserRoles(user.getId());
                 for (SysRole role : list) {
                     authorizationInfo.addRole(role.getCode());
-                    roleMsg = role.getCode() + "," + roleMsg;
+                    roleMsg = roleMsg + role.getCode() + ",";
                 }
                 //注入角色所有权限（查询用户所有的权限注入控制器）
                 List<SysMenu> sysMenuList = sysMenuService.getListByRoles(list);
-                for (SysMenu menu : sysMenuList) {
-                    if (menu.getIsActive() == 0) {
-                        //添加到权限对应的URL列表，用于在拦截器中的验证
-                        String url = menu.getUrl();
-                        if (StringUtils.isNotBlank(url) && !permissionSet.contains(url)) {
-                            permissionSet.add(url);
-                        }
-                    }
-                }
+                Set<String> permissionSet = sysMenuService.getPermissionSet(sysMenuList);
                 authorizationInfo.addStringPermissions(permissionSet);
                 logger.info("当前Admin授权角色：" + roleMsg + " 权限：" + permissionSet.toString());
             } catch (Exception e) {

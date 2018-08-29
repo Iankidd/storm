@@ -42,6 +42,8 @@
         <logger name="io.netty" level="INFO" />
         <logger name="io.lettuce" level="INFO" />
         <logger name="reactor" level="INFO" />
+        <logger name="net.sf.ehcache" level="INFO" />
+        <logger name="org.quartz" level="INFO" />
 
         <root level="${DEV_LEVEL}">
             <appender-ref ref="CONSOLE" />
@@ -107,6 +109,8 @@
         <logger name="io.netty" level="INFO" />
         <logger name="io.lettuce" level="INFO" />
         <logger name="reactor" level="INFO" />
+        <logger name="net.sf.ehcache" level="INFO" />
+        <logger name="org.quartz" level="INFO" />
 
         <root level="DEBUG">
             <appender-ref ref="ROLLING" />

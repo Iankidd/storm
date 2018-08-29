@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.storm.framework</groupId>
-    <artifactId>storm-framework</artifactId>
+    <groupId>org.storm.service.quartz</groupId>
+    <artifactId>service-quartz</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>storm-framework</name>
-    <description>通用底层框架</description>
+    <name>service-quartz</name>
+    <description>提供定时任务服务</description>
 
     <parent>
         <artifactId>storm</artifactId>
@@ -19,16 +19,20 @@
     </parent>
 
     <properties>
-        <shiro.version>1.4.0</shiro.version>
+        <quartz.version>2.3.0</quartz.version>
     </properties>
 
     <dependencies>
-        <!-- 注意需要引入shiro相关依赖包 -->
-        <!-- shiro spring -->
         <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-spring</artifactId>
-            <version>${shiro.version}</version>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>${quartz.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz-jobs</artifactId>
+            <version>${quartz.version}</version>
         </dependency>
     </dependencies>
 

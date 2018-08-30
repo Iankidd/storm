@@ -6,6 +6,7 @@ import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -137,7 +138,7 @@ public abstract class BaseController<Te extends Entity, Ts extends BaseService<T
     }
 
     @ExceptionHandler
-    public ModelAndView exception(HttpServletRequest request, HttpServletResponse response, Exception e) {
+    public ModelAndView exception(HttpServletRequest request, HttpServletResponse response, Model model, Exception e) {
         try {
             ErrorUtils.excuteError("后台管理", null, null, e, request, sysServiceErrorLogService);
         } catch (Exception ex) {
@@ -165,7 +166,7 @@ public abstract class BaseController<Te extends Entity, Ts extends BaseService<T
         }
         // 普通请求
         else {
-            request.setAttribute("exceptionMsg", e.getMessage());
+            model.addAttribute("exceptionMsg", e.getMessage());
             return new ModelAndView(ERROR);
         }
     }

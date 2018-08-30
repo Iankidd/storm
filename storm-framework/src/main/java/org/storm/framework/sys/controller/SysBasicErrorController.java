@@ -38,7 +38,7 @@ public class SysBasicErrorController extends BasicErrorController {
         //输出自定义的Json格式
         Map<String, Object> map = new HashMap<>();
         map.put("status", false);
-        map.put("msg", "服务器请求出错!");
+        map.put("msg", "服务器处理错误!");
         return new ResponseEntity<>(map, status);
     }
 }

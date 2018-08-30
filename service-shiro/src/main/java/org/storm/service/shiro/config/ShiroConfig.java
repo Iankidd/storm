@@ -62,7 +62,7 @@ public class ShiroConfig {
         //配置不会被拦截的链接 顺序判断
         filterChainDefinitionMap.put("/favicon.ico", "anon");
         filterChainDefinitionMap.put("/index.action", "anon");
-        filterChainDefinitionMap.put("/sys/user/logout.action", "logout");
+        filterChainDefinitionMap.put("/sys/user/logout.action", "anon");
         filterChainDefinitionMap.put("/sys/user/login.action", "anon");
         //允许访问静态资源
         filterChainDefinitionMap.put("/js/**", "anon");

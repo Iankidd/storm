@@ -2,6 +2,7 @@ package org.storm.service.shiro.filter;
 
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.AccessControlFilter;
+import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,6 +31,9 @@ public class AuthorizeFilter extends AccessControlFilter {
         Subject subject = getSubject(servletRequest, servletResponse);
         String url = getPathWithinApplication(servletRequest);
         logger.info("当前用户正在访问的 url => " + url + " [Is_Permitted] => " + subject.isPermitted(url));
+        if (!subject.isPermitted(url)) {
+            WebUtils.issueRedirect(servletRequest, servletResponse, "/index.action");
+        }
         return false;
     }
 

@@ -1,6 +1,7 @@
 package org.storm.framework.sys.controller;
 
 import net.sf.json.JSONArray;
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.session.Session;
@@ -9,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 import org.storm.framework.base.controller.BaseController;
 import org.storm.framework.base.util.JsonMenuUtils;
 import org.storm.framework.base.util.RequestUtils;
@@ -67,7 +67,7 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
      * @return
      */
     @RequestMapping("/login.action")
-    public ModelAndView login(SysUser user, HttpServletRequest request, Model model) {
+    public String login(SysUser user, HttpServletRequest request, Model model) {
         String code = user.getCode();
         String pwd = user.getPwd();
         if (code != null && pwd != null) {
@@ -116,7 +116,6 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
                                 }
                             }
                         }
-
                     }
                     long t1 = System.currentTimeMillis();
                     JSONArray menuTree = JsonMenuUtils.treeMenuList(menuArray, 0, "submenu");
@@ -141,18 +140,17 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
                     sysUserLogin.setUserAgent(request.getHeader("User-Agent"));
                     sysUserLoginService.save(sysUserLogin);
                 } catch (Exception ex) {
-                    ex.printStackTrace();
-                    return new ModelAndView("login");
+                    logger.error("error at login: " + ExceptionUtils.getFullStackTrace(ex));
+                    return "login";
                 }
-
             }
             if (user == null) {
-                return new ModelAndView("login");
+                return "login";
             } else {
-                return new ModelAndView("home");
+                return "redirect:/index.action";
             }
         } else {
-            return new ModelAndView("login");
+            return "login";
         }
     }
 
@@ -162,9 +160,9 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
      * @return
      */
     @RequestMapping("/logout.action")
-    public ModelAndView logout() {
+    public String logout() {
         Subject subject = SecurityUtils.getSubject();
         subject.logout();
-        return new ModelAndView("login");
+        return "redirect:/index.action";
     }
 }

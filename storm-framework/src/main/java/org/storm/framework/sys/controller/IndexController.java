@@ -31,6 +31,6 @@ public class IndexController {
         } else {
             return new ModelAndView("login");
         }
-
     }
+
 }

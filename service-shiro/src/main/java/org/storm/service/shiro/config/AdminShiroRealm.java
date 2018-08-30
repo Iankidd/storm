@@ -120,4 +120,30 @@ public class AdminShiroRealm extends AuthorizingRealm {
             }
         }
     }
+
+    @Override
+    protected void doClearCache(PrincipalCollection principals) {
+        super.doClearCache(principals);
+        clearCachedAuthenticationInfo(principals);
+        clearCachedAuthorizationInfo(principals);
+    }
+
+    @Override
+    protected void clearCachedAuthenticationInfo(PrincipalCollection principals) {
+        super.clearCachedAuthenticationInfo(principals);
+        Object key = principals.getPrimaryPrincipal();
+        getAuthenticationCache().remove(key);
+    }
+
+    @Override
+    protected void clearCachedAuthorizationInfo(PrincipalCollection principals) {
+        super.clearCachedAuthorizationInfo(principals);
+        Object key = getAuthorizationCacheKey(principals);
+        getAuthorizationCache().remove(key);
+    }
+
+    protected Object getAuthorizationCacheKey(PrincipalCollection principals) {
+        return principals.getPrimaryPrincipal();
+    }
+
 }

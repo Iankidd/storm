@@ -20,6 +20,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.storm.framework.sys.service.SysMenuService;
 import org.storm.service.shiro.MyShiroSessionListener;
+import org.storm.service.shiro.RedisCacheManager;
 import org.storm.service.shiro.SessionDao;
 import org.storm.service.shiro.filter.AuthorizeFilter;
 
@@ -78,7 +79,7 @@ public class ShiroConfig {
     }
 
     /**
-     * shiro缓存管理器;
+     * shiro-cache缓存管理器;
      *
      * @return
      */
@@ -87,6 +88,16 @@ public class ShiroConfig {
         EhCacheManager cacheManager = new EhCacheManager();
         cacheManager.setCacheManagerConfigFile("classpath:config/ehcache-shiro.xml");
         return cacheManager;
+    }
+
+    /**
+     * shiro-redis缓存管理器;
+     *
+     * @return
+     */
+    @Bean(name = "shiroRedisCacheManager")
+    public RedisCacheManager getRedisCacheManager() {
+        return new RedisCacheManager();
     }
 
     /**
@@ -152,7 +163,18 @@ public class ShiroConfig {
     @DependsOn(value = "lifecycleBeanPostProcessor")
     public AdminShiroRealm adminShiroRealm() {
         AdminShiroRealm adminShiroRealm = new AdminShiroRealm();
-        adminShiroRealm.setCacheManager(getEhCacheManager());
+        //启用缓存
+        adminShiroRealm.setCachingEnabled(true);
+        //启用授权缓存
+        adminShiroRealm.setAuthorizationCachingEnabled(true);
+        adminShiroRealm.setAuthorizationCacheName("shiro-AutorizationCache");
+        //启用认证信息缓存
+        adminShiroRealm.setAuthenticationCachingEnabled(true);
+        adminShiroRealm.setAuthenticationCacheName("shiro-AuthenticationCache");
+        //启用redis缓存管理器
+        adminShiroRealm.setCacheManager(getRedisCacheManager());
+        //启用cache缓存管理器
+        //adminShiroRealm.setCacheManager(getEhCacheManager());
         return adminShiroRealm;
     }
 
@@ -199,6 +221,7 @@ public class ShiroConfig {
     @Bean
     public SessionDao sessionDao() {
         SessionDao sessionDao = new SessionDao();
+        sessionDao.setActiveSessionsCacheName("shiro-activeSessionCache");
         return sessionDao;
     }
 }

@@ -1,7 +1,6 @@
 package org.storm.framework.sys.controller;
 
 import net.sf.json.JSONArray;
-import org.apache.commons.lang.exception.ExceptionUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.session.Session;
@@ -77,7 +76,7 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
             try {
                 UsernamePasswordToken token = new UsernamePasswordToken(code, pwd);
                 subject.login(token);
-                user = (SysUser) subject.getPrincipals();
+                user = (SysUser) subject.getPrincipal();
             } catch (IncorrectCredentialsException ex) {
                 user = null;
                 model.addAttribute("error", "用户名或密码不正确！");

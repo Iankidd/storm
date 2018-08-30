@@ -1,6 +1,5 @@
 package org.storm.service.shiro.config;
 
-import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.apache.shiro.session.SessionListener;
 import org.apache.shiro.session.mgt.ExecutorServiceSessionValidationScheduler;
@@ -61,9 +60,10 @@ public class ShiroConfig {
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
         //注意过滤器配置顺序 不能颠倒
         //配置不会被拦截的链接 顺序判断
-        filterChainDefinitionMap.put("/logout.action", "logout");
         filterChainDefinitionMap.put("/favicon.ico", "anon");
         filterChainDefinitionMap.put("/index.action", "anon");
+        filterChainDefinitionMap.put("/sys/user/logout.action", "logout");
+        filterChainDefinitionMap.put("/sys/user/login.action", "anon");
         //允许访问静态资源
         filterChainDefinitionMap.put("/js/**", "anon");
         filterChainDefinitionMap.put("/css/**", "anon");
@@ -112,19 +112,6 @@ public class ShiroConfig {
         return scheduler;
     }
 
-    /**
-     * shiro密码加密规则
-     *
-     * @return
-     */
-    @Bean
-    public HashedCredentialsMatcher hashedCredentialsMatcher() {
-        HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
-        hashedCredentialsMatcher.setHashAlgorithmName("md5");// 散列算法:这里使用MD5算法;
-        hashedCredentialsMatcher.setHashIterations(2);// 散列的次数，比如散列两次，相当于md5(md5(""));
-        return hashedCredentialsMatcher;
-    }
-
     @Bean(name = "defaultWebSecurityManager")
     public DefaultWebSecurityManager defaultWebSecurityManager(AdminShiroRealm adminShiroRealm, DefaultWebSessionManager defaultWebSessionManager) {
         DefaultWebSecurityManager defaultWebSecurityManager = new DefaultWebSecurityManager();
@@ -166,7 +153,6 @@ public class ShiroConfig {
     public AdminShiroRealm adminShiroRealm() {
         AdminShiroRealm adminShiroRealm = new AdminShiroRealm();
         adminShiroRealm.setCacheManager(getEhCacheManager());
-        adminShiroRealm.setCredentialsMatcher(hashedCredentialsMatcher());
         return adminShiroRealm;
     }
 

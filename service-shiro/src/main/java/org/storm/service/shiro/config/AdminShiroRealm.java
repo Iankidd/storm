@@ -11,7 +11,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.storm.framework.base.model.EntityUtil;
 import org.storm.framework.base.util.SysConstants;
+import org.storm.framework.base.util.XXTea;
 import org.storm.framework.sys.model.SysMenu;
 import org.storm.framework.sys.model.SysRole;
 import org.storm.framework.sys.model.SysUser;
@@ -74,20 +76,21 @@ public class AdminShiroRealm extends AuthorizingRealm {
     /**
      * 用户验证
      *
-     * @param token 账户数据
+     * @param authcToken 账户数据
      * @return
      * @throws AuthenticationException 根据账户数据查询账户。根据账户状态抛出对应的异常
      */
     @Override
-    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
+    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authcToken) throws AuthenticationException {
 
         //获取用户的输入的账号
-        String username = (String) token.getPrincipal();
+        UsernamePasswordToken token = (UsernamePasswordToken) authcToken;
+        String username = token.getUsername();
         //这里需注意。看别人的教程有人是这样写的String password = (String) token.getCredentials();
         //项目运行的时候报错，发现密码不正确。后来进源码查看发现将密码注入后。Shiro会进行转义将字符串转换成字符数组。
         //源码：this(username, password != null ? password.toCharArray() : null, false, null);
         //不晓得是否是因为版本的原因，建议使用的时候下载源码进行查看
-        String password = new String((char[]) token.getCredentials());
+        String password = String.valueOf(token.getPassword());
         //通过username从数据库中查找 User对象，如果找到，没找到.
         //实际项目中，这里可以根据实际情况做缓存，如果不做，Shiro自己也是有时间间隔机制，2分钟内不会重复执行该方法
         //DisabledAccountException      (禁用的帐号)
@@ -97,15 +100,20 @@ public class AdminShiroRealm extends AuthorizingRealm {
         //IncorrectCredentialsException (错误的凭证)
         //ExpiredCredentialsException   (过期的凭证)
         SysUser user = sysUserService.getUserByCode(username);
+        String pwd = "";
         if (null == user) {
             throw new UnknownAccountException();
         } else {
-            if (password.equals(user.getPwd())) {
+            try {
+                pwd = XXTea.encrypt(password, "UTF-8", EntityUtil.bytesToHexString(EntityUtil.encryptSecretKey.getBytes()));
+            } catch (Exception e) {
+                logger.error("error at encrypt password!");
+            }
+            if (pwd.equals(user.getPwd())) {
                 if (user.getStatus() == SysConstants.EStatus.InValid.ordinal()) {
                     throw new DisabledAccountException();
                 } else {
-                    SimpleAuthenticationInfo authorizationInfo = new SimpleAuthenticationInfo(user, user.getPwd().toCharArray(), getName());
-                    return authorizationInfo;
+                    return new SimpleAuthenticationInfo(user, password, getName());
                 }
             } else {
                 throw new IncorrectCredentialsException();

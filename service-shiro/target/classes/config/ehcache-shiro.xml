@@ -29,7 +29,7 @@
             diskExpiryThreadIntervalSeconds="120"/>
 
     <!-- 登录记录缓存锁定10分钟 -->
-    <cache name="passwordRetryCache"
+    <cache name = "passwordRetryCache"
            maxEntriesLocalHeap="2000"
            eternal="false"
            timeToIdleSeconds="3600"

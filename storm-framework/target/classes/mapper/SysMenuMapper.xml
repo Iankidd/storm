@@ -199,11 +199,6 @@
                 and E.PARENT_ID = #{parentId}
             </if>
 
-
-            <if test="sort != null">
-                and E.SORT = #{sort}
-            </if>
-
             <if test="ids != null and ids.size != 0">
                 and E.ID IN
                 <foreach item="x_id" index="index" collection="ids"

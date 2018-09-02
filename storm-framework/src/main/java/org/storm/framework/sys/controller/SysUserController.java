@@ -123,7 +123,6 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
                     logger.info("组装菜单花费时间：" + (t2 - t1) + "ms");
                     session.setAttribute(SysConstants.SYS_USER_MENU, menuTree);
                     session.setAttribute(SysConstants.SYS_OPERATE_KEY, operateMap);
-                    model.addAttribute(SysConstants.SYS_USER_MENU, menuTree);
                     Map<Long, String> loginUserMap = (Map<Long, String>) request.getServletContext()
                             .getAttribute(SysConstants.LOGIN_USER_MAP);
                     if (loginUserMap == null) {

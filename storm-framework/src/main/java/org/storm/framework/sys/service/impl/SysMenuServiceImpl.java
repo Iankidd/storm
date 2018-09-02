@@ -41,6 +41,8 @@ public class SysMenuServiceImpl extends BaseServiceImpl<SysMenu> implements SysM
         if (menuIds != null && menuIds.size() > 0) {
             paramMap = new HashMap<>();
             paramMap.put("ids", menuIds);
+            paramMap.put("sort", "id");
+            paramMap.put("order", "asc");
             sysMenuList = sysMenuService.getList(paramMap);
         }
         return sysMenuList;

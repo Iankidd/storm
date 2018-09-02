@@ -1,5 +1,6 @@
 package org.storm.service.shiro.config;
 
+import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.apache.shiro.session.SessionListener;
 import org.apache.shiro.session.mgt.ExecutorServiceSessionValidationScheduler;
@@ -79,16 +80,26 @@ public class ShiroConfig {
     }
 
     /**
+     * shiro-thymeleaf标签;
+     *
+     * @return
+     */
+    @Bean
+    public ShiroDialect shiroDialect() {
+        return new ShiroDialect();
+    }
+
+    /**
      * shiro-cache缓存管理器;
      *
      * @return
      */
-    @Bean(name = "shiroEhcacheManager")
-    public EhCacheManager getEhCacheManager() {
-        EhCacheManager cacheManager = new EhCacheManager();
-        cacheManager.setCacheManagerConfigFile("classpath:config/ehcache-shiro.xml");
-        return cacheManager;
-    }
+//    @Bean(name = "shiroEhcacheManager")
+//    public EhCacheManager getEhCacheManager() {
+//        EhCacheManager cacheManager = new EhCacheManager();
+//        cacheManager.setCacheManagerConfigFile("classpath:config/ehcache-shiro.xml");
+//        return cacheManager;
+//    }
 
     /**
      * shiro-redis缓存管理器;
@@ -127,7 +138,10 @@ public class ShiroConfig {
     public DefaultWebSecurityManager defaultWebSecurityManager(AdminShiroRealm adminShiroRealm, DefaultWebSessionManager defaultWebSessionManager) {
         DefaultWebSecurityManager defaultWebSecurityManager = new DefaultWebSecurityManager();
         defaultWebSecurityManager.setRealm(adminShiroRealm);
-        defaultWebSecurityManager.setCacheManager(getEhCacheManager());
+        //启用cache缓存管理器
+        //defaultWebSecurityManager.setCacheManager(getEhCacheManager());
+        //启用redis缓存管理器
+        defaultWebSecurityManager.setCacheManager(getRedisCacheManager());
         defaultWebSecurityManager.setSessionManager(defaultWebSessionManager);
         defaultWebSecurityManager.setRememberMeManager(rememberMeManager());
         return defaultWebSecurityManager;

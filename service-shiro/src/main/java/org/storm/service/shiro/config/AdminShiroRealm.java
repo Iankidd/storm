@@ -142,6 +142,7 @@ public class AdminShiroRealm extends AuthorizingRealm {
         getAuthorizationCache().remove(key);
     }
 
+    @Override
     protected Object getAuthorizationCacheKey(PrincipalCollection principals) {
         return principals.getPrimaryPrincipal();
     }

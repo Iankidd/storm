@@ -2,41 +2,42 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta charset="UTF-8"/>
-<title>Insert title here</title>
+    <meta charset="UTF-8"/>
+    <title>Insert title here</title>
 </head>
 <body>
-	<nav class="navbar-default navbar-static-side" role="navigation" th:fragment="navigation">
-        <div class="sidebar-collapse">
-            <ul class="nav metismenu" id="side-menu">
-                <li class="nav-header">
-                    <div class="dropdown profile-element"> 
-                    	<span>
-                            <img alt="image" class="img-circle" th:src="@{/img/profile_small.jpg}" />
-						</span>
-                    	<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> 
-                            	<span class="block m-t-xs">
-                            		<strong class="font-bold">Mr.MoXi</strong>
-                             	</span> 
-                             </span>
-                     	</a>
-                    </div>
-                    <div class="logo-element">
-                        MOXI
-                    </div>
-                </li>
-                <li th:each="m : ${sys_user_menu}">
-                    <a href="#"><i th:class="${m.icon}"></i> <span class="nav-label" th:text="${m.name}"></span><span class="fa arrow"></span></a>
-                    <th:block th:if="${#arrays.length(m.submenu)} gt 0">
+<nav class="navbar-default navbar-static-side" role="navigation" th:fragment="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <span>
+                        <img alt="image" class="img-circle" th:src="@{/img/profile_small.jpg}"/>
+                    </span>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold">Mr.Kidd</strong>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+                <div class="logo-element">
+                    STROM
+                </div>
+            </li>
+            <li th:each="m : ${sys_user_menu}">
+                <a href="#"><i th:class="${m.icon}"></i> <span class="nav-label" th:text="${m.name}"></span><span
+                        class="fa arrow"></span></a>
+                <th:block th:if="${#arrays.length(m.submenu)} gt 0">
                     <ul th:each="s : ${m.submenu}" class="nav nav-second-level collapse">
                         <li><a th:href="@{${s.url}}" th:text="${s.name}"></a></li>
                     </ul>
-                    </th:block>
-                </li>
-            </ul>
-        </div>
-    </nav>
+                </th:block>
+            </li>
+        </ul>
+    </div>
+</nav>
 </body>
 </html>
 

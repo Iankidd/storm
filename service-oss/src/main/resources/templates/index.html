@@ -2,42 +2,29 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
     <title>STROM</title>
-
-    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
-    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet"/>
-
-    <link th:href="@{/css/animate.css}" rel="stylesheet"/>
-    <link th:href="@{/css/style.css}" rel="stylesheet"/>
-
+    <!-- 导入公共 common_style -->
+    <div th:replace="/init/init_style :: common_style"></div>
 </head>
 
 <body>
 <div id="wrapper">
-    <nav class="navbar-default navbar-static-side" role="navigation" th:include="nav :: navigation"></nav>
+    <!-- 导入公共 common_nav -->
+    <nav th:include="/common/nav :: navigation" class="navbar-default navbar-static-side" role="navigation"></nav>
     <div id="page-wrapper" class="gray-bg">
-        <div class="border-bottom" th:include="header :: headerTop"></div>
+        <!-- 导入公共 common_header -->
+        <div th:include="/common/header :: headerTop" class="border-bottom"></div>
         <div class="wrapper wrapper-content">
 
         </div>
-        <div class="footer" th:include="footer :: copyright"></div>
+        <!-- 导入公共 common_footer -->
+        <div th:include="/common/footer :: copyright" class="footer"></div>
     </div>
 </div>
-
-<!-- Mainly scripts -->
-<script th:src="@{/js/jquery-3.1.1.min.js}"></script>
-<script th:src="@{/js/popper.min.js}"></script>
-<script th:src="@{/js/bootstrap.min.js}"></script>
-<script th:src="@{/js/plugins/metisMenu/jquery.metisMenu.js}"></script>
-<script th:src="@{/js/plugins/slimscroll/jquery.slimscroll.min.js}"></script>
-
-<!-- Custom and plugin javascript -->
-<script th:src="@{/js/inspinia.js}"></script>
-<script th:src="@{/js/plugins/pace/pace.min.js}"></script>
+<!-- 导入公共 common_script -->
+<div th:replace="/init/init_script :: common_script"></div>
 
 <script>
     $(document).ready(function () {

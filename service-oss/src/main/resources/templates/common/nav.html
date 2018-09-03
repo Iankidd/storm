@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta charset="UTF-8"/>
-    <title>Insert title here</title>
-</head>
-<body>
 <nav class="navbar-default navbar-static-side" role="navigation" th:fragment="navigation">
     <div class="sidebar-collapse">
         <ul class="nav metismenu" id="side-menu">
@@ -30,15 +25,17 @@
                 <a href="#"><i th:class="${m.icon}"></i> <span class="nav-label" th:text="${m.name}"></span><span
                         class="fa arrow"></span></a>
                 <th:block th:if="${#arrays.length(m.submenu)} gt 0">
-                    <ul th:each="s : ${m.submenu}" class="nav nav-second-level collapse">
-                        <li><a th:href="@{${s.url}}" th:text="${s.name}"></a></li>
+                    <ul class="nav nav-second-level collapse">
+                        <th:block th:each="s : ${m.submenu}">
+                            <li><a th:href="@{${s.url}}" th:text="${s.name}"></a></li>
+                        </th:block>
                     </ul>
                 </th:block>
             </li>
         </ul>
     </div>
 </nav>
-</body>
+
 </html>
 
 

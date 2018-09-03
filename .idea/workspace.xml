@@ -2,576 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2abef353-240a-4c31-bc24-a4d280a9de18" name="Default" comment="修改日志配置文件">
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_script.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_style.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/badgets_labels.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/base.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/buttons.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/chat.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/custom.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/elements.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/landing.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/md-skin.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/media.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/metismenu.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/mixins.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/navigation.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/pages.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/rtl.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/sidebar.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/skins.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/spinners.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/style.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/theme-config.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/top_navigation.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/typography.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/LESS/variables.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/animate.css" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/animate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/bootstrap.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/blueimp/css/blueimp-gallery-indicator.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/blueimp/css/blueimp-gallery-video.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/blueimp/css/blueimp-gallery.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/blueimp/css/blueimp-gallery.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/blueimp/css/demo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/blueimp/img/error.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/blueimp/img/error.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/blueimp/img/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/blueimp/img/play-pause.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/blueimp/img/play-pause.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/blueimp/img/video-play.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/blueimp/img/video-play.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/bootstrap-rtl/bootstrap-rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/bootstrap-rtl/bootstrap-rtl.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/bootstrap-rtl/bootstrap-rtl.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/chartist/chartist.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/chosen/chosen-sprite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/chosen/chosen-sprite@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/chosen/chosen.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/clockpicker/clockpicker.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/codemirror/ambiance.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/codemirror/codemirror.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/colorpicker/bootstrap-colorpicker.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/cropper/cropper.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/dataTables/dataTables.bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/dataTables/dataTables.responsive.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/dataTables/dataTables.tableTools.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/datapicker/datepicker3.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/daterangepicker/daterangepicker-bs3.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/dropzone/basic.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/dropzone/dropzone.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/footable/fonts/footable.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/footable/fonts/footable.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/footable/fonts/footable.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/footable/fonts/footable.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/footable/footable.core.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/fullcalendar/fullcalendar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/fullcalendar/fullcalendar.print.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/iCheck/custom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/iCheck/green.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/iCheck/green@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/images/bootstrap-colorpicker/alpha-horizontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/images/bootstrap-colorpicker/alpha.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/images/bootstrap-colorpicker/hue-horizontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/images/bootstrap-colorpicker/hue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/images/bootstrap-colorpicker/saturation.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/images/sort.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/images/sort_asc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/images/sort_desc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/images/sprite-skin-flat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/images/sprite-skin-flat2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/images/sprite-skin-nice.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/images/sprite-skin-simple.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/images/spritemap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/images/spritemap@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/ionRangeSlider/ion.rangeSlider.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/ionRangeSlider/ion.rangeSlider.skinNice.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/ionRangeSlider/ion.rangeSlider.skinSimple.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jQueryUI/images/animated-overlay.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jQueryUI/images/ui-bg_flat_0_aaaaaa_40x100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jQueryUI/images/ui-bg_flat_75_ffffff_40x100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jQueryUI/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jQueryUI/images/ui-bg_glass_65_ffffff_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jQueryUI/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jQueryUI/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jQueryUI/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jQueryUI/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jQueryUI/images/ui-icons_222222_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jQueryUI/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jQueryUI/images/ui-icons_454545_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jQueryUI/images/ui-icons_888888_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jQueryUI/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jQueryUI/jquery-ui-1.10.4.custom.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jasny/jasny-bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jqGrid/ui.jqgrid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jsTree/32px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jsTree/39px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jsTree/40px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jsTree/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jsTree/style.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/jsTree/throbber.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/morris/morris-0.4.3.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/nouslider/jquery.nouislider.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/select2/select2.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/slick/ajax-loader.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/slick/fonts/slick.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/slick/fonts/slick.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/slick/fonts/slick.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/slick/fonts/slick.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/slick/slick-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/slick/slick.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/social-buttons/social-buttons.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/steps/jquery.steps.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/summernote/summernote-bs3.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/summernote/summernote.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/switchery/switchery.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/plugins/toastr/toastr.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/style.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/email_templates/action.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/email_templates/alert.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/email_templates/billing.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/email_templates/img/header.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/email_templates/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/css/font-awesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/css/font-awesome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/css/font-awesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/less/bordered-pulled.less" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/less/bordered-pulled.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/less/core.less" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/less/core.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/less/font-awesome.less" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/less/font-awesome.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/less/icons.less" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/less/icons.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/less/mixins.less" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/less/mixins.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/less/path.less" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/less/path.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/less/variables.less" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/less/variables.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/scss/_bordered-pulled.scss" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/scss/_bordered-pulled.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/scss/_core.scss" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/scss/_core.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/scss/_icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/scss/_icons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/scss/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/scss/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/scss/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/scss/font-awesome.scss" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/font-awesome/scss/font-awesome.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/a1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/a2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/a3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/a4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/a5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/a6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/a7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/a8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/angular_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/dashbard4_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/dashbard4_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/email_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/email_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/email_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/full_height.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/10s.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/11s.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/12s.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/1s.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/2s.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/3s.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/4s.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/5s.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/6s.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/7s.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/8s.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/gallery/9s.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/headphones.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/html_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/landing/avatar1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/landing/avatar2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/landing/avatar3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/landing/avatar4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/landing/avatar5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/landing/avatar6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/landing/avatar7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/landing/avatar8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/landing/avatar9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/landing/avatar_all.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/landing/dashboard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/landing/header_one.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/landing/header_two.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/landing/iphone.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/landing/laptop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/landing/perspective.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/landing/shattered.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/landing/word_map.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/meteor_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/mvc_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/off_canvas.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/p1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/p2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/p3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/p4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/p5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/p6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/p7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/p8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/p_big1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/p_big2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/p_big3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/profile.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/profile_big.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/rails_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/img/zender_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/demo/chartjs-demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/demo/dashboard-demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/demo/flot-demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/demo/flot-demo2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/demo/morris-demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/demo/peity-demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/demo/rickshaw-demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/demo/sparkline-demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/inspinia.js" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/inspinia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/jquery-2.1.1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/jquery-ui-1.10.4.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/jquery-ui.custom.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/blueimp/jquery.blueimp-gallery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/chartJs/Chart.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/chartist/chartist.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/chartist/chartist.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/chosen/chosen.jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/clockpicker/clockpicker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/colorpicker/bootstrap-colorpicker.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/cropper/cropper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/dataTables/dataTables.bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/dataTables/dataTables.responsive.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/dataTables/dataTables.tableTools.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/dataTables/jquery.dataTables.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/dataTables/swf/copy_csv_xls.swf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/dataTables/swf/copy_csv_xls_pdf.swf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/datapicker/bootstrap-datepicker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/daterangepicker/daterangepicker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/diff_match_patch/COPYING" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/diff_match_patch/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/diff_match_patch/javascript/diff_match_patch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/dropzone/dropzone.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/easypiechart/easypiechart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/easypiechart/jquery.easypiechart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/flot/curvedLines.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/flot/excanvas.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/flot/jquery.flot.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/flot/jquery.flot.pie.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/flot/jquery.flot.resize.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/flot/jquery.flot.spline.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/flot/jquery.flot.symbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/flot/jquery.flot.time.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/flot/jquery.flot.tooltip.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/footable/footable.all.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/fullcalendar/fullcalendar.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/fullcalendar/moment.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/gritter/images/gritter-light.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/gritter/images/gritter-long.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/gritter/images/gritter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/gritter/images/ie-spacer.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/gritter/jquery.gritter.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/gritter/jquery.gritter.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/iCheck/icheck.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/idle-timer/idle-timer.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/ionRangeSlider/ion.rangeSlider.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jasny/jasny-bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jeditable/jquery.jeditable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-ar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-bg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-bg1251.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-cat.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-cn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-cs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-da.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-de.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-dk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-el.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-es.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-fa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-fi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-fr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-gl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-he.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-hr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-hr1250.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-hu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-id.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-is.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-it.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-ja.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-kr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-lt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-mne.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-nl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-no.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-pl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-pt-br.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-pt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-ro.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-ru.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-sk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-sr-latin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-sr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-sv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-th.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-tr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-tw.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-ua.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/i18n/grid.locale-vi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jqGrid/jquery.jqGrid.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery-ui-i18n.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-af.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ar-DZ.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ar.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-az.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-be.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-bg.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-bs.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ca.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-cs.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-cy-GB.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-da.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-de.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-el.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-en-AU.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-en-GB.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-en-NZ.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-eo.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-es.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-et.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-eu.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-fa.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-fi.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-fo.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-fr-CA.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-fr-CH.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-fr.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-gl.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-he.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-hi.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-hr.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-hu.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-hy.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-id.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-is.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-it.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ja.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ka.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-kk.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-km.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ko.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ky.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-lb.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-lt.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-lv.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-mk.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ml.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ms.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-nb.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-nl-BE.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-nl.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-nn.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-no.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-pl.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-pt-BR.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-pt.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-rm.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ro.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ru.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-sk.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-sl.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-sq.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-sr-SR.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-sr.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-sv.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-ta.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-th.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-tj.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-tr.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-uk.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-vi.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-zh-CN.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-zh-HK.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/i18n/jquery.ui.datepicker-zh-TW.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/images/animated-overlay.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/images/ui-bg_flat_0_aaaaaa_40x100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/images/ui-bg_flat_75_ffffff_40x100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/images/ui-bg_glass_65_ffffff_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/images/ui-icons_222222_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/images/ui-icons_454545_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/images/ui-icons_888888_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/jquery-ui.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/jquery-ui.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/jquery-ui.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jquery-ui/jquery-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jsKnob/jquery.knob.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jsTree/jstree.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/justified-gallery/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/justified-gallery/jquery.justifiedgallery.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/justified-gallery/jquery.justifiedgallery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/justified-gallery/jquery.justifiedgallery.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/justified-gallery/jquery.justifiedgallery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/justified-gallery/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jvectormap/jquery-jvectormap-2.0.2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/masonary/masonry.pkgd.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/metisMenu/jquery.metisMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/metisMenu/jquery.metisMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/morris/morris.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/morris/raphael-2.1.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/nestable/jquery.nestable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/nouslider/jquery.nouislider.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/peity/jquery.peity.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/preetyTextDiff/jquery.pretty-text-diff.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/rickshaw/rickshaw.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/rickshaw/vendor/d3.v3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/select2/select2.full.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/slick/slick.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/sparkline/jquery.sparkline.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/staps/jquery.steps.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/summernote/summernote.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/switchery/switchery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/tinycon/tinycon.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/toastr/toastr.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/validate/jquery.validate.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/video/responsible-video.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/plugins/wow/wow.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/agile_board.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/article.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/badges_labels.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/basic_gallery.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/buttons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/calendar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/carousel.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/chat_view.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/clients.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/code_editor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/contacts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/contacts_2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/css_animation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/dashboard_2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/dashboard_3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/dashboard_4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/dashboard_4_1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/dashboard_5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/diff.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/draggable_panels.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/ecommerce-orders.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/ecommerce_payments.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/ecommerce_product.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/ecommerce_product_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/ecommerce_product_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/ecommerce_products_grid.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/email_template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/empty_page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/faq.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/file_manager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/forgot_password.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/form_advanced.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/form_basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/form_editors.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/form_file_upload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/form_wizard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/forum_main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/forum_post.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/full_height.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/google_maps.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/graph_chartist.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/graph_chartjs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/graph_flot.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/graph_morris.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/graph_peity.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/graph_rickshaw.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/graph_sparkline.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/grid_options.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/icons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/idle_timer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/invoice.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/invoice_print.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/issue_tracker.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/jq_grid.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/landing.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/layouts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/lockscreen.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/login_two_columns.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/mail_compose.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/mail_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/mailbox.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/masonry.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/metrics.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/modal_window.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/nestable_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/notifications.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/off_canvas_menu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/package.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/pin_board.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/profile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/profile_2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/project_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/projects.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/search_results.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/skin-config.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/slick_carousel.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/social_feed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/spinners.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/sweetalert.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/table_basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/table_data_tables.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/table_foo_table.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/tabs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/tabs_panels.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/teams_board.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/timeline.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/timeline_2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/tinycon.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/toastr_notifications.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/tree_view.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/typography.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/validation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/video.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/vote_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/demo/widgets.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/common/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/common/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/news/newsCategoryEdit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/news/newsCategoryManage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/news/newsEdit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/news/newsManage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/skin-config.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/common/nav.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/eureka-server/target/" />
@@ -615,7 +52,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="51" />
-          <entry key="html" value="58" />
+          <entry key="html" value="78" />
           <entry key="java" value="374" />
           <entry key="js" value="6" />
           <entry key="mvnw" value="1" />
@@ -628,7 +65,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="51" />
-          <entry key="HTML" value="58" />
+          <entry key="HTML" value="78" />
           <entry key="JAVA" value="374" />
           <entry key="JavaScript" value="6" />
           <entry key="PLAIN_TEXT" value="1" />
@@ -640,7 +77,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="11" />
-          <entry key="html" value="376" />
+          <entry key="html" value="501" />
           <entry key="java" value="3023" />
           <entry key="js" value="11" />
           <entry key="properties" value="25" />
@@ -651,7 +88,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="376" />
+          <entry key="HTML" value="501" />
           <entry key="JAVA" value="3023" />
           <entry key="JavaScript" value="11" />
           <entry key="PLAIN_TEXT" value="36" />
@@ -724,20 +161,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/header.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+            <state relative-caret-position="200">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/nav.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_script.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/common/footer.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="220">
-              <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/common/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/common/nav.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -750,6 +214,7 @@
         <option value="Interface" />
         <option value="spring-beans.schema" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -796,11 +261,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/storm-framework/src/main/resources/mapper/SysRoleMapper.xml" />
-        <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/service/impl/SysRoleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/service/impl/SysUserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/config/ShiroRealm.java" />
-        <option value="$PROJECT_DIR$/service-oss/pom.xml" />
         <option value="$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/config/AdminRealm.java" />
         <option value="$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/service/ShiroService.java" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/mapper/SysMenuMapper.java" />
@@ -821,7 +281,6 @@
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/XXTea.java" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/ByteFormat.java" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/dashboard.html" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/footer.html" />
         <option value="$PROJECT_DIR$/service-oss/src/main/java/org/storm/service/oss/ServiceClientApplication.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/404.html" />
@@ -844,9 +303,15 @@
         <option value="$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/config/ShiroConfig.java" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/login.html" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/static/js/inspinia.js" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/index.html" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/header.html" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/footer.html" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/nav.html" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/header.html" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/init_style.html" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/meta.html" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_script.html" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_style.html" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/common/footer.html" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/index.html" />
       </list>
     </option>
   </component>
@@ -904,7 +369,18 @@
             <path>
               <item name="storm" type="58d84e3e:PackageViewProjectNode" />
               <item name="service-oss" type="616d4139:PackageViewModuleNode" />
+              <item name="static" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
               <item name="templates" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
+              <item name="templates" type="1f31426a:PackageElementNode" />
+              <item name="common" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="storm" type="58d84e3e:PackageViewProjectNode" />
@@ -993,6 +469,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -1000,7 +477,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/eureka-server/src/main/java/org/storm/eureka/server" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/service-oss/src/main/resources/templates/common" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -1009,6 +486,10 @@
     <property name="settings.editor.selected.configurable" value="spring.boot" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\github-workspace\storm\service-oss\src\main\resources\templates\common" />
+      <recent name="D:\github-workspace\storm\service-oss\src\main\resources\templates\init" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.storm.framework.base" />
       <recent name="org.storm" />
@@ -1188,7 +669,7 @@
       <workItem from="1535774342065" duration="2107000" />
       <workItem from="1535898294670" duration="7169000" />
       <workItem from="1535974667190" duration="1202000" />
-      <workItem from="1535978706293" duration="3745000" />
+      <workItem from="1535978706293" duration="9850000" />
     </task>
     <task id="LOCAL-00001" summary="集成mybatis分页">
       <created>1534158730692</created>
@@ -1234,7 +715,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220452000" />
+    <option name="totallyTimeSpent" value="226557000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1257,7 +738,7 @@
       <window_info id="Favorites" order="5" sideWeight="0.50073856" side_tool="true" weight="0.25737265" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32892805" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.40234947" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.40234947" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5095448" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1301,27 +782,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/model/SysUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.31/tomcat-embed-core-8.5.31.jar!/javax/servlet/http/HttpServletResponseWrapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.31/tomcat-embed-core-8.5.31.jar!/javax/servlet/http/HttpServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="291" selection-start-line="291" selection-end-line="291" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.31/tomcat-embed-core-8.5.31.jar!/org/apache/catalina/core/ApplicationFilterChain.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
@@ -1591,15 +1051,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="60" column="27" lean-forward="true" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -1612,29 +1065,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/404.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+        <state relative-caret-position="280">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_style.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/meta.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" selection-start-line="2" selection-end-line="10" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_script.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/common/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/common/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/common/nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/nav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        <state relative-caret-position="200">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>

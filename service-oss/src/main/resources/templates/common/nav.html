@@ -27,7 +27,7 @@
                 <th:block th:if="${#arrays.length(m.submenu)} gt 0">
                     <ul class="nav nav-second-level collapse">
                         <th:block th:each="s : ${m.submenu}">
-                            <li><a th:href="@{${s.url}}" th:text="${s.name}"></a></li>
+                            <li><a href="#" th:onclick="'javascript:link(\''+@{${s.url}}+'\')'" th:text="${s.name}"></a></li>
                         </th:block>
                     </ul>
                 </th:block>

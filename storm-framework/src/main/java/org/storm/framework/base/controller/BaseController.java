@@ -37,6 +37,7 @@ public abstract class BaseController<Te extends Entity, Ts extends BaseService<T
 
     protected abstract String getPrefix();
 
+    protected final String VIEW = "/view";
     protected final String MODEL_NAME = "entity";
     protected final String ERROR = "error";
     protected final String EDIT = getPrefix() + "_edit";

@@ -16,7 +16,7 @@
     <div id="page-wrapper" class="gray-bg">
         <!-- 导入公共 common_header -->
         <div th:include="/common/header :: headerTop" class="border-bottom"></div>
-        <div class="wrapper wrapper-content">
+        <div id="pageContent" class="wrapper wrapper-content">
 
         </div>
         <!-- 导入公共 common_footer -->
@@ -27,9 +27,15 @@
 <div th:replace="/init/init_script :: common_script"></div>
 
 <script>
-    $(document).ready(function () {
+    $(function(){
 
     });
+
+    function link(url, callback){
+        $("#pageContent").load(url,function(data){
+            callback && callback();
+        });
+    }
 </script>
 </body>
 </html>

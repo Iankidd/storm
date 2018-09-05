@@ -44,7 +44,7 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
 
     @Override
     protected String getPrefix() {
-        return "/sysUser/sysUser";
+        return VIEW + "/sysUser/sysUser";
     }
 
     @Override

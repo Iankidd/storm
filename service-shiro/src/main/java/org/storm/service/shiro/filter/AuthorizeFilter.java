@@ -1,13 +1,19 @@
 package org.storm.service.shiro.filter;
 
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.AccessControlFilter;
 import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.storm.framework.sys.model.SysUser;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class AuthorizeFilter extends AccessControlFilter {
 
@@ -28,13 +34,43 @@ public class AuthorizeFilter extends AccessControlFilter {
      */
     @Override
     protected boolean isAccessAllowed(ServletRequest servletRequest, ServletResponse servletResponse, Object o) throws Exception {
+        boolean tag = true;
         Subject subject = getSubject(servletRequest, servletResponse);
         String url = getPathWithinApplication(servletRequest);
-        logger.info("当前用户正在访问的 url => " + url + " [Is_Permitted] => " + subject.isPermitted(url));
-        if (!subject.isPermitted(url)) {
-            WebUtils.issueRedirect(servletRequest, servletResponse, "/index.action");
+
+        SecurityUtils.getSubject();
+        SysUser user = (SysUser) subject.getPrincipal();
+        if (user == null) {
+            logger.info("AuthorizeFilter：跳转到login页面！");
+        } else {
+            tag = false;
         }
-        return false;
+
+        HttpServletRequest request = (HttpServletRequest) servletRequest;
+        HttpServletResponse response = (HttpServletResponse) servletResponse;
+        if (tag) {
+            if ((request.getHeader("accept") != null && request.getHeader("accept").indexOf("application/json") > -1)
+                    || (request.getHeader("X-Requested-With") != null
+                    && request.getHeader("X-Requested-With").indexOf("XMLHttpRequest") > -1)) {
+                PrintWriter writer = null;
+                response.setStatus(200);
+                response.setContentType("application/json;charset=utf-8");
+                try {
+                    writer = response.getWriter();
+                    writer.write("loginOut");
+                    writer.flush();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                } finally {
+                    if (writer != null)
+                        writer.close();
+                }
+            } else {
+                WebUtils.issueRedirect(servletRequest, servletResponse, "/index.action");
+            }
+        }
+        logger.info("当前用户正在访问的 url => " + url + " [权限情况] => " + subject.isPermitted(url));
+        return tag;
     }
 
     /**

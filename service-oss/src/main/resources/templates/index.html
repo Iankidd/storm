@@ -33,7 +33,11 @@
 
     function link(url, callback){
         $("#pageContent").load(url,function(data){
-            callback && callback();
+            if(data == 'loginOut'){
+                location.href = "[[@{/index.action}]]";
+            } else {
+                callback && callback();
+            }
         });
     }
 </script>

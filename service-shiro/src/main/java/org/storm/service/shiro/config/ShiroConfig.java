@@ -21,7 +21,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
-import org.springframework.context.annotation.PropertySource;
 import org.storm.service.shiro.MyShiroSessionListener;
 import org.storm.service.shiro.filter.AuthorizeFilter;
 
@@ -32,21 +31,20 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Configuration
-@PropertySource("classpath:config/shiro.properties")
 public class ShiroConfig {
 
     private static final Logger logger = LoggerFactory.getLogger(ShiroConfig.class);
 
-    @Value("${shiro.redis.host}")
+    @Value("${spring.redis.host}")
     private String host;
 
-    @Value("${shiro.redis.port}")
+    @Value("${spring.redis.port}")
     private int port;
 
-    @Value("${shiro.redis.timeout}")
+    @Value("${spring.redis.timeout}")
     private int timeout;
 
-    @Value("${shiro.redis.password}")
+    @Value("${spring.redis.password}")
     private String password;
 
     /**

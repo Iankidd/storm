@@ -8,7 +8,7 @@ spring:
     name: service-oss
   #多模块配置文件引用
   profiles:
-    active: framework,dev,redis
+    active: dev
   #数据源配置
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/storm_oss?useSSL=false&useUnicode=true&characterEncoding=UTF-8
@@ -22,6 +22,19 @@ spring:
     servlet:
       content-type: text/html
     cache: false
+  #redis配置
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password: 123456
+    timeout: 5000ms
+    jedis:
+      pool:
+        max-active: 8
+        min-idle: 0
+        max-wait: -1ms
+        max-idle: 8
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

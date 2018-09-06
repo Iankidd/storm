@@ -1,11 +1,13 @@
 package org.storm.service.shiro.config;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,31 +46,44 @@ public class AdminShiroRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-        logger.debug("开始Admin权限授权(进行权限验证!)");
         if (principals == null) {
             throw new AuthorizationException("PrincipalCollection method argument cannot be null.");
         }
 
+        Session session = SecurityUtils.getSubject().getSession();
+
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         if (principals.getPrimaryPrincipal() instanceof SysUser) {
+            //获取 session 存储的角色和权限
+            List<SysRole> roleList = (List<SysRole>) session.getAttribute(SysConstants.SYS_ROLE_KEY);
+            Set<String> permissionSet = (Set<String>) session.getAttribute(SysConstants.SYS_PERMISSION_KEY);
+            String roleMsg = "";
             SysUser user = (SysUser) principals.getPrimaryPrincipal();
-            logger.debug("当前Admin: " + user.getCode());
-            try {
-                //注入角色(查询所有的角色注入控制器）
-                String roleMsg = "";
-                List<SysRole> list = sysRoleService.getUserRoles(user.getId());
-                for (SysRole role : list) {
-                    authorizationInfo.addRole(role.getCode());
-                    roleMsg = roleMsg + role.getCode() + ",";
+            //获取数据库存储的角色和权限
+            if (roleList == null || permissionSet == null) {
+                logger.debug("get permission from DB");
+                try {
+                    roleList = sysRoleService.getUserRoles(user.getId());
+                    List<SysMenu> sysMenuList = sysMenuService.getListByRoles(roleList);
+                    permissionSet = sysMenuService.getPermissionSet(sysMenuList);
+                    session.setAttribute(SysConstants.SYS_ROLE_KEY, roleList);
+                    session.setAttribute(SysConstants.SYS_PERMISSION_KEY, permissionSet);
+                } catch (Exception e) {
+                    logger.error("error at doGetAuthorizationInfo: " + ExceptionUtils.getFullStackTrace(e));
                 }
-                //注入角色所有权限（查询用户所有的权限注入控制器）
-                List<SysMenu> sysMenuList = sysMenuService.getListByRoles(list);
-                Set<String> permissionSet = sysMenuService.getPermissionSet(sysMenuList);
-                authorizationInfo.addStringPermissions(permissionSet);
-                logger.info("当前Admin授权角色：" + roleMsg + " 权限：" + permissionSet.toString());
-            } catch (Exception e) {
-                logger.error("error at doGetAuthorizationInfo: " + ExceptionUtils.getFullStackTrace(e));
+            } else {
+                logger.debug("get permission from session");
             }
+
+            //注入角色(查询所有的角色注入控制器）
+            for (SysRole role : roleList) {
+                authorizationInfo.addRole(role.getCode());
+                roleMsg = roleMsg + role.getCode() + ",";
+            }
+            //注入角色所有权限（查询用户所有的权限注入控制器）
+            authorizationInfo.addStringPermissions(permissionSet);
+
+            logger.info("Admin[" + user.getCode() + "]授权角色：" + roleMsg + " 权限：" + permissionSet.toString());
         }
         return authorizationInfo;
     }

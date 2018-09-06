@@ -5,6 +5,7 @@ public class SysConstants {
     public static final String MD5_SALT = "md5salt";
 
     public static final String SYS_LOGIN_KEY = "oss.session.user";
+    public static final String SYS_ROLE_KEY = "sys_user_role";
     public static final String SYS_PERMISSION_KEY = "sys_user_permission";
     public static final String SYS_USER_MENU = "sys_user_menu";
     public static final String SYS_IGNORE_KEY = "sys_ignore_access";

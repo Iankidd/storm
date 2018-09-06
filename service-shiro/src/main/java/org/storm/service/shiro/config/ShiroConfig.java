@@ -1,7 +1,6 @@
 package org.storm.service.shiro.config;
 
 import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
-import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.apache.shiro.session.SessionListener;
 import org.apache.shiro.session.mgt.ExecutorServiceSessionValidationScheduler;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
@@ -11,18 +10,17 @@ import org.apache.shiro.web.mgt.CookieRememberMeManager;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.servlet.SimpleCookie;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
+import org.crazycake.shiro.RedisCacheManager;
+import org.crazycake.shiro.RedisManager;
+import org.crazycake.shiro.RedisSessionDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
-import org.storm.framework.sys.service.SysMenuService;
 import org.storm.service.shiro.MyShiroSessionListener;
-import org.storm.service.shiro.RedisCacheManager;
-import org.storm.service.shiro.SessionDao;
 import org.storm.service.shiro.filter.AuthorizeFilter;
 
 import javax.servlet.Filter;
@@ -36,9 +34,6 @@ public class ShiroConfig {
 
     private static final Logger logger = LoggerFactory.getLogger(ShiroConfig.class);
 
-    @Autowired
-    private SysMenuService sysMenuService;
-
     /**
      * ShiroFilterFactoryBean 处理拦截资源文件问题。
      * 注意：单独一个ShiroFilterFactoryBean配置是或报错的，因为在
@@ -47,13 +42,13 @@ public class ShiroConfig {
      * 1、一个URL可以配置多个Filter，使用逗号分隔
      * 2、当设置多个过滤器时，全部验证通过，才视为通过部分过滤器可指定参数，如perms，roles
      *
-     * @param defaultWebSecurityManager
+     * @param securityManager
      * @return
      */
     @Bean(name = "shiroFilter")
-    public ShiroFilterFactoryBean shiroFilterFactoryBean(@Qualifier("defaultWebSecurityManager") DefaultWebSecurityManager defaultWebSecurityManager) {
+    public ShiroFilterFactoryBean shiroFilterFactoryBean(@Qualifier("securityManager") DefaultWebSecurityManager securityManager) {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
-        shiroFilterFactoryBean.setSecurityManager(defaultWebSecurityManager);
+        shiroFilterFactoryBean.setSecurityManager(securityManager);
         //自定义拦截器
         Map<String, Filter> filtersMap = new LinkedHashMap<>();
         filtersMap.put("AuthorizeFilter", new AuthorizeFilter());
@@ -108,7 +103,19 @@ public class ShiroConfig {
      */
     @Bean(name = "shiroRedisCacheManager")
     public RedisCacheManager getRedisCacheManager() {
-        return new RedisCacheManager();
+        RedisCacheManager redisCacheManager = new RedisCacheManager();
+        redisCacheManager.setRedisManager(redisManager());
+        return redisCacheManager;
+    }
+
+    @Bean(name = "shiroRedisManager")
+    public RedisManager redisManager() {
+        RedisManager redisManager = new RedisManager();
+        redisManager.setHost("localhost");
+        redisManager.setPort(6379);
+        redisManager.setTimeout(6000);
+        redisManager.setPassword("123456");
+        return redisManager;
     }
 
     /**
@@ -134,15 +141,15 @@ public class ShiroConfig {
         return scheduler;
     }
 
-    @Bean(name = "defaultWebSecurityManager")
-    public DefaultWebSecurityManager defaultWebSecurityManager(AdminShiroRealm adminShiroRealm, DefaultWebSessionManager defaultWebSessionManager) {
+    @Bean(name = "securityManager")
+    public DefaultWebSecurityManager securityManager(AdminShiroRealm adminShiroRealm, DefaultWebSessionManager sessionManager) {
         DefaultWebSecurityManager defaultWebSecurityManager = new DefaultWebSecurityManager();
         defaultWebSecurityManager.setRealm(adminShiroRealm);
         //启用cache缓存管理器
         //defaultWebSecurityManager.setCacheManager(getEhCacheManager());
         //启用redis缓存管理器
         defaultWebSecurityManager.setCacheManager(getRedisCacheManager());
-        defaultWebSecurityManager.setSessionManager(defaultWebSessionManager);
+        defaultWebSecurityManager.setSessionManager(sessionManager);
         defaultWebSecurityManager.setRememberMeManager(rememberMeManager());
         return defaultWebSecurityManager;
     }
@@ -208,7 +215,7 @@ public class ShiroConfig {
     }
 
     @Bean(name = "sessionManager")
-    public DefaultWebSessionManager defaultWebSessionManager(SessionDao sessionDao) {
+    public DefaultWebSessionManager sessionManager(RedisSessionDAO sessionDAO) {
         DefaultWebSessionManager sessionManager = new DefaultWebSessionManager();
         sessionManager.setGlobalSessionTimeout(18000000);//单位毫秒,设置5小时
         // url中是否显示session Id
@@ -224,7 +231,7 @@ public class ShiroConfig {
         sessionManager.getSessionIdCookie().setPath("/");
         sessionManager.getSessionIdCookie().setMaxAge(60 * 60 * 24 * 7);
 
-        sessionManager.setSessionDAO(sessionDao);
+        sessionManager.setSessionDAO(sessionDAO);
         Collection<SessionListener> c = new ArrayList<>();
         c.add(new MyShiroSessionListener());
         sessionManager.setSessionListeners(c);
@@ -233,9 +240,9 @@ public class ShiroConfig {
     }
 
     @Bean
-    public SessionDao sessionDao() {
-        SessionDao sessionDao = new SessionDao();
-        sessionDao.setActiveSessionsCacheName("shiro-activeSessionCache");
-        return sessionDao;
+    public RedisSessionDAO redisSessionDAO() {
+        RedisSessionDAO redisSessionDAO = new RedisSessionDAO();
+        redisSessionDAO.setRedisManager(redisManager());
+        return redisSessionDAO;
     }
 }

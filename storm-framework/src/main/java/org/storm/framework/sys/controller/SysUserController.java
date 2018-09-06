@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.storm.framework.base.controller.BaseController;
 import org.storm.framework.base.util.JsonMenuUtils;
+import org.storm.framework.base.util.LoginUserUtils;
 import org.storm.framework.base.util.RequestUtils;
 import org.storm.framework.base.util.SysConstants;
 import org.storm.framework.sys.model.SysMenu;
@@ -100,7 +101,6 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
             }
             if (user != null) {
                 List<Long> roleIds = sysRefUserRoleService.getRolesIdByUserId(user.getId());
-                Map<String, SysMenu> operateMap = new HashMap<>();
                 JSONArray menuArray = new JSONArray();
                 try {
                     if (roleIds.size() > 0) {
@@ -110,9 +110,6 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
                                 // 添加到菜单列表
                                 if (menu.getType() == SysConstants.EResourceType.Menu.ordinal()) {
                                     menuArray.add(menu);
-                                } else if (menu.getType() == SysConstants.EResourceType.Button.ordinal()) {
-                                    // 按钮为增删改操作
-                                    operateMap.put(menu.getUrl(), menu);
                                 }
                             }
                         }
@@ -122,15 +119,8 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
                     long t2 = System.currentTimeMillis();
                     logger.info("组装菜单花费时间：" + (t2 - t1) + "ms");
                     session.setAttribute(SysConstants.SYS_USER_MENU, menuTree);
-                    session.setAttribute(SysConstants.SYS_OPERATE_KEY, operateMap);
-                    Map<Long, String> loginUserMap = (Map<Long, String>) request.getServletContext()
-                            .getAttribute(SysConstants.LOGIN_USER_MAP);
-                    if (loginUserMap == null) {
-                        loginUserMap = new HashMap<>();
-                    }
-
-                    loginUserMap.put(user.getId(), request.getSession().getId());
-                    request.getServletContext().setAttribute(SysConstants.LOGIN_USER_MAP, loginUserMap);
+                    // 管理员在线记录
+                    LoginUserUtils.addLoginUserMap(request.getServletContext(), user.getId(), session.getId().toString());
                     // 登录记录
                     SysUserLogin sysUserLogin = new SysUserLogin();
                     sysUserLogin.setUserId(user.getId());
@@ -159,9 +149,15 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
      * @return
      */
     @RequestMapping("/logout.action")
-    public String logout() {
+    public String logout(HttpServletRequest request) {
         Subject subject = SecurityUtils.getSubject();
+        SysUser user = (SysUser) subject.getPrincipal();
+
+        // 管理员下线记录
+        LoginUserUtils.removeLoginUserMap(request.getServletContext(), user.getId());
+
         subject.logout();
+
         return "redirect:/index.action";
     }
 }

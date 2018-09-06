@@ -1,0 +1,11 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "org.storm.service.shiro.config.RedisConfig",
+      "name": "shiro.redis",
+      "type": "org.storm.service.shiro.config.RedisConfig"
+    }
+  ],
+  "properties": []
+}

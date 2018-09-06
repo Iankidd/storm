@@ -17,9 +17,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
+import org.springframework.context.annotation.PropertySource;
 import org.storm.service.shiro.MyShiroSessionListener;
 import org.storm.service.shiro.filter.AuthorizeFilter;
 
@@ -30,9 +32,22 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Configuration
+@PropertySource("classpath:config/shiro.properties")
 public class ShiroConfig {
 
     private static final Logger logger = LoggerFactory.getLogger(ShiroConfig.class);
+
+    @Value("${shiro.redis.host}")
+    private String host;
+
+    @Value("${shiro.redis.port}")
+    private int port;
+
+    @Value("${shiro.redis.timeout}")
+    private int timeout;
+
+    @Value("${shiro.redis.password}")
+    private String password;
 
     /**
      * ShiroFilterFactoryBean 处理拦截资源文件问题。
@@ -111,10 +126,11 @@ public class ShiroConfig {
     @Bean(name = "shiroRedisManager")
     public RedisManager redisManager() {
         RedisManager redisManager = new RedisManager();
-        redisManager.setHost("localhost");
-        redisManager.setPort(6379);
-        redisManager.setTimeout(6000);
-        redisManager.setPassword("123456");
+        logger.info("redis connect url: " + host + ":" + port);
+        redisManager.setHost(host);
+        redisManager.setPort(port);
+        redisManager.setTimeout(port);
+        redisManager.setPassword(password);
         return redisManager;
     }
 
@@ -124,9 +140,8 @@ public class ShiroConfig {
      * @return
      */
     @Bean(name = "lifecycleBeanPostProcessor")
-    public LifecycleBeanPostProcessor lifecycleBeanPostProcessor() {
-        LifecycleBeanPostProcessor lifecycleBeanPostProcessor = new LifecycleBeanPostProcessor();
-        return lifecycleBeanPostProcessor;
+    public static LifecycleBeanPostProcessor getLifecycleBeanPostProcessor() {
+        return new LifecycleBeanPostProcessor();
     }
 
     /**

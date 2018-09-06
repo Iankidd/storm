@@ -56,6 +56,7 @@
                         <table class="table table-striped table-bordered table-hover dataTables-example">
                             <thead>
                             <tr>
+                                <td><input id="checkAll" type="checkbox"></td>
                                 <th>id</th>
                                 <th>帐号</th>
                                 <th>名称</th>
@@ -65,17 +66,6 @@
                                 <th>操作</th>
                             </tr>
                             </thead>
-
-                            <tr>
-                                <th>id</th>
-                                <th>帐号</th>
-                                <th>名称</th>
-                                <th>邮箱</th>
-                                <th>邮件报障</th>
-                                <th>状态</th>
-                                <th>操作</th>
-                            </tr>
-                            </tfoot>
                         </table>
                     </div>
 
@@ -101,7 +91,6 @@
                 {extend: 'csv', title: 'ExampleFile'},
                 {extend: 'excel', title: 'ExampleFile'},
                 {extend: 'pdf', title: 'ExampleFile'},
-
                 {
                     extend: 'print',
                     customize: function (win) {
@@ -111,6 +100,52 @@
                             .addClass('compact')
                             .css('font-size', 'inherit');
                     }
+                }
+            ],
+            //对应上面thead里面的序列
+            columns: [
+                {"data": null, "width": "5px", "orderable": false},
+                {"data": 'id', "width": "5px"},
+                {"data": 'code', "width": "50px"},
+                {"data": 'name', "width": "50px"},
+                {"data": 'email', "width": "80px"},
+                {
+                    "data": 'recvEmailFlag', "width": "20px",
+                    "render": function (data, type, full, callback) {
+                        if (data == 0) {
+                            return "正常";
+                        }
+                        else {
+                            return "禁用";
+                        }
+                    }
+                },
+                {
+                    "data": 'status', "width": "20px",
+                    "render": function (data, type, full, callback) {
+                        if (data == 0) {
+                            return "正常";
+                        }
+                        else {
+                            return "禁用";
+                        }
+                    }
+                },
+                {"data": null, "width": "100px"}
+            ],
+            //操作按钮
+            columnDefs: [
+                {
+                    targets: 0,
+                    defaultContent: "<input type='checkbox' name='checkList'>"
+                },
+                {
+                    targets: -1,
+                    defaultContent: "<div class='btn-group'>" +
+                        "<button id='editRow' class='btn btn-primary btn-sm' type='button'><i class='fa fa-edit'></i></button>" +
+                        "&nbsp;&nbsp;&nbsp;&nbsp;" +
+                        "<button id='delRow' class='btn btn-primary btn-sm' type='button'><i class='fa fa-trash-o'></i></button>" +
+                        "</div>"
                 }
             ],
             language: {

@@ -12,10 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.storm.framework.base.annotation.IsSearchCondition;
 import org.storm.framework.base.exception.BusinessException;
 import org.storm.framework.base.model.Entity;
 import org.storm.framework.base.service.BaseService;
 import org.storm.framework.base.util.*;
+import org.storm.framework.base.util.datatables.DatatablesView;
+import org.storm.framework.base.util.datatables.SearchCondition;
 import org.storm.framework.sys.model.SysUser;
 import org.storm.framework.sys.service.SysServiceErrorLogService;
 
@@ -62,24 +65,34 @@ public abstract class BaseController<Te extends Entity, Ts extends BaseService<T
      */
     @RequestMapping("/pageJson.action")
     @ResponseBody
-    public String pageJson(HttpServletRequest request) {
-        int draw = RequestUtils.getInt(request, "draw", 1);
-        int pageNo = RequestUtils.getInt(request, "start", 0);
-        int pageSize = RequestUtils.getInt(request, "length", 0);
-
+    public String pageJson(HttpServletRequest request, @IsSearchCondition SearchCondition condition) {
         Map<String, Object> paramMap = RequestUtils.getParameterMap(request);
-        if (StringUtils.isNotBlank(request.getParameter("limit"))) {
-            int offset = RequestUtils.getInt(request, "offset", 1);
-            pageSize = RequestUtils.getInt(request, "limit", 10);
-            pageNo = offset / pageSize + 1;
-        }
-
         logger.info("params:" + paramMap.toString());
 
-        List<Te> list = this.getBaseService().getPageList(paramMap, pageNo, pageSize);
+        int draw = condition.getDraw();
+        int pageNo = condition.getStart();
+        int pageSize = condition.getLength();
+        int columnIndex = condition.getOrders().get(0).getColumn();
+        String sort = condition.getColumns().get(columnIndex).getName();
+        String order = condition.getOrders().get(0).getDir();
 
-        JSONObject dataJson = PageHelper.toJson(list);
-        return dataJson.toString();
+        if (StringUtils.isNotBlank(sort)) {
+            paramMap.put("sort", sort);
+            paramMap.put("order", order);
+        }
+
+        long filtered = this.getBaseService().getCount(paramMap);
+        List<Te> list = this.getBaseService().getPageList(paramMap, pageNo, pageSize);
+        Page page = (Page) list;
+        long total = page.getTotal();
+
+        DatatablesView<Te> view = new DatatablesView<>();
+        view.setDraw(draw);
+        view.setRecordsTotal(total);
+        view.setRecordsFiltered(filtered);
+        view.setData(list);
+
+        return JSONObject.fromObject(view).toString();
     }
 
     @RequestMapping(value = "/edit.action")

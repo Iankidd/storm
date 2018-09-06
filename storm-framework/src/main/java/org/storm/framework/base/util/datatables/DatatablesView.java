@@ -1,4 +1,4 @@
-package org.storm.framework.base.model;
+package org.storm.framework.base.util.datatables;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ public class DatatablesView<T> {
 
     private List<T> data;
 
-    private int recordsTotal;
+    private long recordsTotal;
 
-    private int recordsFiltered;
+    private long recordsFiltered;
 
     private int draw;
 
@@ -24,19 +24,19 @@ public class DatatablesView<T> {
         this.data = data;
     }
 
-    public int getRecordsTotal() {
+    public long getRecordsTotal() {
         return recordsTotal;
     }
 
-    public void setRecordsTotal(int recordsTotal) {
+    public void setRecordsTotal(long recordsTotal) {
         this.recordsTotal = recordsTotal;
     }
 
-    public int getRecordsFiltered() {
+    public long getRecordsFiltered() {
         return recordsFiltered;
     }
 
-    public void setRecordsFiltered(int recordsFiltered) {
+    public void setRecordsFiltered(long recordsFiltered) {
         this.recordsFiltered = recordsFiltered;
     }
 

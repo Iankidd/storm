@@ -63,8 +63,10 @@ public abstract class BaseController<Te extends Entity, Ts extends BaseService<T
     @RequestMapping("/pageJson.action")
     @ResponseBody
     public String pageJson(HttpServletRequest request) {
-        int pageNo = RequestUtils.getInt(request, "page", 0);
-        int pageSize = RequestUtils.getInt(request, "rows", 0);
+        int draw = RequestUtils.getInt(request, "draw", 1);
+        int pageNo = RequestUtils.getInt(request, "start", 0);
+        int pageSize = RequestUtils.getInt(request, "length", 0);
+
         Map<String, Object> paramMap = RequestUtils.getParameterMap(request);
         if (StringUtils.isNotBlank(request.getParameter("limit"))) {
             int offset = RequestUtils.getInt(request, "offset", 1);

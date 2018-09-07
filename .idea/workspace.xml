@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2abef353-240a-4c31-bc24-a4d280a9de18" name="Default" comment="修改日志配置文件">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/animate.css" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/animate.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_script.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_script.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-shiro/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/eureka-server/target/" />
@@ -48,7 +51,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="100" />
-          <entry key="html" value="101" />
+          <entry key="html" value="104" />
           <entry key="java" value="468" />
           <entry key="js" value="6" />
           <entry key="json" value="1" />
@@ -62,7 +65,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="100" />
-          <entry key="HTML" value="101" />
+          <entry key="HTML" value="104" />
           <entry key="JAVA" value="468" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="6" />
@@ -76,7 +79,7 @@
         <counts>
           <entry key="class" value="1" />
           <entry key="dummy" value="11" />
-          <entry key="html" value="1803" />
+          <entry key="html" value="1812" />
           <entry key="java" value="4695" />
           <entry key="js" value="11" />
           <entry key="properties" value="144" />
@@ -88,7 +91,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="HTML" value="1803" />
+          <entry key="HTML" value="1812" />
           <entry key="JAVA" value="4695" />
           <entry key="JavaScript" value="11" />
           <entry key="PLAIN_TEXT" value="36" />
@@ -164,18 +167,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="95" column="15" lean-forward="true" selection-start-line="95" selection-start-column="15" selection-end-line="95" selection-end-column="15" />
+            <state relative-caret-position="200">
+              <caret line="61" column="92" selection-start-line="61" selection-start-column="92" selection-end-line="61" selection-end-column="92" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#1307#1313#0" expanded="true" />
-                <element signature="e#1313#1319#0" expanded="true" />
-                <element signature="e#1515#1521#0" expanded="true" />
-                <element signature="e#1521#1527#0" expanded="true" />
-                <element signature="e#1645#1651#0" expanded="true" />
-                <element signature="e#1651#1657#0" expanded="true" />
-                <element signature="e#1857#1863#0" expanded="true" />
-                <element signature="e#1863#1869#0" expanded="true" />
+                <element signature="e#1284#1290#0" expanded="true" />
+                <element signature="e#1290#1296#0" expanded="true" />
+                <element signature="e#1473#1479#0" expanded="true" />
+                <element signature="e#1479#1485#0" expanded="true" />
+                <element signature="e#1596#1602#0" expanded="true" />
+                <element signature="e#1602#1608#0" expanded="true" />
+                <element signature="e#1789#1795#0" expanded="true" />
+                <element signature="e#1795#1801#0" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -186,7 +190,7 @@
         <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
-              <caret line="90" column="36" lean-forward="true" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
+              <caret line="90" column="36" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -205,7 +209,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>shiroRedisCacheManager</find>
       <find>getAuthorizationCacheKey</find>
       <find>getCacheManager</find>
       <find>top-search</find>
@@ -235,6 +238,7 @@
       <find>AdminShiroRealm</find>
       <find>redis</find>
       <find>addArgumentResolvers</find>
+      <find>style</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -258,7 +262,6 @@
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/common/footer.html" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/common/nav.html" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_style.html" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_script.html" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser_list.html" />
         <option value="$PROJECT_DIR$/service-oss/pom.xml" />
         <option value="$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/filter/AuthorizeFilter.java" />
@@ -296,6 +299,7 @@
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/datatables/DatatablesView.java" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_script.html" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_list.html" />
       </list>
     </option>
@@ -488,6 +492,26 @@
           <expand>
             <path>
               <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
+              <item name="static" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
+              <item name="templates" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
+              <item name="templates" type="1f31426a:PackageElementNode" />
+              <item name="init" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
               <item name="service-shiro" type="616d4139:PackageViewModuleNode" />
             </path>
             <path>
@@ -504,13 +528,6 @@
               <item name="storm-framework" type="616d4139:PackageViewModuleNode" />
               <item name="org.storm.framework" type="1f31426a:PackageElementNode" />
               <item name="base" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="storm-framework" type="616d4139:PackageViewModuleNode" />
-              <item name="org.storm.framework" type="1f31426a:PackageElementNode" />
-              <item name="base" type="1f31426a:PackageElementNode" />
-              <item name="controller" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="storm" type="58d84e3e:PackageViewProjectNode" />
@@ -751,7 +768,7 @@
       <workItem from="1536106664234" duration="4804000" />
       <workItem from="1536116156521" duration="178000" />
       <workItem from="1536143611395" duration="63804000" />
-      <workItem from="1536292421999" duration="21207000" />
+      <workItem from="1536292421999" duration="23775000" />
     </task>
     <task id="LOCAL-00001" summary="集成mybatis分页">
       <created>1534158730692</created>
@@ -797,7 +814,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="317425000" />
+    <option name="totallyTimeSpent" value="319993000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -820,8 +837,8 @@
       <window_info id="Favorites" order="5" sideWeight="0.50073856" side_tool="true" weight="0.25737265" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32892805" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36710718" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4229075" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36563876" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.33480176" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32892805" />
@@ -862,14 +879,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/crazycake/shiro-redis/3.1.0/shiro-redis-3.1.0.jar!/org/crazycake/shiro/RedisManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-shiro/src/main/resources/application-shiro.yml" />
     <entry file="file://$PROJECT_DIR$/service-redis/src/main/resources/redis.properties" />
     <entry file="file://$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/MyShiroSessionListener.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1123,13 +1132,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="56" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysUserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-503">
@@ -1140,24 +1142,42 @@
     <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
-          <caret line="90" column="36" lean-forward="true" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
+          <caret line="90" column="36" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_style.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_script.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="23" column="51" lean-forward="true" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="95" column="15" lean-forward="true" selection-start-line="95" selection-start-column="15" selection-end-line="95" selection-end-column="15" />
+        <state relative-caret-position="200">
+          <caret line="61" column="92" selection-start-line="61" selection-start-column="92" selection-end-line="61" selection-end-column="92" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#1307#1313#0" expanded="true" />
-            <element signature="e#1313#1319#0" expanded="true" />
-            <element signature="e#1515#1521#0" expanded="true" />
-            <element signature="e#1521#1527#0" expanded="true" />
-            <element signature="e#1645#1651#0" expanded="true" />
-            <element signature="e#1651#1657#0" expanded="true" />
-            <element signature="e#1857#1863#0" expanded="true" />
-            <element signature="e#1863#1869#0" expanded="true" />
+            <element signature="e#1284#1290#0" expanded="true" />
+            <element signature="e#1290#1296#0" expanded="true" />
+            <element signature="e#1473#1479#0" expanded="true" />
+            <element signature="e#1479#1485#0" expanded="true" />
+            <element signature="e#1596#1602#0" expanded="true" />
+            <element signature="e#1602#1608#0" expanded="true" />
+            <element signature="e#1789#1795#0" expanded="true" />
+            <element signature="e#1795#1801#0" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>

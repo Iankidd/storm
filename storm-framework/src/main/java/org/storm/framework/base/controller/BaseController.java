@@ -73,7 +73,7 @@ public abstract class BaseController<Te extends Entity, Ts extends BaseService<T
         int pageNo = condition.getStart();
         int pageSize = condition.getLength();
         int columnIndex = condition.getOrders().get(0).getColumn();
-        String sort = condition.getColumns().get(columnIndex).getName();
+        String sort = condition.getColumns().get(columnIndex).getData();
         String order = condition.getOrders().get(0).getDir();
 
         if (StringUtils.isNotBlank(sort)) {

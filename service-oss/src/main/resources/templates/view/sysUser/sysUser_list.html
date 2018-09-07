@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 
 <head>
     <meta charset="utf-8"/>
@@ -8,7 +9,7 @@
 </head>
 
 <body>
-<div class="row wrapper border-bottom white-bg page-heading">
+<div class="row wrapper border-bottom white-bg page-heading" style="padding-bottom: 10px;">
     <div class="col-lg-10">
         <h2>用户管理</h2>
         <ol class="breadcrumb">
@@ -75,6 +76,12 @@
     </div>
 </div>
 
+<!-- 菜单权限 -->
+<div id="btn" style="display: none">
+    <button shiro:hasPermission="/sys/user/edit.action" type="button" class="btn btn-info btn-sm" onclick=""><i class="fa fa-edit"></i> 编辑</button>
+    <button shiro:hasPermission="/sys/user/delete.action" type="button" class="btn btn-danger btn-sm" onclick=""><i class="fa fa-trash-o"></i> 删除</button>
+</div>
+
 <!-- Page-Level Scripts -->
 <script>
     $(document).ready(function () {
@@ -88,9 +95,9 @@
             dom: '<"html5buttons"B>lTfgitp',
             buttons: [
                 {extend: 'copy'},
-                {extend: 'csv', title: 'ExampleFile'},
-                {extend: 'excel', title: 'ExampleFile'},
-                {extend: 'pdf', title: 'ExampleFile'},
+                {extend: 'csv', title: 'data_csv'},
+                {extend: 'excel', title: 'data_excel'},
+                {extend: 'pdf', title: 'data_pdf'},
                 {
                     extend: 'print',
                     customize: function (win) {
@@ -137,15 +144,15 @@
             columnDefs: [
                 {
                     targets: 0,
-                    defaultContent: "<input type='checkbox' name='checkList'>"
+                    render: function (data, type, row, meta) {
+                        return "<input type='checkbox' name='checkList'>"
+                    }
                 },
                 {
                     targets: -1,
-                    defaultContent: "<div class='btn-group'>" +
-                        "<button id='editRow' class='btn btn-primary btn-sm' type='button'><i class='fa fa-edit'></i></button>" +
-                        "&nbsp;&nbsp;&nbsp;&nbsp;" +
-                        "<button id='delRow' class='btn btn-primary btn-sm' type='button'><i class='fa fa-trash-o'></i></button>" +
-                        "</div>"
+                    render: function (data, type, row, meta) {
+                        return $("#btn").html();
+                    }
                 }
             ],
             language: {

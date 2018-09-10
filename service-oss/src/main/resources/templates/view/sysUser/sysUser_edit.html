@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>STROM</title>
+</head>
+
+<body>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>用户管理</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                首页
+            </li>
+            <li class="breadcrumb-item">
+                系统管理
+            </li>
+            <li class="breadcrumb-item">
+                <strong>用户管理</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <th:block th:if="${entity?.id eq null}"><h5>添加用户信息</h5></th:block>
+                    <th:block th:unless="${entity?.id lt 0}"><h5>编辑用户信息</h5></th:block>
+                    <div class="ibox-tools">
+                        <a href="javascript:void(0);" class="btn btn-primary btn-sm" th:onclick="'javascript:link(\''+@{/sys/user/list.action}+'\')'"><span class="fa fa-mail-reply"></span> 返回</a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <form id="infoForm" th:action="@{/sys/user/save.action}">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Email</label>
+                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Password</label>
+                                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                            </div>
+                        </div>
+
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group row">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button th:onclick="'javascript:link(\''+@{/sys/user/list.action}+'\')'" class="btn btn-white btn-sm" type="button">取消</button>
+                                <button class="btn btn-primary btn-sm" type="button">保存</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'iradio_square-green',
+        });
+    });
+</script>
+</body>
+</html>

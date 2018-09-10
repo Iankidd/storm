@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <!-- 权限菜单按钮 -->
-                    <button shiro:hasPermission="/sys/user/add.action" onclick="" class="btn btn-primary btn-sm" type="button">
+                    <button shiro:hasPermission="/sys/user/add.action" onclick="edit(0)" class="btn btn-primary btn-sm" type="button">
                         <i class="fa fa-plus"></i> 新增
                     </button>
                 </div>
@@ -82,10 +82,10 @@
 
 <!-- 表格权限菜单按钮 -->
 <div id="btn" style="display: none">
-    <button shiro:hasPermission="/sys/user/edit.action" type="button" class="btn btn-info btn-sm" onclick="">
+    <button id="btn_edit" shiro:hasPermission="/sys/user/edit.action" type="button" class="btn btn-info btn-sm" onclick="">
         <i class="fa fa-edit"></i> 编辑
     </button>
-    <button shiro:hasPermission="/sys/user/delete.action" type="button" class="btn btn-danger btn-sm" onclick="">
+    <button id="btn_delete" shiro:hasPermission="/sys/user/delete.action" type="button" class="btn btn-danger btn-sm" onclick="">
         <i class="fa fa-trash-o"></i> 删除
     </button>
 </div>
@@ -141,14 +141,18 @@
             ],
             //对应上面thead里面的序列
             columns: [
-                {"data": null, "width": "5px", "orderable": false, "searchable": false},
+                {"data": null, "width": "5px", "orderable": false, "searchable": false,
+                    "render": function (data, type, row, meta) {
+                        return "<input type='checkbox' name='checkList'>";
+                    }
+                },
                 {"data": 'id', "width": "5px"},
                 {"data": 'code', "width": "50px"},
                 {"data": 'name', "width": "50px"},
                 {"data": 'email', "width": "80px"},
                 {
                     "data": 'recvEmailFlag', "width": "20px",
-                    "render": function (data, type, full, callback) {
+                    "render": function (data, type, row, meta) {
                         if (data == 0) {
                             return "正常";
                         }
@@ -159,7 +163,7 @@
                 },
                 {
                     "data": 'status', "width": "20px",
-                    "render": function (data, type, full, callback) {
+                    "render": function (data, type, row, meta) {
                         if (data == 0) {
                             return "正常";
                         }
@@ -168,19 +172,11 @@
                         }
                     }
                 },
-                {"data": null, "width": "100px", "orderable": false, "searchable": false}
-            ],
-            //操作按钮
-            columnDefs: [
-                {
-                    targets: 0,
-                    render: function (data, type, row, meta) {
-                        return "<input type='checkbox' name='checkList'>";
-                    }
-                },
-                {
-                    targets: -1,
-                    render: function (data, type, row, meta) {
+                {"data": null, "width": "100px", "orderable": false, "searchable": false,
+                    "defaultContent": "",
+                    "render": function (data, type, row, meta) {
+                        $("#btn_edit").attr("onclick","edit("+row.id+")");
+                        $("#btn_delete").attr("onclick","del("+row.id+")");
                         return $("#btn").html();
                     }
                 }
@@ -193,6 +189,18 @@
 
     function search() {
         table.draw(true);
+    }
+
+    function edit(id,viewType){
+        var url ="[[@{/sys/user/edit.action}]]?id=" + id;
+        if(viewType != undefined){
+            url += "&viewType=view";
+        }
+        link(url);
+    }
+
+    function del(id){
+
     }
 </script>
 </body>

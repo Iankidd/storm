@@ -96,14 +96,14 @@ public abstract class BaseController<Te extends Entity, Ts extends BaseService<T
     }
 
     @RequestMapping(value = "/edit.action")
-    public ModelAndView edit(@RequestParam(value = "id", required = false) Long id, HttpServletRequest request) {
+    public ModelAndView edit(@RequestParam(value = "id", required = false) Long id, HttpServletRequest request, Model model) {
         String viewType = request.getParameter("viewType");
         if (id != null && id > 0) {
             Te te = this.getBaseService().getById(id);
-            request.setAttribute(MODEL_NAME, te);
+            model.addAttribute(MODEL_NAME, te);
             logger.warn("entity:" + JSONObject.fromObject(te));
         }
-        request.setAttribute("viewType", viewType);
+        model.addAttribute("viewType", viewType);
         return new ModelAndView(EDIT);
     }
 

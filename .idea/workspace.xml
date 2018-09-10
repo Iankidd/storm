@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2abef353-240a-4c31-bc24-a4d280a9de18" name="Default" comment="修改日志配置文件">
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/animate.css" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/css/animate.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_script.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_script.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_style.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_style.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-shiro/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/eureka-server/target/" />
@@ -27,11 +29,11 @@
     <session id="-1572135592">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="47" />
+          <entry key="project.closed" value="48" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="6" />
-          <entry key="project.open.time.11" value="9" />
+          <entry key="project.open.time.11" value="10" />
           <entry key="project.open.time.114" value="1" />
           <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.14" value="1" />
@@ -45,15 +47,15 @@
           <entry key="project.open.time.7" value="4" />
           <entry key="project.open.time.8" value="8" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="51" />
+          <entry key="project.opened" value="52" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="100" />
-          <entry key="html" value="104" />
-          <entry key="java" value="468" />
-          <entry key="js" value="6" />
+          <entry key="class" value="101" />
+          <entry key="html" value="110" />
+          <entry key="java" value="473" />
+          <entry key="js" value="9" />
           <entry key="json" value="1" />
           <entry key="mvnw" value="1" />
           <entry key="pom" value="8" />
@@ -64,11 +66,11 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="100" />
-          <entry key="HTML" value="104" />
-          <entry key="JAVA" value="468" />
+          <entry key="CLASS" value="101" />
+          <entry key="HTML" value="110" />
+          <entry key="JAVA" value="473" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="6" />
+          <entry key="JavaScript" value="9" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="15" />
           <entry key="XML" value="169" />
@@ -79,8 +81,8 @@
         <counts>
           <entry key="class" value="1" />
           <entry key="dummy" value="11" />
-          <entry key="html" value="1812" />
-          <entry key="java" value="4695" />
+          <entry key="html" value="2405" />
+          <entry key="java" value="4708" />
           <entry key="js" value="11" />
           <entry key="properties" value="144" />
           <entry key="txt" value="25" />
@@ -91,8 +93,8 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="HTML" value="1812" />
-          <entry key="JAVA" value="4695" />
+          <entry key="HTML" value="2405" />
+          <entry key="JAVA" value="4708" />
           <entry key="JavaScript" value="11" />
           <entry key="PLAIN_TEXT" value="36" />
           <entry key="Properties" value="144" />
@@ -164,11 +166,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="61" column="92" selection-start-line="61" selection-start-column="92" selection-end-line="61" selection-end-column="92" />
+            <state relative-caret-position="120">
+              <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="e#1284#1290#0" expanded="true" />
@@ -180,17 +182,25 @@
                 <element signature="e#1789#1795#0" expanded="true" />
                 <element signature="e#1795#1801#0" expanded="true" />
                 <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="90" column="36" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
+            <state relative-caret-position="120">
+              <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/model/SysUser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" column="26" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -209,9 +219,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getAuthorizationCacheKey</find>
-      <find>getCacheManager</find>
-      <find>top-search</find>
       <find>mailbox.html</find>
       <find>sortSysMenuSql</find>
       <find>a4.jpg</find>
@@ -239,6 +246,9 @@
       <find>redis</find>
       <find>addArgumentResolvers</find>
       <find>style</find>
+      <find>row wrapper</find>
+      <find>All form elements</find>
+      <find>@</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -250,8 +260,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/storm-framework/src/main/resources/mapper/SysMenuMapper.xml" />
-        <option value="$PROJECT_DIR$/service-shiro/src/main/resources/config/ehcache-shiro.xml" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/login.html" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/static/js/inspinia.js" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/footer.html" />
@@ -261,7 +269,6 @@
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/meta.html" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/common/footer.html" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/common/nav.html" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_style.html" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser_list.html" />
         <option value="$PROJECT_DIR$/service-oss/pom.xml" />
         <option value="$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/filter/AuthorizeFilter.java" />
@@ -298,9 +305,12 @@
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/PageHelper.java" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/datatables/DatatablesView.java" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/index.html" />
-        <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_style.html" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_script.html" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/static/js/common.js" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_list.html" />
+        <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_edit.html" />
       </list>
     </option>
   </component>
@@ -324,7 +334,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="156" />
+    <option name="x" value="155" />
     <option name="width" value="1750" />
     <option name="height" value="970" />
   </component>
@@ -497,18 +507,25 @@
             <path>
               <item name="storm" type="58d84e3e:PackageViewProjectNode" />
               <item name="service-oss" type="616d4139:PackageViewModuleNode" />
-              <item name="static" type="1f31426a:PackageElementNode" />
+              <item name="templates" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="storm" type="58d84e3e:PackageViewProjectNode" />
               <item name="service-oss" type="616d4139:PackageViewModuleNode" />
               <item name="templates" type="1f31426a:PackageElementNode" />
+              <item name="common" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="storm" type="58d84e3e:PackageViewProjectNode" />
               <item name="service-oss" type="616d4139:PackageViewModuleNode" />
               <item name="templates" type="1f31426a:PackageElementNode" />
               <item name="init" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
+              <item name="templates" type="1f31426a:PackageElementNode" />
+              <item name="view.sysUser" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="storm" type="58d84e3e:PackageViewProjectNode" />
@@ -577,23 +594,23 @@
     <property name="settings.editor.selected.configurable" value="spring.boot" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\github-workspace\storm\service-shiro\src\main\resources" />
+      <recent name="D:\github-workspace\storm\service-oss\src\main\resources\templates\view\sysUser" />
+      <recent name="D:\github-workspace\storm\service-oss\src\main\resources\templates\common" />
+      <recent name="D:\github-workspace\storm\service-oss\src\main\resources\templates\init" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.storm.framework.base.util.datatables" />
       <recent name="org.storm.framework.base" />
       <recent name="org.storm" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github-workspace\storm\service-oss\src\main\resources\templates\view\sysUser" />
       <recent name="D:\github-workspace\storm\service-oss\src\main\resources\static\language" />
       <recent name="D:\github-workspace\storm\service-oss\src\main\resources" />
       <recent name="D:\github-workspace\storm\service-shiro\src\main\resources" />
       <recent name="D:\github-workspace\storm\service-shiro\src\main\resources\config" />
-      <recent name="D:\github-workspace\storm\service-oss\src\main\resources\templates\view" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\github-workspace\storm\service-shiro\src\main\resources" />
-      <recent name="D:\github-workspace\storm\service-oss\src\main\resources\templates\view\sysUser" />
-      <recent name="D:\github-workspace\storm\service-oss\src\main\resources\templates\common" />
-      <recent name="D:\github-workspace\storm\service-oss\src\main\resources\templates\init" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -768,7 +785,8 @@
       <workItem from="1536106664234" duration="4804000" />
       <workItem from="1536116156521" duration="178000" />
       <workItem from="1536143611395" duration="63804000" />
-      <workItem from="1536292421999" duration="23775000" />
+      <workItem from="1536292421999" duration="24599000" />
+      <workItem from="1536545349378" duration="16684000" />
     </task>
     <task id="LOCAL-00001" summary="集成mybatis分页">
       <created>1534158730692</created>
@@ -814,7 +832,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="319993000" />
+    <option name="totallyTimeSpent" value="337501000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -829,7 +847,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.2863436" visible="true" weight="0.21715818" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.2863436" visible="true" weight="0.21983914" />
       <window_info id="Structure" order="1" sideWeight="0.71365637" side_tool="true" weight="0.21447721" />
       <window_info id="Web" order="2" sideWeight="0.50367105" side_tool="true" weight="0.23257373" />
       <window_info id="Designer" order="3" />
@@ -838,7 +856,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32892805" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.36563876" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.33480176" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.35389134" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32892805" />
@@ -879,27 +897,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/service-redis/src/main/resources/redis.properties" />
-    <entry file="file://$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/MyShiroSessionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/SessionDao.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-web/1.4.0/shiro-web-1.4.0.jar!/org/apache/shiro/web/mgt/CookieRememberMeManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-redis/src/main/resources/application-redis.yml" />
-    <entry file="file://$PROJECT_DIR$/service-shiro/src/main/resources/application.properties" />
     <entry file="file://$PROJECT_DIR$/service-redis/src/main/java/org/storm/service/redis/service/impl/RedisServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1709">
@@ -1074,6 +1071,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding>
+            <element signature="e#293#294#0" expanded="true" />
+            <element signature="e#320#321#0" expanded="true" />
+            <element signature="e#361#362#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
+            <element signature="e#430#431#0" expanded="true" />
+            <element signature="e#465#466#0" expanded="true" />
+            <element signature="e#519#520#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#645#646#0" expanded="true" />
+            <element signature="e#705#706#0" expanded="true" />
+            <element signature="e#759#760#0" expanded="true" />
+            <element signature="e#787#788#0" expanded="true" />
+            <element signature="e#814#815#0" expanded="true" />
+            <element signature="e#851#852#0" expanded="true" />
+            <element signature="e#883#884#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1098,13 +1113,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/model/SysUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
@@ -1118,41 +1126,10 @@
     <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/common/footer.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/common/nav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service-shiro/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
           <caret line="69" column="21" lean-forward="true" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-503">
-          <caret line="113" column="29" lean-forward="true" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="90" column="36" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_style.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_script.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1163,10 +1140,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/service/BaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="111" column="25" lean-forward="true" selection-start-line="111" selection-start-column="25" selection-end-line="111" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pagehelper/pagehelper/4.1.6/pagehelper-4.1.6.jar!/com/github/pagehelper/PageHelper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="52" column="36" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/service/impl/BaseServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="91" column="36" lean-forward="true" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/static/js/inspinia.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5520">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/static/js/common.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/common/nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="29" column="44" lean-forward="true" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="61" column="92" selection-start-line="61" selection-start-column="92" selection-end-line="61" selection-end-column="92" />
+        <state relative-caret-position="120">
+          <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#1284#1290#0" expanded="true" />
@@ -1178,8 +1195,53 @@
             <element signature="e#1789#1795#0" expanded="true" />
             <element signature="e#1795#1801#0" expanded="true" />
             <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="104" column="9" lean-forward="true" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
+          <folding>
+            <element signature="e#2113#2114#0" expanded="true" />
+            <element signature="e#2158#2159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="70" column="28" lean-forward="true" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/model/SysUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_style.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_script.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
         </state>
       </provider>
     </entry>

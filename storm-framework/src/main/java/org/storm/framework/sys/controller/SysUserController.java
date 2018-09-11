@@ -1,6 +1,7 @@
 package org.storm.framework.sys.controller;
 
 import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
@@ -10,11 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 import org.storm.framework.base.controller.BaseController;
-import org.storm.framework.base.util.JsonMenuUtils;
-import org.storm.framework.base.util.LoginUserUtils;
-import org.storm.framework.base.util.RequestUtils;
-import org.storm.framework.base.util.SysConstants;
+import org.storm.framework.base.exception.BusinessException;
+import org.storm.framework.base.model.EntityUtil;
+import org.storm.framework.base.util.*;
 import org.storm.framework.sys.model.SysMenu;
 import org.storm.framework.sys.model.SysUser;
 import org.storm.framework.sys.model.SysUserLogin;
@@ -159,5 +160,62 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
         subject.logout();
 
         return "redirect:/index.action";
+    }
+
+    @Override
+    public ModelAndView edit(Long id, HttpServletRequest request, Model model) {
+        String viewType = request.getParameter("viewType");
+        if (id != null && id > 0) {
+            SysUser te = this.getBaseService().getById(id);
+            String pwd = XXTea.decrypt(te.getPwd(), "UTF-8", EntityUtil.bytesToHexString(EntityUtil.encryptSecretKey.getBytes()));
+            te.setPwd(pwd);
+            model.addAttribute(MODEL_NAME, te);
+            logger.warn("entity:" + JSONObject.fromObject(te));
+        }
+        model.addAttribute("viewType", viewType);
+        return new ModelAndView(EDIT);
+    }
+
+    @Override
+    public String save(HttpServletRequest request) throws BusinessException {
+        Map<String, Object> params = RequestUtils.getParameterByEdit(request);
+        entity = getBaseEntity();
+        logger.info("params:" + params.toString());
+        EntityUtils.populate(entity, params);
+
+        String pwd = "";
+        try {
+            pwd = XXTea.encrypt(entity.getPwd(), "UTF-8", EntityUtil.bytesToHexString(EntityUtil.encryptSecretKey.getBytes()));
+        } catch (Exception e) {}
+
+        logger.info("entity:" + JSONObject.fromObject(entity));
+        Date nowDate = new Date();
+        SysUser user = (SysUser) SecurityUtils.getSubject().getPrincipal();
+        if (entity.getId() != null && entity.getId() > 0) {
+            SysUser existEntity = this.getBaseService().getById(entity.getId());
+            EntityUtils.populate(existEntity, params);
+            existEntity.setModifyDatetime(nowDate);
+            if (user != null) {
+                existEntity.setModifyUserId(user.getId());
+            }
+
+            existEntity.setPwd(pwd);
+
+            this.getBaseService().update(existEntity);
+        } else {
+
+            entity.setPwd(pwd);
+
+            if (user != null) {
+                entity.setCreateUser(user.getId());
+                entity.setCreateUserId(user.getId());
+                entity.setModifyUserId(user.getId());
+            }
+            entity.setCreateDatetime(nowDate);
+            entity.setModifyDatetime(nowDate);
+            this.getBaseService().save(entity);
+        }
+
+        return ResponseUtils.responseJsonResult(true);
     }
 }

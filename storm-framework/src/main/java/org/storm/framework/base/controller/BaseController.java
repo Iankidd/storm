@@ -3,6 +3,7 @@ package org.storm.framework.base.controller;
 import com.github.pagehelper.Page;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
+import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -116,7 +117,7 @@ public abstract class BaseController<Te extends Entity, Ts extends BaseService<T
         EntityUtils.populate(entity, params);
         logger.info("entity:" + JSONObject.fromObject(entity));
         Date nowDate = new Date();
-        SysUser user = (SysUser) request.getSession().getAttribute(SysConstants.SYS_LOGIN_KEY);
+        SysUser user = (SysUser) SecurityUtils.getSubject().getPrincipal();
         if (entity.getId() != null && entity.getId() > 0) {
             Te existEntity = this.getBaseService().getById(entity.getId());
             EntityUtils.populate(existEntity, params);

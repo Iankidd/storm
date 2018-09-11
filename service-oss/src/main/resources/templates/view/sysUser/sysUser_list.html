@@ -82,10 +82,10 @@
 
 <!-- 表格权限菜单按钮 -->
 <div id="btn" style="display: none">
-    <button id="btn_edit" shiro:hasPermission="/sys/user/edit.action" type="button" class="btn btn-info btn-sm" onclick="">
+    <button id="btn_edit" shiro:hasPermission="/sys/user/edit.action" type="button" class="btn btn-info btn-sm" onclick="edit(#id)">
         <i class="fa fa-edit"></i> 编辑
     </button>
-    <button id="btn_delete" shiro:hasPermission="/sys/user/delete.action" type="button" class="btn btn-danger btn-sm" onclick="">
+    <button id="btn_delete" shiro:hasPermission="/sys/user/delete.action" type="button" class="btn btn-danger btn-sm" onclick="del(#id)">
         <i class="fa fa-trash-o"></i> 删除
     </button>
 </div>
@@ -101,7 +101,6 @@
 
     }
 
-    var table;
     function getData() {
         table = $('.dataTables-example').DataTable({
             pageLength: 25,
@@ -143,7 +142,7 @@
             columns: [
                 {"data": null, "width": "5px", "orderable": false, "searchable": false,
                     "render": function (data, type, row, meta) {
-                        return "<input type='checkbox' name='checkList'>";
+                        return "<input type='checkbox' name='checkList' value='"+row.id+"'>";
                     }
                 },
                 {"data": 'id', "width": "5px"},
@@ -154,10 +153,10 @@
                     "data": 'recvEmailFlag', "width": "20px",
                     "render": function (data, type, row, meta) {
                         if (data == 0) {
-                            return "正常";
+                            return "有效";
                         }
                         else {
-                            return "禁用";
+                            return "无效";
                         }
                     }
                 },
@@ -175,12 +174,18 @@
                 {"data": null, "width": "100px", "orderable": false, "searchable": false,
                     "defaultContent": "",
                     "render": function (data, type, row, meta) {
-                        $("#btn_edit").attr("onclick","edit("+row.id+")");
-                        $("#btn_delete").attr("onclick","del("+row.id+")");
-                        return $("#btn").html();
+                        return $("#btn").html().replace(/#id/g, row.id);
                     }
                 }
             ],
+            columnDefs: [{
+                targets: -1,
+                render: function(data, type, row, meta) {
+                    $("#btn_edit").attr("onclick","edit("+row.id+")");
+                    $("#btn_delete").attr("onclick","del("+row.id+")");
+                    return $("#btn").html();
+                }
+            }],
             language: {
                 url: '[[@{/language/datatables_chinese.json}]]'
             }
@@ -192,7 +197,7 @@
     }
 
     function edit(id,viewType){
-        var url ="[[@{/sys/user/edit.action}]]?id=" + id;
+        var url = "[[@{/sys/user/edit.action}]]?id=" + id;
         if(viewType != undefined){
             url += "&viewType=view";
         }
@@ -200,7 +205,15 @@
     }
 
     function del(id){
-
+        if(id == 1) {
+            appDialog.error("超级管理员不能被删除！");
+            return;
+        }
+        appDialog.comfirm("确定要删除该记录吗？", "[[@{/sys/user/delete.action}]]?ids=" + id,
+            function () {
+                search();
+            }
+        );
     }
 </script>
 </body>

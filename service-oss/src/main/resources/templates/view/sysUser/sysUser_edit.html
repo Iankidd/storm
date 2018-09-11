@@ -40,14 +40,49 @@
                 </div>
                 <div class="ibox-content">
                     <form id="infoForm" th:action="@{/sys/user/save.action}">
+                        <input name="id" type="hidden" th:value="${entity?.id}">
                         <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputEmail4">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                            <div class="col-md-3 mb-3 data-info">
+                                <label>账号</label>
+                                <input name="code" type="text" th:value="${entity?.code}" class="form-control" required>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputPassword4">Password</label>
-                                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                            <div class="col-md-1 mb-3"></div>
+                            <div class="col-md-3 mb-3 data-info">
+                                <label>昵称</label>
+                                <input name="name" type="text" th:value="${entity?.name}" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3 mb-3 data-info">
+                                <label>邮箱</label>
+                                <input name="email" type="text" th:value="${entity?.email}" class="form-control">
+                            </div>
+                            <div class="col-md-1 mb-3"></div>
+                            <div class="col-md-3 mb-3 data-info">
+                                <label>密码</label>
+                                <input name="pwd" type="text" th:value="${entity?.pwd}" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3 mb-3 data-info">
+                                <label>邮件报障</label>
+                                <select name="recvEmailFlag" class="custom-select" required>
+                                    <option value="0" th:selected="${entity?.recvEmailFlag eq 0}">有效</option>
+                                    <option value="1" th:selected="${entity?.recvEmailFlag eq 1}">无效</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1 mb-3"></div>
+                            <div class="col-md-3 mb-3 data-info">
+                                <label>状态</label>
+                                <select name="status" class="custom-select" required>
+                                    <option value="0" th:selected="${entity?.status eq 0}">正常</option>
+                                    <option value="1" th:selected="${entity?.status eq 1}">禁用</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1 mb-3"></div>
+                            <div class="col-md-3 mb-3 data-info">
+                                <label>备注</label>
+                                <input name="memo" type="text" th:value="${entity?.memo}" class="form-control">
                             </div>
                         </div>
 
@@ -55,7 +90,7 @@
                         <div class="form-group row">
                             <div class="col-sm-4 col-sm-offset-2">
                                 <button th:onclick="'javascript:link(\''+@{/sys/user/list.action}+'\')'" class="btn btn-white btn-sm" type="button">取消</button>
-                                <button class="btn btn-primary btn-sm" type="button">保存</button>
+                                <button id="infoFormBtn" class="btn btn-primary btn-sm ladda-button" onclick="save()" type="button" data-style="zoom-in">保存</button>
                             </div>
                         </div>
                     </form>
@@ -66,12 +101,47 @@
 </div>
 
 <script>
-    $(document).ready(function () {
-        $('.i-checks').iCheck({
-            checkboxClass: 'icheckbox_square-green',
-            radioClass: 'iradio_square-green',
-        });
+    $(function() {
+        init();
     });
+
+    function init() {
+
+    }
+
+    function save(){
+        if(validateForm()){
+            appDialog.submit_form("保存成功", "保存失败", "infoForm", "[[@{/sys/user/list.action}]]");
+        }
+    }
+
+    function validateForm() {
+        return $('#infoForm').validate({
+            errorElement : 'div',
+            errorClass : 'invalid-feedback',
+            focusInvalid : true,
+            rules : {
+                "code":{required:true},
+                "pwd":{required:true}
+            },
+            onclick : function (element) {
+                $(element).valid();
+            },
+            onfocusout: function (element) {
+                $(element).valid();
+            },
+            highlight : function(element) {
+                $(element).closest('.data-info').removeClass('has-success').addClass('has-error');
+            },
+            success : function(label) {
+                label.closest('.data-info').removeClass('has-error');
+                label.remove();
+            },
+            errorPlacement : function(error, element) {
+                element.parent('div').append(error);
+            }
+        }).form();
+    }
 </script>
 </body>
 </html>

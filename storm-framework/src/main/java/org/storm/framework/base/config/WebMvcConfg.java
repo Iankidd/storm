@@ -1,4 +1,4 @@
-package org.storm.service.oss.config;
+package org.storm.framework.base.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;

@@ -212,44 +212,10 @@
     <sql id="sortSysMenuSql">
         <choose>
             <when test="sort != null and sort != '' ">
-                order by
-                <if test="sort == 'id'">
-                    id
-                </if>
-                <if test="sort == 'name'">
-                    E.NAME
-                </if>
-                <if test="sort == 'module'">
-                    E.MODULE
-                </if>
-                <if test="sort == 'url'">
-                    E.URL
-                </if>
-                <if test="sort == 'keyword'">
-                    E.KEYWORD
-                </if>
-                <if test="sort == 'icon'">
-                    E.ICON
-                </if>
-                <if test="sort == 'type'">
-                    E.TYPE
-                </if>
-                <if test="sort == 'isLeaf'">
-                    E.IS_LEAF
-                </if>
-                <if test="sort == 'isActive'">
-                    E.IS_ACTIVE
-                </if>
-                <if test="sort == 'parentId'">
-                    E.PARENT_ID
-                </if>
-                <if test="sort == 'sort'">
-                    E.SORT
-                </if>
-                ${order}
+                order by ${sort} ${order}
             </when>
             <otherwise>
-                order by E.ID desc
+                order by E.SORT asc
             </otherwise>
         </choose>
     </sql>

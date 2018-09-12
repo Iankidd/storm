@@ -14,4 +14,6 @@ public interface SysUserService extends BaseService<SysUser> {
     void setRolesForUser(long userId, String roleIds);
 
     List<SysUser> getActivityList();
+
+
 }

@@ -27,6 +27,7 @@ public class IndexController {
         SysUser user = (SysUser) subject.getPrincipal();
         if (user != null && session.getAttribute(SysConstants.SYS_USER_MENU) != null) {
             model.addAttribute(SysConstants.SYS_USER_MENU, session.getAttribute(SysConstants.SYS_USER_MENU));
+            model.addAttribute("admin", user);
             return new ModelAndView("index");
         } else {
             return new ModelAndView("login");

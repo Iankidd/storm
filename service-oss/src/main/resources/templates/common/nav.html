@@ -12,7 +12,7 @@
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
                             <span class="block m-t-xs">
-                                <strong class="font-bold">Mr.Kidd</strong>
+                                <strong class="font-bold" th:text="${admin?.code}"></strong>
                             </span>
                         </span>
                     </a>
@@ -27,7 +27,8 @@
                 <th:block th:if="${#arrays.length(m.submenu)} gt 0">
                     <ul class="nav nav-second-level collapse">
                         <th:block th:each="s : ${m.submenu}">
-                            <li><a href="#" th:onclick="'javascript:link(\''+@{${s.url}}+'\')'" th:text="${s.name}"></a></li>
+                            <li><a href="#" th:onclick="'javascript:link(\''+@{${s.url}}+'\')'" th:text="${s.name}"></a>
+                            </li>
                         </th:block>
                     </ul>
                 </th:block>

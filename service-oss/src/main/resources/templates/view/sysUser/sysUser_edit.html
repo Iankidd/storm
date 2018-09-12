@@ -87,12 +87,14 @@
                         </div>
 
                         <div class="hr-line-dashed"></div>
+                        <th:block th:if="${viewType ne 'view'}">
                         <div class="form-group row">
                             <div class="col-sm-4 col-sm-offset-2">
                                 <button th:onclick="'javascript:link(\''+@{/sys/user/list.action}+'\')'" class="btn btn-white btn-sm" type="button">取消</button>
                                 <button id="infoFormBtn" class="btn btn-primary btn-sm ladda-button" onclick="save()" type="button" data-style="zoom-in">保存</button>
                             </div>
                         </div>
+                        </th:block>
                     </form>
                 </div>
             </div>
@@ -101,12 +103,23 @@
 </div>
 
 <script>
+    var viewType = '[[${viewType}]]';
     $(function() {
         init();
     });
 
     function init() {
-
+        if(viewType == 'view'){
+            $("input").each(function(){
+                $(this).attr('disabled','disabled');
+            });
+            $("select").each(function(){
+                $(this).attr('disabled','disabled');
+            });
+            $("#infoForm button").each(function(){
+                $(this).attr('disabled','disabled');
+            });
+        }
     }
 
     function save(){

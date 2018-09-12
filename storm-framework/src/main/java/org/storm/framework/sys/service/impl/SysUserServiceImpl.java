@@ -92,4 +92,23 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUser> implements SysU
         List<SysUser> list = sysUserMapper.getList(paramMap);
         return list;
     }
+
+    @Override
+    public void deleteByIds(String ids) {
+        StringTokenizer token = new StringTokenizer(ids, ",");
+        while (token.hasMoreTokens()) {
+            String x = token.nextToken();
+            sysRefUserRoleMapper.deleteUserRoleByUserId(Long.parseLong(x));
+        }
+        super.deleteByIds(ids);
+
+    }
+
+    @Override
+    public void deleteById(long id) {
+        sysRefUserRoleMapper.deleteUserRoleByUserId(id);
+        SysUser user = null;
+        user.getId();
+        super.deleteById(id);
+    }
 }

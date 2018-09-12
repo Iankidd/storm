@@ -2,6 +2,7 @@ package org.storm.framework.sys.controller;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
@@ -179,43 +180,75 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
     @Override
     public String save(HttpServletRequest request) throws BusinessException {
         Map<String, Object> params = RequestUtils.getParameterByEdit(request);
-        entity = getBaseEntity();
+        SysUser entity = getBaseEntity();
         logger.info("params:" + params.toString());
         EntityUtils.populate(entity, params);
 
+        boolean isTrue = true;
+        String msg = "保存成功！";
         String pwd = "";
         try {
             pwd = XXTea.encrypt(entity.getPwd(), "UTF-8", EntityUtil.bytesToHexString(EntityUtil.encryptSecretKey.getBytes()));
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        }
+
+        SysUser existsUser = sysUserService.getUserByCode(entity.getCode());
 
         logger.info("entity:" + JSONObject.fromObject(entity));
         Date nowDate = new Date();
         SysUser user = (SysUser) SecurityUtils.getSubject().getPrincipal();
-        if (entity.getId() != null && entity.getId() > 0) {
-            SysUser existEntity = this.getBaseService().getById(entity.getId());
-            EntityUtils.populate(existEntity, params);
-            existEntity.setModifyDatetime(nowDate);
-            if (user != null) {
-                existEntity.setModifyUserId(user.getId());
+        do {
+            if (entity.getId() != null && entity.getId() > 0) {
+                SysUser existEntity = this.getBaseService().getById(entity.getId());
+                EntityUtils.populate(existEntity, params);
+                existEntity.setModifyDatetime(nowDate);
+                if (user != null) {
+                    existEntity.setModifyUserId(user.getId());
+                }
+
+                if (existsUser != null && !existEntity.getId().equals(existsUser.getId())) {
+                    isTrue = false;
+                    msg = "该账号已存在！";
+                    break;
+                }
+
+                existEntity.setPwd(pwd);
+
+                this.getBaseService().update(existEntity);
+            } else {
+                if (existsUser != null) {
+                    isTrue = false;
+                    msg = "该账号已存在！";
+                    break;
+                }
+
+                entity.setPwd(pwd);
+
+                if (user != null) {
+                    entity.setCreateUser(user.getId());
+                    entity.setCreateUserId(user.getId());
+                    entity.setModifyUserId(user.getId());
+                }
+                entity.setCreateDatetime(nowDate);
+                entity.setModifyDatetime(nowDate);
+                this.getBaseService().save(entity);
+            }
+        } while (false);
+
+        return ResponseUtils.responseJsonResult(isTrue, msg);
+    }
+
+    @Override
+    public String delete(HttpServletRequest request) {
+        String ids = request.getParameter("ids");
+        if (StringUtils.isNotBlank(ids)) {
+            if (ids.indexOf(",") >= 0) {
+                this.getBaseService().deleteByIds(ids);
+            } else {
+                this.getBaseService().deleteById(Long.parseLong(ids));
             }
 
-            existEntity.setPwd(pwd);
-
-            this.getBaseService().update(existEntity);
-        } else {
-
-            entity.setPwd(pwd);
-
-            if (user != null) {
-                entity.setCreateUser(user.getId());
-                entity.setCreateUserId(user.getId());
-                entity.setModifyUserId(user.getId());
-            }
-            entity.setCreateDatetime(nowDate);
-            entity.setModifyDatetime(nowDate);
-            this.getBaseService().save(entity);
         }
-
         return ResponseUtils.responseJsonResult(true);
     }
 }

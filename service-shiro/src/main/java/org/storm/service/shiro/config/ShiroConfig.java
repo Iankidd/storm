@@ -81,6 +81,7 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/fonts/**", "anon");
         filterChainDefinitionMap.put("/img/**", "anon");
         filterChainDefinitionMap.put("/language/**", "anon");
+        filterChainDefinitionMap.put("/druid/**", "anon");
         //拦截其他所有接口
         filterChainDefinitionMap.put("/**", "AuthorizeFilter");
         logger.info("拦截器链：" + filterChainDefinitionMap);

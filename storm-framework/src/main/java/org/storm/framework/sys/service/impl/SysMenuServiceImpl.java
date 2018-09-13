@@ -80,8 +80,10 @@ public class SysMenuServiceImpl extends BaseServiceImpl<SysMenu> implements SysM
         if (list != null && list.size() > 0) {
             for (SysMenu e : list) {
                 deleteById(e.getId());
+                sysRefRoleMenuMapper.deleteByMenuId(e.getId());
             }
         }
         sysMenuMapper.deleteById(id);
+        sysRefRoleMenuMapper.deleteByMenuId(id);
     }
 }

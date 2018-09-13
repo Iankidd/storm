@@ -37,8 +37,23 @@
 </div>
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-3">
+            <div class="panel" style="margin-bottom: 0px">
+                <div class="panel-body">
+                    <div id="menu"></div>
+                    <input id="parentId" type="hidden" value="0">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
             <div class="ibox">
+                <!-- 搜索查询条件 -->
+                <div class="ibox-title">
+                    <!-- 权限菜单按钮 -->
+                    <button shiro:hasPermission="/sys/menu/add.action" onclick="edit(0)" class="btn btn-primary btn-sm" type="button">
+                        <i class="fa fa-plus"></i> 新增
+                    </button>
+                </div>
                 <!-- 表格数据 -->
                 <div class="ibox-content">
                     <div class="table-responsive">
@@ -73,18 +88,44 @@
 
 <!-- Page-Level Scripts -->
 <script>
+    var menu;
     $(function() {
         init();
         getData();
+        getMenu();
     });
 
     function init() {
 
     }
 
+    function getMenu() {
+        menu = $('#menu').jstree({
+            'core' : {
+                'data' : {
+                    "url" : "[[@{/sys/menu/treeJson.action}]]",
+                    "dataType" : "json"
+                }
+            }
+        });
+    }
+
+    $('#menu').bind("activate_node.jstree", function (obj, e) {
+        // 处理代码
+        // 获取当前节点
+        var id = e.node.id.toString();
+        if(id.search("_") != -1) {
+            $('#parentId').val(0);
+        }
+        else {
+            $('#parentId').val(id);
+        }
+        search();
+    });
+
     function getData() {
         table = $('.dataTables-data').DataTable({
-            pageLength: 25,
+            pageLength: 50,
             responsive: true,
             processing: true,
             serverSide: true,
@@ -93,16 +134,10 @@
                 url:"[[@{/sys/menu/pageJson.action}]]",
                 type: "POST",
                 data: function ( data ) {
-                    $.each( $("#searchFrom").serializeArray() , function(){
-                        if(data[this['name']]){
-                            data[this['name']] = this['name'] +","+ this['value'];
-                        }else{
-                            data[this['name']] = this['value'];
-                        }
-                    });
+                    data['parentId'] = $('#parentId').val();
                 }
             },
-            dom: '<"html5buttons"B>lgtip',
+            dom: 't',
             buttons: [
                 {extend: 'copy'},
                 {extend: 'csv', title: 'data_csv'},
@@ -121,12 +156,28 @@
             ],
             //对应上面thead里面的序列
             columns: [
-                {"data": 'name', "width": "5px"},
-                {"data": 'url', "width": "50px"},
-                {"data": 'type', "width": "50px"},
-                {"data": 'isActive', "width": "80px"},
-                {"data": 'sort', "width": "80px"},
-                {"data": null, "width": "100px", "orderable": false, "searchable": false,
+                {"data": 'name', "width": "20px", "orderable": false, "searchable": false},
+                {"data": 'url', "width": "30px", "orderable": false, "searchable": false},
+                {"data": 'type', "width": "10px", "orderable": false, "searchable": false,
+                    "render": function (data, type, row, meta) {
+                        if(data == 0) {
+                            return "菜单";
+                        } else {
+                            return "按钮";
+                        }
+                    }
+                },
+                {"data": 'isActive', "width": "10px", "orderable": false, "searchable": false,
+                    "render": function (data, type, row, meta) {
+                        if(data == 0) {
+                            return "有效";
+                        } else {
+                            return "无效";
+                        }
+                    }
+                },
+                {"data": 'sort', "width": "10px", "orderable": false, "searchable": false},
+                {"data": null, "width": "80px", "orderable": false, "searchable": false,
                     "defaultContent": "",
                     "render": function (data, type, row, meta) {
                         return $("#btn").html().replace(/#id/g, row.id);
@@ -144,7 +195,7 @@
     }
 
     function edit(id,viewType){
-        var url = "[[@{/sys/menu/edit.action}]]?id=" + id;
+        var url = "[[@{/sys/menu/edit.action}]]?id=" + id + "&parentId=" + $('#parentId').val();
         if(viewType != undefined){
             url += "&viewType=view";
         }
@@ -152,13 +203,10 @@
     }
 
     function del(id){
-        if(id == 1) {
-            appDialog.error("超级管理员不能被删除！");
-            return;
-        }
         appDialog.comfirm("确定要删除该记录吗？", "[[@{/sys/menu/delete.action}]]?ids=" + id,
             function () {
                 search();
+                menu.jstree(true).refresh();
             }
         );
     }

@@ -24,7 +24,6 @@ import org.storm.framework.sys.service.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -57,8 +56,7 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
 
     @Override
     protected SysUser getBaseEntity() {
-        SysUser sysUser = new SysUser();
-        return sysUser;
+        return new SysUser();
     }
 
     /**

@@ -43,18 +43,18 @@ public class TransactionAspect {
 
     @Around(value = POINT_CUT)
     public Object doAroundAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-        logger.info("开启事务管理：" + proceedingJoinPoint.getSignature().getDeclaringTypeName() + "." + proceedingJoinPoint.getSignature().getName());
+        logger.info("TransactionManager Start: " + proceedingJoinPoint.getSignature().getDeclaringTypeName() + "." + proceedingJoinPoint.getSignature().getName());
         DefaultTransactionDefinition transactionDefinition = new DefaultTransactionDefinition(TransactionDefinition.PROPAGATION_REQUIRED);
         TransactionStatus status = transactionManager.getTransaction(transactionDefinition);
         try {
             Object obj = proceedingJoinPoint.proceed();
             transactionManager.commit(status);
-            logger.info("进行事务提交");
+            logger.info("TransactionManager Commit: " + proceedingJoinPoint.getSignature().getDeclaringTypeName() + "." + proceedingJoinPoint.getSignature().getName());
             return obj;
         } catch (Throwable ex) {
             logger.error("error at " + proceedingJoinPoint.getSignature().getDeclaringTypeName() + "." + proceedingJoinPoint.getSignature().getName() + ": " + ExceptionUtils.getFullStackTrace(ex));
             transactionManager.rollback(status);
-            logger.error("进行事务回滚");
+            logger.error("TransactionManager Rollback: " + proceedingJoinPoint.getSignature().getDeclaringTypeName() + "." + proceedingJoinPoint.getSignature().getName());
             throw new Throwable(ex);
         }
     }

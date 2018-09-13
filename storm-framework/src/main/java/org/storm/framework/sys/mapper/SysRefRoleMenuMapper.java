@@ -12,4 +12,6 @@ public interface SysRefRoleMenuMapper extends BaseMapper<SysRefRoleMenu> {
     List<Long> getIdsByRoleIds(List<Long> roleIds);
 
     void deleteByRoleId(long roleId);
+
+    void deleteByMenuId(long menuId);
 }

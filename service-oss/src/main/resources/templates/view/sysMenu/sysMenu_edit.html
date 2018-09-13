@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>STROM</title>
+</head>
+
+<body>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>菜单管理</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                首页
+            </li>
+            <li class="breadcrumb-item">
+                系统管理
+            </li>
+            <li class="breadcrumb-item">
+                <strong>菜单管理</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>父级菜单[<th:block th:text="${parent}"></th:block>]</h5>
+                    &nbsp;&nbsp;
+                    <h5><th:block th:if="${entity?.id eq null}">添加菜单/按钮信息</th:block></h5>
+                    <h5><th:block th:unless="${entity?.id lt 0}">编辑菜单/按钮信息</th:block></h5>
+                    <div class="ibox-tools">
+                        <a href="javascript:void(0);" class="btn btn-primary btn-sm" th:onclick="'javascript:link(\''+@{/sys/menu/list.action}+'\')'"><span class="fa fa-mail-reply"></span> 返回</a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <form id="infoForm" th:action="@{/sys/menu/save.action}">
+                        <input name="id" type="hidden" th:value="${entity?.id}">
+                        <input name="parentId" type="hidden" th:value="${parentId}">
+                        <div class="form-row">
+                            <div class="col-md-3 mb-3 data-info">
+                                <label>名称</label>
+                                <input name="name" type="text" th:value="${entity?.name}" class="form-control" required>
+                            </div>
+                            <div class="col-md-1 mb-3"></div>
+                            <div class="col-md-3 mb-3 data-info">
+                                <label>类型</label>
+                                <select name="type" class="custom-select" required>
+                                    <option value="0" th:selected="${entity?.type eq 0}">菜单</option>
+                                    <option value="1" th:selected="${entity?.type eq 1}">按钮</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3 mb-3 data-info">
+                                <label>链接</label>
+                                <input name="url" type="text" th:value="${entity?.url}" class="form-control">
+                            </div>
+                            <div class="col-md-1 mb-3"></div>
+                            <div class="col-md-3 mb-3 data-info">
+                                <label>ICON样式</label>
+                                <input name="icon" type="text" th:value="${entity?.icon}" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3 mb-3 data-info">
+                                <label>状态</label>
+                                <select name="isActive" class="custom-select" required>
+                                    <option value="0" th:selected="${entity?.isActive eq 0}">有效</option>
+                                    <option value="1" th:selected="${entity?.isActive eq 1}">无效</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1 mb-3"></div>
+                            <div class="col-md-3 mb-3 data-info">
+                                <label>排序</label>
+                                <input name="sort" type="text" th:value="${entity?.sort}" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="hr-line-dashed"></div>
+                        <th:block th:if="${viewType ne 'view'}">
+                        <div class="form-group row">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button th:onclick="'javascript:link(\''+@{/sys/menu/list.action}+'\')'" class="btn btn-white btn-sm" type="button">取消</button>
+                                <button id="infoFormBtn" class="btn btn-primary btn-sm ladda-button" onclick="save()" type="button" data-style="zoom-in">保存</button>
+                            </div>
+                        </div>
+                        </th:block>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var viewType = '[[${viewType}]]';
+    $(function() {
+        init();
+    });
+
+    function init() {
+        if(viewType == 'view'){
+            $("input").each(function(){
+                $(this).attr('disabled','disabled');
+            });
+            $("select").each(function(){
+                $(this).attr('disabled','disabled');
+            });
+            $("#infoForm button").each(function(){
+                $(this).attr('disabled','disabled');
+            });
+        }
+    }
+
+    function save(){
+        if(validateForm()){
+            appDialog.submit_form("保存成功", "保存失败", "infoForm", "[[@{/sys/menu/list.action}]]");
+        }
+    }
+
+    function validateForm() {
+        return $('#infoForm').validate({
+            errorElement : 'div',
+            errorClass : 'invalid-feedback',
+            focusInvalid : true,
+            rules : {
+                "name":{required:true}
+            },
+            onclick : function (element) {
+                $(element).valid();
+            },
+            onfocusout: function (element) {
+                $(element).valid();
+            },
+            highlight : function(element) {
+                $(element).closest('.data-info').removeClass('has-success').addClass('has-error');
+            },
+            success : function(label) {
+                label.closest('.data-info').removeClass('has-error');
+                label.remove();
+            },
+            errorPlacement : function(error, element) {
+                element.parent('div').append(error);
+            }
+        }).form();
+    }
+</script>
+</body>
+</html>

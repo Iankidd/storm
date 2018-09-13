@@ -52,6 +52,11 @@
         where SYS_ROLE_ID = #{roleId}
 	</delete>
 
+    <delete id="deleteByMenuId" parameterType="long">
+        delete from sys_ref_role_menu
+        where SYS_MENU_ID = #{menuId}
+	</delete>
+
     <delete id="deleteByIdList">
         delete from SYS_REF_ROLE_MENU
         where (

@@ -107,8 +107,7 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUser> implements SysU
     @Override
     public void deleteById(long id) {
         sysRefUserRoleMapper.deleteUserRoleByUserId(id);
-        SysUser user = null;
-        user.getId();
+        int l = 1 / 0;
         super.deleteById(id);
     }
 }

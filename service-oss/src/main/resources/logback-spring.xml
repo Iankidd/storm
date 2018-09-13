@@ -46,6 +46,7 @@
         <logger name="org.quartz" level="INFO" />
         <logger name="org.crazycake.shiro" level="INFO" />
         <logger name="druid.sql" level="INFO" />
+        <logger name="com.alibaba.druid" level="INFO" />
 
         <root level="${DEV_LEVEL}">
             <appender-ref ref="CONSOLE" />
@@ -115,6 +116,7 @@
         <logger name="org.quartz" level="INFO" />
         <logger name="org.crazycake.shiro" level="INFO" />
         <logger name="druid.sql" level="INFO" />
+        <logger name="com.alibaba.druid" level="INFO" />
 
         <root level="DEBUG">
             <appender-ref ref="ROLLING" />

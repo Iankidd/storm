@@ -2,13 +2,8 @@ package org.storm.framework.base.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import org.apache.ibatis.session.ExecutorType;
-import org.apache.ibatis.session.SqlSession;
-import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.storm.framework.base.mapper.BaseMapper;
 import org.storm.framework.base.model.Entity;
 import org.storm.framework.base.service.BaseService;
 
@@ -19,9 +14,6 @@ import java.util.StringTokenizer;
 
 public abstract class BaseServiceImpl<Te extends Entity> implements BaseService<Te> {
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
-
-    @Autowired
-    protected SqlSessionTemplate sqlSessionTemplate;
 
     @Override
     public Long save(Te paramT) {
@@ -101,73 +93,30 @@ public abstract class BaseServiceImpl<Te extends Entity> implements BaseService<
      */
     @Override
     public void saveBatch(List<Te> list) {
-        SqlSession session = sqlSessionTemplate.getSqlSessionFactory().openSession(ExecutorType.BATCH, false);
-        try {
-            BaseMapper mapper = (BaseMapper) session.getMapper(this.getMpClass());
-            int index = 0;
-            for (Te te : list) {
-                mapper.save(te);
-                index++;
-                if (index % 2000 == 0) {
-                    session.commit();
-                    session.clearCache();
-                }
-            }
-            session.commit();
-            session.close();
-        } catch (Exception e) {
-            session.rollback();
-            logger.error("saveBatch 批量处理出错");
-            logger.error(String.valueOf(e.getClass()), e);
-        } finally {
-            session.close();
+        for (Te te : list) {
+            getBaseMapper().save(te);
         }
     }
 
     @Override
     public boolean deleteBatch(List<Long> ids) {
-        SqlSession session = sqlSessionTemplate.getSqlSessionFactory().openSession(ExecutorType.BATCH, false);
-        BaseMapper mapper = (BaseMapper) session.getMapper(this.getMpClass());
         for (Long id : ids) {
-            mapper.deleteById(id);
+            getBaseMapper().deleteById(id);
         }
-        session.commit();
-        session.close();
         return true;
     }
 
     @Override
     public void updateBatch(List<Te> list) {
-        SqlSession session = sqlSessionTemplate.getSqlSessionFactory().openSession(ExecutorType.BATCH, false);
-        try {
-            BaseMapper mapper = (BaseMapper) session.getMapper(this.getMpClass());
-            int index = 0;
-            for (Te t : list) {
-                mapper.update(t);
-                index++;
-                if (index % 2000 == 0) {
-                    session.commit();
-                    session.clearCache();
-                }
-            }
-            session.commit();
-            session.close();
-        } catch (Exception e) {
-            session.rollback();
-            logger.error("updateBatch 批量处理出错");
-            logger.error(String.valueOf(e.getClass()), e);
-        } finally {
-            session.close();
+        for (Te t : list) {
+            getBaseMapper().update(t);
         }
     }
 
     @Override
     public List<Te> getListBySql(String sql) {
-        SqlSession session = sqlSessionTemplate.getSqlSessionFactory().openSession(ExecutorType.BATCH, false);
-        BaseMapper mapper = (BaseMapper) session.getMapper(this.getMpClass());
-        List<Te> list = mapper.getListBySql(sql);
+        List<Te> list = getBaseMapper().getListBySql(sql);
         logger.info("getListBySql:" + sql);
-        session.close();
         return list;
     }
 }

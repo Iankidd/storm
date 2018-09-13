@@ -12,6 +12,7 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.storm.framework.base.model.EntityUtil;
 import org.storm.framework.base.util.SysConstants;
@@ -32,10 +33,13 @@ public class AdminShiroRealm extends AuthorizingRealm {
     private static Logger logger = LoggerFactory.getLogger(AdminShiroRealm.class);
 
     @Autowired
+    @Lazy
     private SysUserService sysUserService;
     @Autowired
+    @Lazy
     private SysRoleService sysRoleService;
     @Autowired
+    @Lazy
     private SysMenuService sysMenuService;
 
     /**

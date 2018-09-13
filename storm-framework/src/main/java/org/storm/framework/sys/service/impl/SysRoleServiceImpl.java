@@ -50,15 +50,11 @@ public class SysRoleServiceImpl extends BaseServiceImpl<SysRole> implements SysR
                 list.add(SysRefRoleMenu);
             }
         }
-        SqlSession session = sqlSessionTemplate.getSqlSessionFactory().openSession(ExecutorType.BATCH, false);
         long t1 = System.currentTimeMillis();
-        SysRefRoleMenuMapper sysRefRoleMenuMapper = session.getMapper(SysRefRoleMenuMapper.class);
         sysRefRoleMenuMapper.deleteByRoleId(roleId);
         for (SysRefRoleMenu te : list) {
             sysRefRoleMenuMapper.save(te);
         }
-        session.commit();
-        session.close();
         long t2 = System.currentTimeMillis();
         logger.debug("debug at " + this.getClass().getName() + "saveMenusForRole 花费：" + (t2 - t1) / 1000 + "s");
     }

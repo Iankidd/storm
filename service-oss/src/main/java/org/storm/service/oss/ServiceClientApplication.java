@@ -10,7 +10,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableAsync;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +18,6 @@ import java.util.Properties;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableAsync
-@EnableTransactionManagement
 @RestController
 @ComponentScan({"org.storm.framework.base.config", "org.storm.framework.sys", "org.storm.service"})
 @MapperScan({"org.storm.**.mapper"})

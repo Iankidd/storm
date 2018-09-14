@@ -37,7 +37,7 @@
                     <h5><th:block th:if="${entity?.id eq null}">添加菜单/按钮信息</th:block></h5>
                     <h5><th:block th:unless="${entity?.id lt 0}">编辑菜单/按钮信息</th:block></h5>
                     <div class="ibox-tools">
-                        <a href="javascript:void(0);" class="btn btn-primary btn-sm" th:onclick="'javascript:link(\''+@{/sys/menu/list.action}+'\')'"><span class="fa fa-mail-reply"></span> 返回</a>
+                        <a href="javascript:void(0);" class="btn btn-primary btn-sm" th:onclick="'javascript:link(\''+@{/sys/menu/list.action?parentId=}+${parentId}+'\')'"><span class="fa fa-mail-reply"></span> 返回</a>
                     </div>
                 </div>
                 <div class="ibox-content">
@@ -88,7 +88,7 @@
                         <th:block th:if="${viewType ne 'view'}">
                         <div class="form-group row">
                             <div class="col-sm-4 col-sm-offset-2">
-                                <button th:onclick="'javascript:link(\''+@{/sys/menu/list.action}+'\')'" class="btn btn-white btn-sm" type="button">取消</button>
+                                <button th:onclick="'javascript:link(\''+@{/sys/menu/list.action?parentId=}+${parentId}+'\')'" class="btn btn-white btn-sm" type="button">取消</button>
                                 <button id="infoFormBtn" class="btn btn-primary btn-sm ladda-button" onclick="save()" type="button" data-style="zoom-in">保存</button>
                             </div>
                         </div>
@@ -122,7 +122,7 @@
 
     function save(){
         if(validateForm()){
-            appDialog.submit_form("保存成功", "保存失败", "infoForm", "[[@{/sys/menu/list.action}]]");
+            appDialog.submit_form("保存成功", "保存失败", "infoForm", "[[@{/sys/menu/list.action?parentId=}]][[${parentId}]]");
         }
     }
 

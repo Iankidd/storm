@@ -54,7 +54,7 @@ public abstract class BaseController<Te extends Entity, Ts extends BaseService<T
     protected Te entity;
 
     @RequestMapping("/list.action")
-    public ModelAndView list(HttpServletRequest request) {
+    public ModelAndView list(HttpServletRequest request, Model model) {
         return new ModelAndView(LIST);
     }
 

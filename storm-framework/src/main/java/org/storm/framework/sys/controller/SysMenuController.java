@@ -51,9 +51,9 @@ public class SysMenuController extends BaseController<SysMenu, SysMenuService> {
 
     @RequestMapping("/list.action")
     @Override
-    public ModelAndView list(HttpServletRequest request) {
-        long parentId = 0;
-        request.setAttribute("parentId", parentId);
+    public ModelAndView list(HttpServletRequest request, Model model) {
+        long parentId = RequestUtils.getLong(request, "parentId", 0);
+        model.addAttribute("parentId", parentId);
         return new ModelAndView(LIST);
     }
 
@@ -61,11 +61,19 @@ public class SysMenuController extends BaseController<SysMenu, SysMenuService> {
     @ResponseBody
     public String treeJson(HttpServletRequest request) {
         String parentId = request.getParameter("parentId");
+        String nodeId = request.getParameter("nodeId");
         List<SysMenu> list = this.getBaseService().getAll();
 
         JSONObject rootState = new JSONObject();
         rootState.put("opened", true);
-        rootState.put("selected", true);
+        if(Long.parseLong(nodeId) > 0) {
+            rootState.put("selected", false);
+        } else {
+            rootState.put("selected", true);
+        }
+        JSONObject nodeState = new JSONObject();
+        nodeState.put("opened", true);
+        nodeState.put("selected", true);
 
         JSONArray menuArray = new JSONArray();
         JSONObject nodeArray = new JSONObject();
@@ -78,6 +86,9 @@ public class SysMenuController extends BaseController<SysMenu, SysMenuService> {
             nodeArray = new JSONObject();
             nodeArray.put("id", sysMenu.getId());
             nodeArray.put("text", sysMenu.getName());
+            if(sysMenu.getId() == Long.parseLong(nodeId)) {
+                nodeArray.put("state", nodeState);
+            }
             nodeArray.put("parentId", sysMenu.getParentId() == null ? 0 : sysMenu.getParentId());
             menuArray.add(nodeArray);
         }

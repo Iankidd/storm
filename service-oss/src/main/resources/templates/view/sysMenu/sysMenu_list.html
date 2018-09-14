@@ -41,7 +41,7 @@
             <div class="panel" style="margin-bottom: 0px">
                 <div class="panel-body">
                     <div id="menu"></div>
-                    <input id="parentId" type="hidden" value="0">
+                    <input id="parentId" type="hidden" th:value="${parentId}">
                 </div>
             </div>
         </div>
@@ -104,7 +104,11 @@
             'core' : {
                 'data' : {
                     "url" : "[[@{/sys/menu/treeJson.action}]]",
-                    "dataType" : "json"
+                    "dataType" : "json",
+                    "data" : function (node) {
+                        var nodeId = $('#parentId').val();
+                        return { "nodeId" : nodeId };
+                    }
                 }
             }
         });

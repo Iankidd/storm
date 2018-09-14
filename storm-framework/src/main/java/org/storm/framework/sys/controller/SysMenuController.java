@@ -60,28 +60,33 @@ public class SysMenuController extends BaseController<SysMenu, SysMenuService> {
     @RequestMapping("/treeJson.action")
     @ResponseBody
     public String treeJson(HttpServletRequest request) {
-        Map<String, Object> paramMap = new HashMap<>();
         String parentId = request.getParameter("parentId");
-        List<SysMenu> list = this.getBaseService().getList(paramMap);
-        JSONArray array = new JSONArray();
-        JSONObject object = new JSONObject();
-        object.put("id", 0);
-        object.put("text", "菜单");
-        object.put("parentId", -1);
-        array.add(object);
+        List<SysMenu> list = this.getBaseService().getAll();
+
+        JSONObject rootState = new JSONObject();
+        rootState.put("opened", true);
+        rootState.put("selected", true);
+
+        JSONArray menuArray = new JSONArray();
+        JSONObject nodeArray = new JSONObject();
+        nodeArray.put("id", 0);
+        nodeArray.put("text", "菜单");
+        nodeArray.put("state", rootState);
+        nodeArray.put("parentId", -1);
+        menuArray.add(nodeArray);
         for (SysMenu sysMenu : list) {
-            object = new JSONObject();
-            object.put("id", sysMenu.getId());
-            object.put("text", sysMenu.getName());
-            object.put("parentId", sysMenu.getParentId() == null ? 0 : sysMenu.getParentId());
-            array.add(object);
+            nodeArray = new JSONObject();
+            nodeArray.put("id", sysMenu.getId());
+            nodeArray.put("text", sysMenu.getName());
+            nodeArray.put("parentId", sysMenu.getParentId() == null ? 0 : sysMenu.getParentId());
+            menuArray.add(nodeArray);
         }
-        logger.info("菜单[array]:" + array);
+        logger.info("菜单[menuArray]:" + menuArray);
         JSONArray treeArray = null;
         if (StringUtils.isBlank(parentId)) {
-            treeArray = JsonMenuUtils.treeMenuList(array, -1, "children");
+            treeArray = JsonMenuUtils.treeMenuList(menuArray, -1, "children");
         } else {
-            treeArray = JsonMenuUtils.treeMenuList(array, Long.parseLong(parentId), "children");
+            treeArray = JsonMenuUtils.treeMenuList(menuArray, Long.parseLong(parentId), "children");
         }
         logger.info("菜单[treeArray]:" + treeArray.toString());
         return treeArray.toString();

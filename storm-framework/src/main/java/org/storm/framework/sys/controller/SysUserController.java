@@ -106,7 +106,7 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
                     if (roleIds.size() > 0) {
                         List<SysMenu> sysMenuList = sysMenuService.getListByRoleIds(roleIds);
                         for (SysMenu menu : sysMenuList) {
-                            if (menu.getIsActive() == 0) {
+                            if (menu.getIsActive() == SysConstants.EStatus.Valid.ordinal()) {
                                 // 添加到菜单列表
                                 if (menu.getType() == SysConstants.EResourceType.Menu.ordinal()) {
                                     menuArray.add(menu);

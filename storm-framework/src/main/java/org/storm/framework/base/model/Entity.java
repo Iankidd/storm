@@ -11,79 +11,98 @@ import java.util.Date;
  */
 public class Entity implements Serializable {
 
-	// 把日志记录到slf4j中输出
-	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+    // 把日志记录到slf4j中输出
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	protected Long id;
-	protected Date createDatetime;
-	protected Date modifyDatetime;
-	protected Long createUserId;
-	protected String createUserName;
-	protected Long modifyUserId;
-	protected String modifyUserName;
-	protected String memo;
+    protected Long id;
+    protected Date createDatetime;
+    protected Date modifyDatetime;
+    protected Long createUserId;
+    protected String createUserName;
+    protected Long modifyUserId;
+    protected String modifyUserName;
+    protected String memo;
 
-	public Long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Date getCreateDatetime() {
-		return createDatetime;
-	}
+    public Date getCreateDatetime() {
+        return createDatetime;
+    }
 
-	public void setCreateDatetime(Date createDatetime) {
-		this.createDatetime = createDatetime;
-	}
+    public void setCreateDatetime(Date createDatetime) {
+        this.createDatetime = createDatetime;
+    }
 
-	public Date getModifyDatetime() {
-		return modifyDatetime;
-	}
+    public Date getModifyDatetime() {
+        return modifyDatetime;
+    }
 
-	public void setModifyDatetime(Date modifyDatetime) {
-		this.modifyDatetime = modifyDatetime;
-	}
+    public void setModifyDatetime(Date modifyDatetime) {
+        this.modifyDatetime = modifyDatetime;
+    }
 
-	public Long getCreateUserId() {
-		return createUserId;
-	}
+    public Long getCreateUserId() {
+        return createUserId;
+    }
 
-	public void setCreateUserId(Long createUserId) {
-		this.createUserId = createUserId;
-	}
+    public void setCreateUserId(Long createUserId) {
+        this.createUserId = createUserId;
+    }
 
-	public String getCreateUserName() {
-		return createUserName;
-	}
+    public String getCreateUserName() {
+        return createUserName;
+    }
 
-	public void setCreateUserName(String createUserName) {
-		this.createUserName = createUserName;
-	}
+    public void setCreateUserName(String createUserName) {
+        this.createUserName = createUserName;
+    }
 
-	public Long getModifyUserId() {
-		return modifyUserId;
-	}
+    public Long getModifyUserId() {
+        return modifyUserId;
+    }
 
-	public void setModifyUserId(Long modifyUserId) {
-		this.modifyUserId = modifyUserId;
-	}
+    public void setModifyUserId(Long modifyUserId) {
+        this.modifyUserId = modifyUserId;
+    }
 
-	public String getModifyUserName() {
-		return modifyUserName;
-	}
+    public String getModifyUserName() {
+        return modifyUserName;
+    }
 
-	public void setModifyUserName(String modifyUserName) {
-		this.modifyUserName = modifyUserName;
-	}
+    public void setModifyUserName(String modifyUserName) {
+        this.modifyUserName = modifyUserName;
+    }
 
-	public String getMemo() {
-		return memo;
-	}
+    public String getMemo() {
+        return memo;
+    }
 
-	public void setMemo(String memo) {
-		this.memo = memo;
-	}
+    public void setMemo(String memo) {
+        this.memo = memo;
+    }
+
+    /**
+     * 判断是否同一实例
+     */
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+        Entity entity = (Entity) obj;
+        return id == null ? entity.id == null : id.equals(entity.id);
+    }
+
+    /**
+     * @return 如果id属性为null，则返回super.hashCode()，否则返回id的hashCode
+     */
+    public int hashCode() {
+        return id == null ? super.hashCode() : id.hashCode();
+    }
 }

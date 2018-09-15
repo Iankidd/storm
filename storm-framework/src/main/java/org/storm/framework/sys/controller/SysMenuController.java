@@ -23,7 +23,6 @@ import org.storm.framework.sys.service.SysMenuService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -61,12 +60,12 @@ public class SysMenuController extends BaseController<SysMenu, SysMenuService> {
     @ResponseBody
     public String treeJson(HttpServletRequest request) {
         String parentId = request.getParameter("parentId");
-        String nodeId = request.getParameter("nodeId");
+        long nodeId = RequestUtils.getLong(request, "nodeId", 0);
         List<SysMenu> list = this.getBaseService().getAll();
 
         JSONObject rootState = new JSONObject();
         rootState.put("opened", true);
-        if(Long.parseLong(nodeId) > 0) {
+        if (nodeId > 0) {
             rootState.put("selected", false);
         } else {
             rootState.put("selected", true);
@@ -86,7 +85,7 @@ public class SysMenuController extends BaseController<SysMenu, SysMenuService> {
             nodeArray = new JSONObject();
             nodeArray.put("id", sysMenu.getId());
             nodeArray.put("text", sysMenu.getName());
-            if(sysMenu.getId() == Long.parseLong(nodeId)) {
+            if (sysMenu.getId() == nodeId) {
                 nodeArray.put("state", nodeState);
             }
             nodeArray.put("parentId", sysMenu.getParentId() == null ? 0 : sysMenu.getParentId());
@@ -135,9 +134,9 @@ public class SysMenuController extends BaseController<SysMenu, SysMenuService> {
         String viewType = request.getParameter("viewType");
         long parentId = RequestUtils.getLong(request, "parentId", 0);
         String parentName = "菜单";
-        if(parentId > 0) {
+        if (parentId > 0) {
             SysMenu parentMenu = this.getBaseService().getById(parentId);
-            if(parentMenu != null) {
+            if (parentMenu != null) {
                 parentName = parentMenu.getName();
             }
         }

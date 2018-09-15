@@ -13,6 +13,9 @@
         float: left !important;
         padding-top: 0 !important;
     }
+    .bootbox-close-button{
+        display: none !important;
+    }
 </style>
 
 <body>
@@ -93,6 +96,9 @@
     <button id="btn_edit" shiro:hasPermission="/sys/role/edit.action" type="button" class="btn btn-info btn-sm" onclick="edit(#id)">
         <i class="fa fa-edit"></i> 编辑
     </button>
+    <button id="btn_auth" shiro:hasPermission="/sys/role/auth.action" type="button" class="btn btn-warning btn-sm" onclick="auth(#id,'#name')">
+        <i class="fa fa-user-o"></i> 角色授权
+    </button>
     <button id="btn_delete" shiro:hasPermission="/sys/role/delete.action" type="button" class="btn btn-danger btn-sm" onclick="del(#id)">
         <i class="fa fa-trash-o"></i> 删除
     </button>
@@ -171,7 +177,8 @@
                 {"data": null, "width": "100px", "orderable": false, "searchable": false,
                     "defaultContent": "",
                     "render": function (data, type, row, meta) {
-                        return $("#btn").html().replace(/#id/g, row.id);
+                        var button = $("#btn").html().replace(/#id/g, row.id);
+                        return button.replace(/#name/g, row.name);
                     }
                 }
             ],
@@ -199,6 +206,47 @@
                 searchFrom();
             }
         );
+    }
+
+    function auth(id, name) {
+        appDialog.dialog(name + "-角色授权", "[[@{/sys/role/auth.action}]]?id=" + id,
+            function () {
+                saveAuth();
+            }
+        )
+    }
+
+    function saveAuth() {
+        var l = $(".modal-footer btn-primary").ladda();
+        var treeObj = $.fn.zTree.getZTreeObj("authTree");
+        var nodes = treeObj.getCheckedNodes(true);
+        var ids = '';
+        for(var i=0 ; i<nodes.length; i++){
+            ids += "," + nodes[i].id;
+        }
+        if(ids.length>0){
+            ids = ids.substr(1);
+        }
+
+        l.ladda('start');
+
+        $.ajax({
+            type: "POST",
+            url: '[[@{/sys/role/authSave.action}]]?roleId='+roleId+'&ids='+ids,
+            data : '',
+            dataType : 'json',
+            error : function(data) {
+                bootbox.alert("<span class='icon-warning'></span> 保存失败");
+            },
+            success : function(data) {
+                l.ladda('stop');
+                if(data.code == 200){
+                    bootbox.alert("<span class='icon-warning'></span> 保存成功");
+                }else{
+                    bootbox.alert("<span class='icon-warning'></span> 保存失败");
+                }
+            }
+        });
     }
 
     /**

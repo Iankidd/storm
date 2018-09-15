@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>STROM</title>
+    <!-- 导入公共 common_ztree -->
+    <div th:replace="/init/init_ztree :: common_ztree"></div>
+</head>
+
+<body>
+    <th:block th:if="${errorMsg} != null" th:text="${errorMsg}"></th:block>
+    <th:block th:if="${errorMsg} == null">
+    <div class="zTreeDemoBackground left">
+        <ul id="authTree" class="ztree"></ul>
+    </div>
+    </th:block>
+
+<script th:inline="javascript">
+    var json = [[${treeJson}]];
+    var roleId = [[${sysRole.id}]];
+    var setting = {
+        check: {
+            enable: true,
+            chkboxType :{ "Y" : "ps", "N" : "s" }
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        }
+    };
+    $(function(){
+        console.log("1")
+        $.fn.zTree.init($("#authTree"), setting, json);
+    });
+</script>
+</body>
+</html>

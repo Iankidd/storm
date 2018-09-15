@@ -1,16 +1,23 @@
 package org.storm.framework.sys.controller;
 
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 import org.storm.framework.base.controller.BaseController;
 import org.storm.framework.base.exception.BusinessException;
 import org.storm.framework.base.util.EntityUtils;
 import org.storm.framework.base.util.RequestUtils;
 import org.storm.framework.base.util.ResponseUtils;
+import org.storm.framework.base.util.SysConstants;
+import org.storm.framework.base.util.ztree.TreeNode;
+import org.storm.framework.sys.model.SysMenu;
 import org.storm.framework.sys.model.SysRefUserRole;
 import org.storm.framework.sys.model.SysRole;
 import org.storm.framework.sys.service.SysMenuService;
@@ -19,9 +26,7 @@ import org.storm.framework.sys.service.SysRefUserRoleService;
 import org.storm.framework.sys.service.SysRoleService;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping("/sys/role")
@@ -81,82 +86,76 @@ public class SysRoleController extends BaseController<SysRole, SysRoleService> {
         return ResponseUtils.responseJsonResult(true);
     }
 
-//    @RequestMapping(value = "/auth.action")
-//    public ModelAndView auth(@RequestParam(value = "id", required = false) Long id, HttpServletRequest request) {
-//        String viewType = request.getParameter("viewType");
-//        boolean chkDisabled = false;
-//        if ("view".equals(viewType)) {
-//            chkDisabled = true;
-//        }
-//        Map<String, Object> arg = new HashMap<String, Object>();
-//        arg.put("isActive", SysConstants.EStatus.Valid.ordinal());
-//        List<SysMenu> list = sysMenuService.getList(arg);
-//        SysRole sysRole = sysRoleService.getById(id);
-//        Set<SysMenu> sysMenus = new HashSet<SysMenu>();
-//        List<TreeNode> treeList = new ArrayList<TreeNode>();
-//        if (sysRole != null) {
-//            List<Long> refRoleResourceIdsList = sysRefRoleMenuService.getIdsByRoleId(sysRole.getId());
-//            if (refRoleResourceIdsList != null && refRoleResourceIdsList.size() > 0) {
-//                Map<String, Object> paramMap = new HashMap<String, Object>();
-//                paramMap.put("ids", refRoleResourceIdsList);
-//                List<SysMenu> sysMenuList = sysMenuService.getList(paramMap);
-//
-//                for (SysMenu sysMenu : sysMenuList) {
-//                    sysMenus.add(sysMenu);
-//                }
-//            }
-//
-//            for (SysMenu sysMenu : list) {
-//                TreeNode tree = null;
-//                if (sysMenus.contains(sysMenu)) {
-//                    tree = new TreeNode(sysMenu.getId(), sysMenu.getParentId() == null ? 0 : sysMenu.getParentId(), sysMenu.getName(), true, true, chkDisabled);
-//                } else {
-//                    tree = new TreeNode(sysMenu.getId(), sysMenu.getParentId() == null ? 0 : sysMenu.getParentId(), sysMenu.getName(), false, false, chkDisabled);
-//                }
-//                treeList.add(tree);
-//            }
-//
-//            JSONArray treeJson = JSONArray.fromObject(treeList);
-//            request.setAttribute("viewType", viewType);
-//            request.setAttribute("sysRole", sysRole);
-//            request.setAttribute("treeJson", treeJson);
-//        } else {
-//            request.setAttribute("errorMsg", "找不到该角色！");
-//        }
-//
-//
-//        return new ModelAndView("/sysRole/setRes");
-//    }
+    @RequestMapping(value = "/auth.action")
+    public ModelAndView auth(Long id, HttpServletRequest request, Model model) {
+        String viewType = request.getParameter("viewType");
+        boolean chkDisabled = false;
+        if ("view".equals(viewType)) {
+            chkDisabled = true;
+        }
+        Map<String, Object> arg = new HashMap<>();
+        arg.put("isActive", SysConstants.EStatus.Valid.ordinal());
+        List<SysMenu> list = sysMenuService.getList(arg);
+        SysRole sysRole = sysRoleService.getById(id);
+        Set<SysMenu> sysMenus = new HashSet<>();
+        List<TreeNode> treeList = new ArrayList<>();
+        if (sysRole != null) {
+            List<Long> refRoleResourceIdsList = sysRefRoleMenuService.getIdsByRoleId(sysRole.getId());
+            if (refRoleResourceIdsList != null && refRoleResourceIdsList.size() > 0) {
+                Map<String, Object> paramMap = new HashMap<>();
+                paramMap.put("ids", refRoleResourceIdsList);
+                List<SysMenu> sysMenuList = sysMenuService.getList(paramMap);
 
-//    @RequestMapping("/authSave.action")
-//    @ResponseBody
-//    protected String authSave(HttpServletRequest request, Model model)
-//            throws Exception {
-//        boolean isTrue = true;
-//        String msg = null;
-//        String resources = request.getParameter("ids");
-//        List<Long> reIds = new ArrayList<Long>();
-//        logger.info("resources:" + resources);
-//        long roleId = RequestUtils.getLong(request, "roleId", 1);
-//        try {
-//			/*if(roleId == 1){
-//				throw new Exception("该角色不能授权");
-//			}*/
-//            if (StringUtils.isNotBlank(resources)) {
-//                StringTokenizer token = new StringTokenizer(resources, ",");
-//                while (token.hasMoreTokens()) {
-//                    String x = token.nextToken();
-//                    reIds.add(Long.parseLong(x));
-//                }
-//            }
-//            sysRoleService.saveMenusForRole(roleId, reIds);
-//        } catch (Exception ex) {
-//            isTrue = false;
-//            msg = ex.getMessage();
-//            logger.error(ex.getClass(), ex);
-//        }
-//        return ResponseUtils.responseJsonResult(isTrue, msg);
-//    }
+                for (SysMenu sysMenu : sysMenuList) {
+                    sysMenus.add(sysMenu);
+                }
+            }
+
+            for (SysMenu sysMenu : list) {
+                TreeNode tree = null;
+                if (sysMenus.contains(sysMenu)) {
+                    tree = new TreeNode(sysMenu.getId(), sysMenu.getParentId() == null ? 0 : sysMenu.getParentId(), sysMenu.getName(), true, true, chkDisabled);
+                } else {
+                    tree = new TreeNode(sysMenu.getId(), sysMenu.getParentId() == null ? 0 : sysMenu.getParentId(), sysMenu.getName(), false, false, chkDisabled);
+                }
+                treeList.add(tree);
+            }
+
+            JSONArray treeJson = JSONArray.fromObject(treeList);
+            model.addAttribute("sysRole", sysRole);
+            model.addAttribute("treeJson", treeJson);
+        } else {
+            model.addAttribute("errorMsg", "找不到该角色！");
+        }
+
+        return new ModelAndView(VIEW + "/sysRole/setRole");
+    }
+
+    @RequestMapping("/authSave.action")
+    @ResponseBody
+    protected String authSave(HttpServletRequest request, Model model) throws BusinessException {
+        boolean isTrue = true;
+        String msg = null;
+        String resources = request.getParameter("ids");
+        List<Long> reIds = new ArrayList<>();
+        logger.debug("resources:" + resources);
+        long roleId = RequestUtils.getLong(request, "roleId", 1);
+        try {
+            if (StringUtils.isNotBlank(resources)) {
+                StringTokenizer token = new StringTokenizer(resources, ",");
+                while (token.hasMoreTokens()) {
+                    String x = token.nextToken();
+                    reIds.add(Long.parseLong(x));
+                }
+            }
+            sysRoleService.saveMenusForRole(roleId, reIds);
+        } catch (Exception ex) {
+            isTrue = false;
+            msg = "角色授权失败";
+            logger.error("error at " + this.getClass().getName() + ".authSave: " + ExceptionUtils.getFullStackTrace(ex));
+        }
+        return ResponseUtils.responseJsonResult(isTrue, msg);
+    }
 
     @RequestMapping("/delete.action")
     @ResponseBody

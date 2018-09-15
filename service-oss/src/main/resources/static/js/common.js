@@ -159,4 +159,27 @@ var appDialog = {
             success: callback
         });
     },
+
+    /**
+     * 模态框
+     */
+    dialog: function (title, action, callback) {
+        var htmlobj = $.ajax({url: action, async: false});
+        bootbox.dialog({
+            message: htmlobj.responseText,
+            title: title,
+            buttons: {
+                "success": {
+                    label: '保存',
+                    className: "btn-primary",
+                    callback: callback
+                },
+                "error": {
+                    label: '取消',
+                    className: "btn-white",
+                    callback: function () {}
+                }
+            }
+        });
+    }
 }

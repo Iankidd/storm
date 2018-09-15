@@ -18,7 +18,7 @@
 <body>
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
-        <h2>用户管理</h2>
+        <h2>角色管理</h2>
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 首页
@@ -27,7 +27,7 @@
                 系统管理
             </li>
             <li class="breadcrumb-item active">
-                <strong>用户管理</strong>
+                <strong>角色管理</strong>
             </li>
         </ol>
     </div>
@@ -45,12 +45,12 @@
                         <div class="panel-body">
                             <form id="searchFrom" onSubmit="return false" class="form-inline">
                                 <div class="form-group">
-                                    <label>账号</label>&nbsp;&nbsp;
+                                    <label>角色代码</label>&nbsp;&nbsp;
                                     <input name="code" type="text" class="form-control form-control-sm">
                                 </div>
                                 &nbsp;&nbsp;
                                 <div class="form-group">
-                                    <label>名称</label>&nbsp;&nbsp;
+                                    <label>角色名称</label>&nbsp;&nbsp;
                                     <input name="nameLike" type="text" class="form-control form-control-sm">
                                 </div>
                                 &nbsp;&nbsp;
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <!-- 权限菜单按钮 -->
-                    <button shiro:hasPermission="/sys/user/add.action" onclick="edit(0)" class="btn btn-primary btn-sm" type="button">
+                    <button shiro:hasPermission="/sys/role/add.action" onclick="edit(0)" class="btn btn-primary btn-sm" type="button">
                         <i class="fa fa-plus"></i> 新增
                     </button>
                 </div>
@@ -73,11 +73,10 @@
                             <tr>
                                 <td><input id="checkAll" type="checkbox"></td>
                                 <th>id</th>
-                                <th>帐号</th>
+                                <th>代码</th>
                                 <th>名称</th>
-                                <th>邮箱</th>
-                                <th>邮件报障</th>
                                 <th>状态</th>
+                                <th>备注</th>
                                 <th>操作</th>
                             </tr>
                             </thead>
@@ -91,10 +90,10 @@
 
 <!-- 表格权限菜单按钮 -->
 <div id="btn" style="display: none">
-    <button id="btn_edit" shiro:hasPermission="/sys/user/edit.action" type="button" class="btn btn-info btn-sm" onclick="edit(#id)">
+    <button id="btn_edit" shiro:hasPermission="/sys/role/edit.action" type="button" class="btn btn-info btn-sm" onclick="edit(#id)">
         <i class="fa fa-edit"></i> 编辑
     </button>
-    <button id="btn_delete" shiro:hasPermission="/sys/user/delete.action" type="button" class="btn btn-danger btn-sm" onclick="del(#id)">
+    <button id="btn_delete" shiro:hasPermission="/sys/role/delete.action" type="button" class="btn btn-danger btn-sm" onclick="del(#id)">
         <i class="fa fa-trash-o"></i> 删除
     </button>
 </div>
@@ -118,7 +117,7 @@
             serverSide: true,
             searching: false,
             ajax: {
-                url:"[[@{/sys/user/pageJson.action}]]",
+                url:"[[@{/sys/role/pageJson.action}]]",
                 type: "POST",
                 data: function ( data ) {
                     $.each( $("#searchFrom").serializeArray() , function(){
@@ -157,18 +156,6 @@
                 {"data": 'id', "width": "5px"},
                 {"data": 'code', "width": "50px"},
                 {"data": 'name', "width": "50px"},
-                {"data": 'email', "width": "80px"},
-                {
-                    "data": 'recvEmailFlag', "width": "20px",
-                    "render": function (data, type, row, meta) {
-                        if (data == 0) {
-                            return "有效";
-                        }
-                        else {
-                            return "无效";
-                        }
-                    }
-                },
                 {
                     "data": 'status', "width": "20px",
                     "render": function (data, type, row, meta) {
@@ -180,6 +167,7 @@
                         }
                     }
                 },
+                {"data": 'memo', "width": "50px"},
                 {"data": null, "width": "100px", "orderable": false, "searchable": false,
                     "defaultContent": "",
                     "render": function (data, type, row, meta) {
@@ -194,7 +182,7 @@
     }
 
     function edit(id,viewType){
-        var url = "[[@{/sys/user/edit.action}]]?id=" + id;
+        var url = "[[@{/sys/role/edit.action}]]?id=" + id;
         if(viewType != undefined){
             url += "&viewType=view";
         }
@@ -203,10 +191,10 @@
 
     function del(id){
         if(id == 1) {
-            appDialog.error("超级管理员不能被删除！");
+            appDialog.error("超级权限不能被删除！");
             return;
         }
-        appDialog.comfirm("确定要删除该记录吗？", "[[@{/sys/user/delete.action}]]?ids=" + id,
+        appDialog.comfirm("确定要删除该记录吗？", "[[@{/sys/role/delete.action}]]?ids=" + id,
             function () {
                 searchFrom();
             }

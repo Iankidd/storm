@@ -48,6 +48,13 @@ spring:
     servlet:
       content-type: text/html
     cache: false
+  #资源缓存开启设置
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+          paths: /js/**
   #redis配置
   redis:
     database: 0

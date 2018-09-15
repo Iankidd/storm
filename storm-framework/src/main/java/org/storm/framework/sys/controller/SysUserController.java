@@ -1,5 +1,6 @@
 package org.storm.framework.sys.controller;
 
+import com.github.pagehelper.Page;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
@@ -12,20 +13,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.storm.framework.base.annotation.IsSearchCondition;
 import org.storm.framework.base.controller.BaseController;
 import org.storm.framework.base.exception.BusinessException;
 import org.storm.framework.base.model.EntityUtil;
 import org.storm.framework.base.util.*;
+import org.storm.framework.base.util.datatables.DatatablesView;
+import org.storm.framework.base.util.datatables.SearchCondition;
 import org.storm.framework.sys.model.SysMenu;
+import org.storm.framework.sys.model.SysRole;
 import org.storm.framework.sys.model.SysUser;
 import org.storm.framework.sys.model.SysUserLogin;
 import org.storm.framework.sys.service.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping("/sys/user")
@@ -247,6 +251,80 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
             }
 
         }
+        return ResponseUtils.responseJsonResult(true);
+    }
+
+    @RequestMapping("/editUserRoles.action")
+    public ModelAndView editUserRoles(HttpServletRequest request, Model model) {
+        long userId = RequestUtils.getLong(request, "userId", 0);
+        model.addAttribute("userId", userId);
+        return new ModelAndView(VIEW + "/sysUser/setRoles");
+    }
+
+    @RequestMapping("/getUserRolesJson.action")
+    @ResponseBody
+    public String getUserRolesJson(HttpServletRequest request, @IsSearchCondition SearchCondition condition) {
+        Map<String, Object> paramMap = RequestUtils.getParameterMap(request);
+        logger.info("params:" + paramMap.toString());
+
+        long userId = RequestUtils.getLong(request, "userId", 0);
+
+        int draw = condition.getDraw();
+        int pageNo = condition.getStart();
+        int pageSize = condition.getLength();
+        int columnIndex = condition.getOrders().get(0).getColumn();
+        String sort = condition.getColumns().get(columnIndex).getData();
+        String order = condition.getOrders().get(0).getDir();
+
+        if (StringUtils.isNotBlank(sort)) {
+            paramMap.put("sort", sort);
+            paramMap.put("order", order);
+        }
+
+        long filtered = sysRoleService.getCount(paramMap);
+        List<SysRole> roleList = sysRoleService.getPageList(paramMap, pageNo, pageSize);
+        Page page = (Page) roleList;
+        long total = page.getTotal();
+
+        List<SysRole> list = new ArrayList<>();
+        if (userId > 0) {
+            Set<Long> roleSet = new HashSet<>();
+            List<SysRole> userRoleList = sysRoleService.getUserRoles(userId);
+            if (userRoleList != null && userRoleList.size() > 0) {
+                for (SysRole sysRole : userRoleList) {
+                    roleSet.add(sysRole.getId());
+                }
+            }
+            if (roleList != null && roleList.size() > 0) {
+                for (SysRole sysRole : roleList) {
+                    if (sysRole.getStatus() == SysConstants.EStatus.InValid.ordinal()) {
+                        continue;
+                    }
+                    if (roleSet.contains(sysRole.getId())) {
+                        sysRole.setStatus((byte) 0);
+                    } else {
+                        sysRole.setStatus((byte) 1);
+                    }
+                    list.add(sysRole);
+                }
+            }
+        }
+
+        DatatablesView<SysRole> view = new DatatablesView<>();
+        view.setDraw(draw);
+        view.setRecordsTotal(total);
+        view.setRecordsFiltered(filtered);
+        view.setData(list);
+
+        return JSONObject.fromObject(view).toString();
+    }
+
+    @RequestMapping("/setRoles.action")
+    @ResponseBody
+    public String setRoles(HttpServletRequest request) {
+        long userId = RequestUtils.getLong(request, "userId", 0);
+        String roleIds = request.getParameter("roleIds");
+        sysUserService.setRolesForUser(userId, roleIds);
         return ResponseUtils.responseJsonResult(true);
     }
 }

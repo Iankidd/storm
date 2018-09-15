@@ -128,7 +128,7 @@ public class SysRoleController extends BaseController<SysRole, SysRoleService> {
             model.addAttribute("errorMsg", "找不到该角色！");
         }
 
-        return new ModelAndView(VIEW + "/sysRole/setRole");
+        return new ModelAndView(VIEW + "/sysRole/setMenu");
     }
 
     @RequestMapping("/authSave.action")

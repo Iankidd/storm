@@ -94,6 +94,9 @@
     <button id="btn_edit" shiro:hasPermission="/sys/user/edit.action" type="button" class="btn btn-info btn-sm" onclick="edit(#id)">
         <i class="fa fa-edit"></i> 编辑
     </button>
+    <button id="btn_auth" shiro:hasPermission="/sys/user/setRoles.action" type="button" class="btn btn-warning btn-sm" onclick="auth(#id)">
+        <i class="fa fa-user-o"></i> 角色授权
+    </button>
     <button id="btn_delete" shiro:hasPermission="/sys/user/delete.action" type="button" class="btn btn-danger btn-sm" onclick="del(#id)">
         <i class="fa fa-trash-o"></i> 删除
     </button>
@@ -211,6 +214,44 @@
                 searchFrom();
             }
         );
+    }
+
+    function auth(id) {
+        appDialog.dialog("角色授权", "[[@{/sys/user/editUserRoles.action}]]?userId=" + id,
+            function () {
+                saveAuth();
+            }
+        )
+    }
+
+    function saveAuth() {
+        var l = $(".modal-footer btn-primary").ladda();
+        var ids = [];
+        $("input[name='checkList_setRoles']").each(function(j,item){
+            if($(this).prop('checked')) {
+                ids.push(item.value);
+            }
+        });
+        var rowIds = ids.join(',');
+
+        l.ladda('start');
+
+        $.ajax({
+            type: "POST",
+            url: "[[@{/sys/user/setRoles.action}]]?userId="+userId+"&roleIds="+rowIds,
+            dataType:  'json',
+            error: function(data){
+                bootbox.alert("<span class='icon-warning'></span> 授权失败!");
+            },
+            success: function(data){
+                l.ladda('stop');
+                if(data.code == 200){
+                    bootbox.alert("<span class='icon-warning'></span> 授权成功！");
+                }else{
+                    bootbox.alert("<span class='icon-warning'></span> " + data.msg);
+                }
+            }
+        });
     }
 
     /**

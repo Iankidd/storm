@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2abef353-240a-4c31-bc24-a4d280a9de18" name="Default" comment="新增菜单管理">
-      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_ztree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysRole/setRole.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/ztree/TreeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/setRoles.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/static/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_script.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_script.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysRole/sysRole_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysRole/sysRole_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/model/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/model/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysRole/setRole.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysRole/setMenu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysRoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storm-framework/target/classes/org/storm/framework/base/model/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/storm-framework/target/classes/org/storm/framework/base/model/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storm-framework/target/classes/org/storm/framework/sys/controller/SysMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/storm-framework/target/classes/org/storm/framework/sys/controller/SysMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storm-framework/target/classes/org/storm/framework/sys/controller/SysRoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/storm-framework/target/classes/org/storm/framework/sys/controller/SysRoleController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -61,8 +55,8 @@
         <counts>
           <entry key="class" value="125" />
           <entry key="css" value="1" />
-          <entry key="html" value="186" />
-          <entry key="java" value="641" />
+          <entry key="html" value="190" />
+          <entry key="java" value="647" />
           <entry key="js" value="28" />
           <entry key="json" value="3" />
           <entry key="jsp" value="1" />
@@ -78,8 +72,8 @@
         <counts>
           <entry key="CLASS" value="125" />
           <entry key="CSS" value="1" />
-          <entry key="HTML" value="186" />
-          <entry key="JAVA" value="641" />
+          <entry key="HTML" value="190" />
+          <entry key="JAVA" value="647" />
           <entry key="JSON" value="3" />
           <entry key="JSP" value="1" />
           <entry key="JavaScript" value="28" />
@@ -95,8 +89,8 @@
           <entry key="class" value="1" />
           <entry key="css" value="6" />
           <entry key="dummy" value="11" />
-          <entry key="html" value="4290" />
-          <entry key="java" value="6408" />
+          <entry key="html" value="4507" />
+          <entry key="java" value="6496" />
           <entry key="js" value="326" />
           <entry key="json" value="20" />
           <entry key="properties" value="144" />
@@ -109,8 +103,8 @@
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="CSS" value="6" />
-          <entry key="HTML" value="4290" />
-          <entry key="JAVA" value="6408" />
+          <entry key="HTML" value="4507" />
+          <entry key="JAVA" value="6496" />
           <entry key="JSON" value="20" />
           <entry key="JavaScript" value="326" />
           <entry key="PLAIN_TEXT" value="91" />
@@ -183,16 +177,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysRole/sysRole_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1">
-              <caret line="232" column="16" lean-forward="true" selection-start-line="232" selection-start-column="16" selection-end-line="232" selection-end-column="16" />
+            <state relative-caret-position="252">
+              <caret line="241" column="16" selection-start-line="241" selection-start-column="16" selection-end-line="241" selection-end-column="32" />
               <folding>
-                <element signature="e#1922#1928#0" expanded="true" />
-                <element signature="e#1928#1934#0" expanded="true" />
-                <element signature="e#2128#2134#0" expanded="true" />
-                <element signature="e#2134#2140#0" expanded="true" />
                 <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -201,19 +191,27 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/static/js/common.js">
+        <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="128" column="8" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="25" />
+            <state relative-caret-position="-2294">
+              <caret line="129" column="30" lean-forward="true" selection-start-line="129" selection-start-column="30" selection-end-line="129" selection-end-column="30" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#2112#2118#0" expanded="true" />
+                <element signature="e#2118#2124#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysRole/setRole.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/setRoles.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+            <state relative-caret-position="140">
+              <caret line="21" selection-start-line="21" selection-end-line="41" selection-end-column="6" />
+              <folding>
+                <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -232,8 +230,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>This field is required</find>
-      <find>this</find>
       <find>edit</find>
       <find>createUser</find>
       <find>asyncServiceExecutor</find>
@@ -260,8 +256,10 @@
       <find>chkDisabled</find>
       <find>logger.error</find>
       <find>logger</find>
-      <find>search</find>
       <find>TransactionManager</find>
+      <find>search</find>
+      <find>each</find>
+      <find>dataTables-data</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -273,7 +271,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/login.html" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/resources/mapper/SysUserMapper.xml" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/config/VisiableThreadPoolTaskExecutor.java" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/config/ExecutorConfig.java" />
@@ -306,12 +303,10 @@
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/mapper/SysRefRoleMenuMapper.java" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/service/impl/SysMenuServiceImpl.java" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/config/TransactionAspect.java" />
-        <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysUserController.java" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysMenu/sysMenu_list.html" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysMenu/sysMenu_edit.html" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_list.html" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysRole/sysRole_edit.html" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysMenuController.java" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/TreeNode.java" />
@@ -322,8 +317,11 @@
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysRole/setRole.html" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/model/Entity.java" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysRole/sysRole_list.html" />
-        <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysRoleController.java" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/service/impl/SysRoleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysRoleController.java" />
+        <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysUserController.java" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_list.html" />
+        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/setRoles.html" />
       </list>
     </option>
   </component>
@@ -369,17 +367,6 @@
             <path>
               <item name="storm" type="58d84e3e:PackageViewProjectNode" />
               <item name="service-oss" type="616d4139:PackageViewModuleNode" />
-              <item name="static" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
-              <item name="static" type="1f31426a:PackageElementNode" />
-              <item name="js" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
               <item name="templates" type="1f31426a:PackageElementNode" />
             </path>
             <path>
@@ -397,6 +384,13 @@
             </path>
             <path>
               <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
+              <item name="templates" type="1f31426a:PackageElementNode" />
+              <item name="view" type="1f31426a:PackageElementNode" />
+              <item name="sysUser" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
               <item name="storm-framework" type="616d4139:PackageViewModuleNode" />
             </path>
             <path>
@@ -415,14 +409,7 @@
               <item name="storm-framework" type="616d4139:PackageViewModuleNode" />
               <item name="org.storm.framework" type="1f31426a:PackageElementNode" />
               <item name="base" type="1f31426a:PackageElementNode" />
-              <item name="model" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="storm-framework" type="616d4139:PackageViewModuleNode" />
-              <item name="org.storm.framework" type="1f31426a:PackageElementNode" />
-              <item name="base" type="1f31426a:PackageElementNode" />
-              <item name="util" type="1f31426a:PackageElementNode" />
+              <item name="config" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="storm" type="58d84e3e:PackageViewProjectNode" />
@@ -638,11 +625,11 @@
       <recent name="org.storm.framework.base.config" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\github-workspace\storm\service-oss\src\main\resources\templates\view\sysUser" />
       <recent name="D:\github-workspace\storm\storm-framework\src\main\java\org\storm\framework\base\util" />
       <recent name="D:\github-workspace\storm\service-oss\src\main\resources\templates\init" />
       <recent name="D:\github-workspace\storm\service-oss\src\main\resources\templates\view\sysRole" />
       <recent name="D:\github-workspace\storm\storm-framework\src\main\java\org\storm\framework\sys\controller" />
-      <recent name="D:\github-workspace\storm\service-oss\src\main\resources\templates\view\sysMenu" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -828,7 +815,7 @@
       <workItem from="1536824139564" duration="11516000" />
       <workItem from="1536846591710" duration="12240000" />
       <workItem from="1536862478985" duration="8073000" />
-      <workItem from="1536999815672" duration="17464000" />
+      <workItem from="1536999815672" duration="23211000" />
     </task>
     <task id="LOCAL-00001" summary="集成mybatis分页">
       <created>1534158730692</created>
@@ -895,7 +882,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="477037000" />
+    <option name="totallyTimeSpent" value="482784000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -908,6 +895,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.2863436" visible="true" weight="0.17426273" />
       <window_info id="Structure" order="1" sideWeight="0.71365637" side_tool="true" weight="0.21447721" />
@@ -918,7 +906,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32892805" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.36563876" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49932975" visible="true" weight="1.0" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932975" weight="0.33039647" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32892805" />
@@ -955,20 +943,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="新增菜单管理" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.7.RELEASE/spring-webmvc-5.0.7.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="563" selection-start-line="563" selection-end-line="563" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.31/tomcat-embed-core-8.5.31.jar!/javax/servlet/http/HttpServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="254" selection-start-line="254" selection-end-line="254" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/service/impl/SysDepartmentServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -1053,13 +1027,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/filter/AuthorizeFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-320">
-          <caret line="27" column="6" lean-forward="true" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysBasicErrorController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -1106,13 +1073,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/config/TransactionAspect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="44" column="54" selection-start-line="44" selection-start-column="54" selection-end-line="44" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/SysConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
@@ -1123,13 +1083,6 @@
     <entry file="file://$PROJECT_DIR$/storm-framework/src/main/resources/mapper/SysMenuMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2160" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2383">
-          <caret line="108" column="72" selection-start-line="108" selection-start-column="72" selection-end-line="108" selection-end-column="72" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/exception/BusinessException.java">
@@ -1146,13 +1099,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-500">
-          <caret line="159" column="30" lean-forward="true" selection-start-line="159" selection-start-column="30" selection-end-line="159" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service-oss/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-420" />
@@ -1162,18 +1108,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="960">
           <caret line="48" column="29" lean-forward="true" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="58" column="131" selection-start-line="58" selection-start-column="131" selection-end-line="58" selection-end-column="131" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#2112#2118#0" expanded="true" />
-            <element signature="e#2118#2124#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1286,23 +1220,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysRoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="161" column="13" lean-forward="true" selection-start-line="161" selection-start-column="13" selection-end-line="161" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysRole/setRole.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/static/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
@@ -1310,17 +1227,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/filter/AuthorizeFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="68" column="53" lean-forward="true" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/model/SysRole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysRoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-469">
+          <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/config/TransactionAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="44" column="54" selection-start-line="44" selection-start-column="54" selection-end-line="44" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="327" column="54" lean-forward="true" selection-start-line="327" selection-start-column="54" selection-end-line="327" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysRole/setMenu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-74">
+          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysRole/sysRole_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="232" column="16" lean-forward="true" selection-start-line="232" selection-start-column="16" selection-end-line="232" selection-end-column="16" />
+        <state relative-caret-position="252">
+          <caret line="241" column="16" selection-start-line="241" selection-start-column="16" selection-end-line="241" selection-end-column="32" />
           <folding>
-            <element signature="e#1922#1928#0" expanded="true" />
-            <element signature="e#1928#1934#0" expanded="true" />
-            <element signature="e#2128#2134#0" expanded="true" />
-            <element signature="e#2134#2140#0" expanded="true" />
             <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2294">
+          <caret line="129" column="30" lean-forward="true" selection-start-line="129" selection-start-column="30" selection-end-line="129" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#2112#2118#0" expanded="true" />
+            <element signature="e#2118#2124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/setRoles.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="21" selection-start-line="21" selection-end-line="41" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,6 +1,7 @@
 package org.storm.framework.sys.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.storm.framework.base.mapper.BaseMapper;
 import org.storm.framework.base.service.impl.BaseServiceImpl;
@@ -24,4 +25,9 @@ public class SysServiceErrorLogServiceImpl extends BaseServiceImpl<SysServiceErr
         return SysServiceErrorLogMapper.class;
     }
 
+    @Async("asyncServiceExecutor")
+    @Override
+    public Long save(SysServiceErrorLog paramT) {
+        return super.save(paramT);
+    }
 }

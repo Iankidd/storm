@@ -13,6 +13,12 @@
         float: left !important;
         padding-top: 0 !important;
     }
+    .form-inline .form-group{
+        margin-top: 1rem;
+    }
+    .form-inline .btn{
+        margin-top: 1rem;
+    }
 </style>
 
 <body>
@@ -47,6 +53,16 @@
                                 <div class="form-group">
                                     <label>模块名称</label>&nbsp;&nbsp;
                                     <input name="modelNameLike" type="text" class="form-control form-control-sm">
+                                </div>
+                                &nbsp;&nbsp;
+                                <div class="form-group">
+                                    <label>User_Agent</label>&nbsp;&nbsp;
+                                    <input name="userAgentLike" type="text" class="form-control form-control-sm">
+                                </div>
+                                &nbsp;&nbsp;
+                                <div class="form-group">
+                                    <label>访问链接</label>&nbsp;&nbsp;
+                                    <input name="accessUrlLike" type="text" class="form-control form-control-sm">
                                 </div>
                                 &nbsp;&nbsp;
                                 <div class="form-group">
@@ -102,6 +118,8 @@
     }
 
     function getData() {
+        var order = [];
+        order.push([0,'desc']);
         table = $('.dataTables-data').DataTable({
             pageLength: 25,
             responsive: true,
@@ -154,6 +172,7 @@
                     }
                 }
             ],
+            order: order,
             language: {
                 url: '[[@{/language/datatables_chinese.json}]]'
             }

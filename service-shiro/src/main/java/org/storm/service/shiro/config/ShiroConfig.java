@@ -18,6 +18,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
@@ -264,5 +265,12 @@ public class ShiroConfig {
     @Bean
     public AuthorizeFilter authorizeFilter() {
         return new AuthorizeFilter();
+    }
+
+    @Bean
+    public FilterRegistrationBean registration(AuthorizeFilter filter) {
+        FilterRegistrationBean registration = new FilterRegistrationBean(filter);
+        registration.setEnabled(false);
+        return registration;
     }
 }

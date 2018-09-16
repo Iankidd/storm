@@ -27,7 +27,7 @@ public class ThreadAsyncConfig implements AsyncConfigurer {
     private int keepAlive;
 
     @Bean
-    public Executor getAsyncExecutor() {
+    public Executor asyncServiceExecutor() {
         logger.info("start asyncServiceExecutor");
         ThreadPoolTaskExecutor executor = new VisiableThreadPoolTaskExecutor();
         //配置核心线程数

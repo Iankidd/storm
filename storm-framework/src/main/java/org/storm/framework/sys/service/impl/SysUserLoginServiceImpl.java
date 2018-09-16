@@ -23,5 +23,4 @@ public class SysUserLoginServiceImpl extends BaseServiceImpl<SysUserLogin> imple
     public Class<SysUserLoginMapper> getMpClass() {
         return SysUserLoginMapper.class;
     }
-
 }

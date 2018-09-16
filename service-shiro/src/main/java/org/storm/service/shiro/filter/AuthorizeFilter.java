@@ -95,29 +95,36 @@ public class AuthorizeFilter extends AccessControlFilter {
         if (opUrl.indexOf("save") >= 0 || opUrl.indexOf("delete") >= 0
                 || opUrl.indexOf("update") >= 0 || opUrl.indexOf("add") >= 0
                 || opUrl.indexOf("set") >= 0) {
+
+            SysOperateLog sysOperateLog = new SysOperateLog();
+            sysOperateLog.setIp(RequestUtils.getIpAddr(request));
+            sysOperateLog.setCreateUserId(user.getId());
+            sysOperateLog.setCreateDatetime(new Date());
+            sysOperateLog.setUserAgent(request.getHeader("User-Agent"));
+            sysOperateLog.setAccessUrl(url);
+            Map<String, Object> params = RequestUtils.getParameterMap(request);
+            if (params != null) {
+                sysOperateLog.setParams(JSONObject.fromObject(params).toString());
+            }
+
             if (operateMap.containsKey(url)) {
                 SysMenu sysMenu = operateMap.get(url);
-                SysOperateLog sysOperateLog = new SysOperateLog();
-                sysOperateLog.setIp(RequestUtils.getIpAddr(request));
-                sysOperateLog.setCreateUserId(user.getId());
-                sysOperateLog.setCreateDatetime(new Date());
-                sysOperateLog.setUserAgent(request.getHeader("User-Agent"));
-                sysOperateLog.setAccessUrl(url);
-                Map<String, Object> params = RequestUtils.getParameterByEdit(request);
-                if (sysMenu.getName().indexOf("保存") >= 0) {
-                    if (Long.parseLong(params.get("id").toString()) > 0) {
-                        sysOperateLog.setModelName(sysMenu.getName() + "-修改");
+                sysOperateLog.setModelName(sysMenu.getName());
+            } else {
+                if (opUrl.indexOf("save") >= 0) {
+                    if (params.get("id") != null) {
+                        if (Long.parseLong(params.get("id").toString()) > 0) {
+                            sysOperateLog.setModelName("通用模块-修改");
+                        } else {
+                            sysOperateLog.setModelName("通用模块-新增");
+                        }
                     } else {
-                        sysOperateLog.setModelName(sysMenu.getName() + "-新增");
+                        sysOperateLog.setModelName("未知模块-待记录");
                     }
-
-                } else {
-                    sysOperateLog.setModelName(sysMenu.getName());
                 }
-
-                sysOperateLog.setParams(JSONObject.fromObject(params).toString());
-                sysOperateLogService.save(sysOperateLog);
             }
+
+            sysOperateLogService.save(sysOperateLog);
         }
 
         logger.info("当前用户正在访问的 url => " + url + " [权限情况] => " + subject.isPermitted(url));

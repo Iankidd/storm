@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package org.storm.framework.base.util;
+package org.storm.framework.base.util.date;
 
 import java.math.BigDecimal;
 import java.text.ParseException;

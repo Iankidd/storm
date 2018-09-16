@@ -1,4 +1,6 @@
-package org.storm.framework.base.util;
+package org.storm.framework.base.util.web;
+
+import org.storm.framework.base.util.SysConstants;
 
 import javax.servlet.ServletContext;
 import java.util.Map;

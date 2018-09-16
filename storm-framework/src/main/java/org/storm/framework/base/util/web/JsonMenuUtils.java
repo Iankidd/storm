@@ -1,4 +1,4 @@
-package org.storm.framework.base.util;
+package org.storm.framework.base.util.web;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;

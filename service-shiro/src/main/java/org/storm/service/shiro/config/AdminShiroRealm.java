@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.storm.framework.base.model.EntityUtil;
 import org.storm.framework.base.util.SysConstants;
-import org.storm.framework.base.util.XXTea;
+import org.storm.framework.base.util.encryption.XXTea;
 import org.storm.framework.sys.model.SysMenu;
 import org.storm.framework.sys.model.SysRole;
 import org.storm.framework.sys.model.SysUser;

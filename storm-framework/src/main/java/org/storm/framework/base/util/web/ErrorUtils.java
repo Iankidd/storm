@@ -1,4 +1,4 @@
-package org.storm.framework.base.util;
+package org.storm.framework.base.util.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

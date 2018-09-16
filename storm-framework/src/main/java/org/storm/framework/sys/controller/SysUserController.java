@@ -22,6 +22,8 @@ import org.storm.framework.base.model.EntityUtil;
 import org.storm.framework.base.util.*;
 import org.storm.framework.base.util.datatables.DatatablesView;
 import org.storm.framework.base.util.datatables.SearchCondition;
+import org.storm.framework.base.util.encryption.XXTea;
+import org.storm.framework.base.util.web.*;
 import org.storm.framework.sys.model.SysMenu;
 import org.storm.framework.sys.model.SysRole;
 import org.storm.framework.sys.model.SysUser;
@@ -106,6 +108,7 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
             if (user != null) {
                 List<Long> roleIds = sysRefUserRoleService.getRolesIdByUserId(user.getId());
                 JSONArray menuArray = new JSONArray();
+                Map<String, SysMenu> operateMap = new HashMap<>();
                 try {
                     if (roleIds.size() > 0) {
                         List<SysMenu> sysMenuList = sysMenuService.getListByRoleIds(roleIds);
@@ -114,6 +117,9 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
                                 // 添加到菜单列表
                                 if (menu.getType() == SysConstants.EResourceType.Menu.ordinal()) {
                                     menuArray.add(menu);
+                                } else if (menu.getType() == SysConstants.EResourceType.Button.ordinal()) {
+                                    // 按钮为增删改操作
+                                    operateMap.put(menu.getUrl(), menu);
                                 }
                             }
                         }
@@ -121,8 +127,9 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
                     long t1 = System.currentTimeMillis();
                     JSONArray menuTree = JsonMenuUtils.treeMenuList(menuArray, 0, "submenu");
                     long t2 = System.currentTimeMillis();
-                    logger.info("组装菜单花费时间：" + (t2 - t1) + "ms");
+                    logger.debug("组装菜单花费时间：" + (t2 - t1) + "ms");
                     session.setAttribute(SysConstants.SYS_USER_MENU, menuTree);
+                    session.setAttribute(SysConstants.SYS_OPERATE_KEY, operateMap);
                     // 管理员在线记录
                     LoginUserUtils.addLoginUserMap(request.getServletContext(), user.getId(), session.getId().toString());
                     // 登录记录

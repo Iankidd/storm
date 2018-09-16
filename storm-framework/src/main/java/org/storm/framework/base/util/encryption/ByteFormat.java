@@ -1,4 +1,4 @@
-package org.storm.framework.base.util;
+package org.storm.framework.base.util.encryption;
 
 /**
  * byte相关常用方法工具类

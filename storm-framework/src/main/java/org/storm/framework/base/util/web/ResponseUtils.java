@@ -1,4 +1,4 @@
-package org.storm.framework.base.util;
+package org.storm.framework.base.util.web;
 
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;

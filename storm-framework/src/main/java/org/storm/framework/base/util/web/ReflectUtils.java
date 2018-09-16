@@ -1,4 +1,4 @@
-package org.storm.framework.base.util;
+package org.storm.framework.base.util.web;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.util.ReflectionUtils;

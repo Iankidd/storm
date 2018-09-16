@@ -64,7 +64,7 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         //自定义拦截器
         Map<String, Filter> filtersMap = new LinkedHashMap<>();
-        filtersMap.put("AuthorizeFilter", new AuthorizeFilter());
+        filtersMap.put("AuthorizeFilter", authorizeFilter());
         shiroFilterFactoryBean.setFilters(filtersMap);
         //拦截器
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
@@ -259,5 +259,10 @@ public class ShiroConfig {
         RedisSessionDAO redisSessionDAO = new RedisSessionDAO();
         redisSessionDAO.setRedisManager(redisManager());
         return redisSessionDAO;
+    }
+
+    @Bean
+    public AuthorizeFilter authorizeFilter() {
+        return new AuthorizeFilter();
     }
 }

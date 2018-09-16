@@ -1,12 +1,20 @@
 package org.storm.service.shiro.filter;
 
-import org.apache.shiro.SecurityUtils;
+import net.sf.json.JSONObject;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.AccessControlFilter;
 import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
+import org.storm.framework.base.util.SysConstants;
+import org.storm.framework.base.util.web.RequestUtils;
+import org.storm.framework.sys.model.SysMenu;
+import org.storm.framework.sys.model.SysOperateLog;
 import org.storm.framework.sys.model.SysUser;
+import org.storm.framework.sys.service.SysOperateLogService;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -14,10 +22,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
+import java.util.Map;
 
 public class AuthorizeFilter extends AccessControlFilter {
 
     private static final Logger logger = LoggerFactory.getLogger(AuthorizeFilter.class);
+
+    @Autowired
+    @Lazy
+    private SysOperateLogService sysOperateLogService;
+
+    public AuthorizeFilter() {
+        super();
+    }
 
     /**
      * 表示是否允许访问:
@@ -38,7 +56,10 @@ public class AuthorizeFilter extends AccessControlFilter {
         Subject subject = getSubject(servletRequest, servletResponse);
         String url = getPathWithinApplication(servletRequest);
 
-        SecurityUtils.getSubject();
+        Session session = subject.getSession();
+        Map<String, SysMenu> operateMap = (Map<String, SysMenu>) session.getAttribute(SysConstants.SYS_OPERATE_KEY);
+        String opUrl = url.toLowerCase();
+
         SysUser user = (SysUser) subject.getPrincipal();
         if (user == null) {
             logger.info("AuthorizeFilter：跳转到login页面！");
@@ -69,7 +90,38 @@ public class AuthorizeFilter extends AccessControlFilter {
                 WebUtils.issueRedirect(servletRequest, servletResponse, "/index.action");
             }
         }
+
+        // 操作日志
+        if (opUrl.indexOf("save") >= 0 || opUrl.indexOf("delete") >= 0
+                || opUrl.indexOf("update") >= 0 || opUrl.indexOf("add") >= 0
+                || opUrl.indexOf("set") >= 0) {
+            if (operateMap.containsKey(url)) {
+                SysMenu sysMenu = operateMap.get(url);
+                SysOperateLog sysOperateLog = new SysOperateLog();
+                sysOperateLog.setIp(RequestUtils.getIpAddr(request));
+                sysOperateLog.setCreateUserId(user.getId());
+                sysOperateLog.setCreateDatetime(new Date());
+                sysOperateLog.setUserAgent(request.getHeader("User-Agent"));
+                sysOperateLog.setAccessUrl(url);
+                Map<String, Object> params = RequestUtils.getParameterByEdit(request);
+                if (sysMenu.getName().indexOf("保存") >= 0) {
+                    if (Long.parseLong(params.get("id").toString()) > 0) {
+                        sysOperateLog.setModelName(sysMenu.getName() + "-修改");
+                    } else {
+                        sysOperateLog.setModelName(sysMenu.getName() + "-新增");
+                    }
+
+                } else {
+                    sysOperateLog.setModelName(sysMenu.getName());
+                }
+
+                sysOperateLog.setParams(JSONObject.fromObject(params).toString());
+                sysOperateLogService.save(sysOperateLog);
+            }
+        }
+
         logger.info("当前用户正在访问的 url => " + url + " [权限情况] => " + subject.isPermitted(url));
+
         return tag;
     }
 

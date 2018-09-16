@@ -1,4 +1,4 @@
-package org.storm.framework.base.util;
+package org.storm.framework.base.util.date;
 
 import net.sf.json.JSON;
 import net.sf.json.JSONSerializer;

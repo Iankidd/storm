@@ -18,6 +18,7 @@
  - 后台模板框架：inspinia
  
 #### 1、目录结构
+![](https://raw.githubusercontent.com/Iankidd/storm/master/img-folder/main_poject.png)
  - 通用底层框架：org.storm.framework
 	* 基础封装工具类：org.storm.framework.base
 	* 系统管理业务类：org.storm.framework.sys
@@ -38,4 +39,3 @@
 	* 公共模块：common
 	* 引用脚部模块：init
 	* 视图模块：view
-![](https://raw.githubusercontent.com/Iankidd/storm/master/img-folder/main_poject.png)

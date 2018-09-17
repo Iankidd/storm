@@ -325,15 +325,6 @@
           <expand>
             <path>
               <item name="storm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
-              <item name="templates" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
               <item name="service-quartz" type="616d4139:PackageViewModuleNode" />
             </path>
             <path>
@@ -347,6 +338,23 @@
             <path>
               <item name="storm" type="58d84e3e:PackageViewProjectNode" />
               <item name="storm-framework" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="storm-framework" type="616d4139:PackageViewModuleNode" />
+              <item name="org.storm.framework" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="storm-framework" type="616d4139:PackageViewModuleNode" />
+              <item name="org.storm.framework" type="1f31426a:PackageElementNode" />
+              <item name="base" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="storm-framework" type="616d4139:PackageViewModuleNode" />
+              <item name="org.storm.framework" type="1f31426a:PackageElementNode" />
+              <item name="sys" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
@@ -674,7 +682,7 @@
       <workItem from="1536999815672" duration="24148000" />
       <workItem from="1537053279646" duration="1497000" />
       <workItem from="1537055795413" duration="11699000" />
-      <workItem from="1537099474507" duration="4672000" />
+      <workItem from="1537099474507" duration="5231000" />
     </task>
     <task id="LOCAL-00001" summary="集成mybatis分页">
       <created>1534158730692</created>
@@ -741,7 +749,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="501589000" />
+    <option name="totallyTimeSpent" value="502148000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -753,8 +761,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.2863436" visible="true" weight="0.22788204" />
       <window_info id="Structure" order="1" sideWeight="0.71365637" side_tool="true" weight="0.21447721" />

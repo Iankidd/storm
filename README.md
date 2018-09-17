@@ -18,17 +18,17 @@
  - 后台模板框架：inspinia
  
 #### 1、目录结构
-![](https://raw.githubusercontent.com/Iankidd/storm/master/img-folder/main_poject.png)
+	![](https://raw.githubusercontent.com/Iankidd/storm/master/img-folder/main_poject.png)
  - 通用底层框架：org.storm.framework
 	* 基础封装工具类：org.storm.framework.base
 	* 系统管理业务类：org.storm.framework.sys
-		- 控制层：org.storm.framework.sys.controller
-		- 数据层：org.storm.framework.sys.model
-		- 服务层：org.storm.framework.sys.service
-		- 数据映射：org.storm.framework.sys.mapper
+		- *控制层：org.storm.framework.sys.controller*
+		- *数据层：org.storm.framework.sys.model*
+		- *服务层：org.storm.framework.sys.service*
+		- *数据映射：org.storm.framework.sys.mapper*
  - 服务包类：org.storm.service
 	* 后台管理包类：org.storm.service.oss
-		- 控制层：org.storm.service.oss.controller
+		- *控制层：org.storm.service.oss.controller*
 	* 服务扩展包类：org.storm.service.xxx
  - 业务层包类：org.storm.apps
 	* 数据层：org.storm.apps.model

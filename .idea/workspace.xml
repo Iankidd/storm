@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2abef353-240a-4c31-bc24-a4d280a9de18" name="Default" comment="新增菜单管理" />
+    <list default="true" id="2abef353-240a-4c31-bc24-a4d280a9de18" name="Default" comment="新增菜单管理">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/eureka-server/target/" />
     <ignored path="$PROJECT_DIR$/service-client/target/" />
@@ -307,7 +309,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="155" />
     <option name="width" value="1750" />
     <option name="height" value="970" />
@@ -682,7 +684,7 @@
       <workItem from="1536999815672" duration="24148000" />
       <workItem from="1537053279646" duration="1497000" />
       <workItem from="1537055795413" duration="11699000" />
-      <workItem from="1537099474507" duration="5231000" />
+      <workItem from="1537099474507" duration="5728000" />
     </task>
     <task id="LOCAL-00001" summary="集成mybatis分页">
       <created>1534158730692</created>
@@ -749,7 +751,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="502148000" />
+    <option name="totallyTimeSpent" value="502645000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

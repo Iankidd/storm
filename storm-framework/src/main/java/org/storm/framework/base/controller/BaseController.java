@@ -3,7 +3,6 @@ package org.storm.framework.base.controller;
 import com.github.pagehelper.Page;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
-import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +16,8 @@ import org.storm.framework.base.annotation.IsSearchCondition;
 import org.storm.framework.base.exception.BusinessException;
 import org.storm.framework.base.model.Entity;
 import org.storm.framework.base.service.BaseService;
+import org.storm.framework.base.util.SecurityManagerUtils;
+import org.storm.framework.base.util.SysConstants;
 import org.storm.framework.base.util.datatables.DatatablesView;
 import org.storm.framework.base.util.datatables.SearchCondition;
 import org.storm.framework.base.util.web.EntityUtils;
@@ -120,7 +121,7 @@ public abstract class BaseController<Te extends Entity, Ts extends BaseService<T
         EntityUtils.populate(entity, params);
         logger.info("entity:" + JSONObject.fromObject(entity));
         Date nowDate = new Date();
-        SysUser user = (SysUser) SecurityUtils.getSubject().getPrincipal();
+        SysUser user = (SysUser) SecurityManagerUtils.getSessionAttribute(SysConstants.SYS_LOGIN_KEY);
         if (entity.getId() != null && entity.getId() > 0) {
             Te existEntity = this.getBaseService().getById(entity.getId());
             EntityUtils.populate(existEntity, params);

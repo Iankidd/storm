@@ -60,7 +60,7 @@ public class AuthorizeFilter extends AccessControlFilter {
         Map<String, SysMenu> operateMap = (Map<String, SysMenu>) session.getAttribute(SysConstants.SYS_OPERATE_KEY);
         String opUrl = url.toLowerCase();
 
-        SysUser user = (SysUser) subject.getPrincipal();
+        SysUser user = (SysUser) session.getAttribute(SysConstants.SYS_LOGIN_KEY);
         if (user == null) {
             logger.info("AuthorizeFilter：跳转到login页面！");
         } else {

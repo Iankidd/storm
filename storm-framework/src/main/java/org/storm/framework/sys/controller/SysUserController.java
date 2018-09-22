@@ -5,10 +5,7 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.exception.ExceptionUtils;
-import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
-import org.apache.shiro.session.Session;
-import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,11 +16,15 @@ import org.storm.framework.base.annotation.IsSearchCondition;
 import org.storm.framework.base.controller.BaseController;
 import org.storm.framework.base.exception.BusinessException;
 import org.storm.framework.base.model.EntityUtil;
-import org.storm.framework.base.util.*;
+import org.storm.framework.base.util.SecurityManagerUtils;
+import org.storm.framework.base.util.SysConstants;
 import org.storm.framework.base.util.datatables.DatatablesView;
 import org.storm.framework.base.util.datatables.SearchCondition;
 import org.storm.framework.base.util.encryption.XXTea;
-import org.storm.framework.base.util.web.*;
+import org.storm.framework.base.util.web.EntityUtils;
+import org.storm.framework.base.util.web.JsonMenuUtils;
+import org.storm.framework.base.util.web.RequestUtils;
+import org.storm.framework.base.util.web.ResponseUtils;
 import org.storm.framework.sys.model.SysMenu;
 import org.storm.framework.sys.model.SysRole;
 import org.storm.framework.sys.model.SysUser;
@@ -78,12 +79,9 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
         String code = user.getCode();
         String pwd = user.getPwd();
         if (code != null && pwd != null) {
-            Subject subject = SecurityUtils.getSubject();
-            Session session = subject.getSession();
             try {
-                UsernamePasswordToken token = new UsernamePasswordToken(code, pwd);
-                subject.login(token);
-                user = (SysUser) subject.getPrincipal();
+                user = (SysUser) SecurityManagerUtils.login(code, pwd);
+                SecurityManagerUtils.setSessionAttribute(SysConstants.SYS_LOGIN_KEY, user);
             } catch (IncorrectCredentialsException ex) {
                 user = null;
                 model.addAttribute("error", "用户名或密码不正确！");
@@ -128,10 +126,8 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
                     JSONArray menuTree = JsonMenuUtils.treeMenuList(menuArray, 0, "submenu");
                     long t2 = System.currentTimeMillis();
                     logger.debug("组装菜单花费时间：" + (t2 - t1) + "ms");
-                    session.setAttribute(SysConstants.SYS_USER_MENU, menuTree);
-                    session.setAttribute(SysConstants.SYS_OPERATE_KEY, operateMap);
-                    // 管理员在线记录
-                    LoginUserUtils.addLoginUserMap(request.getServletContext(), user.getId(), session.getId().toString());
+                    SecurityManagerUtils.setSessionAttribute(SysConstants.SYS_USER_MENU, menuTree);
+                    SecurityManagerUtils.setSessionAttribute(SysConstants.SYS_OPERATE_KEY, operateMap);
                     // 登录记录
                     SysUserLogin sysUserLogin = new SysUserLogin();
                     sysUserLogin.setUserId(user.getId());
@@ -161,14 +157,7 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
      */
     @RequestMapping("/logout.action")
     public String logout(HttpServletRequest request) {
-        Subject subject = SecurityUtils.getSubject();
-        SysUser user = (SysUser) subject.getPrincipal();
-
-        // 管理员下线记录
-        LoginUserUtils.removeLoginUserMap(request.getServletContext(), user.getId());
-
-        subject.logout();
-
+        SecurityManagerUtils.logout();
         return "redirect:/index.action";
     }
 
@@ -205,7 +194,7 @@ public class SysUserController extends BaseController<SysUser, SysUserService> {
 
         logger.info("entity:" + JSONObject.fromObject(entity));
         Date nowDate = new Date();
-        SysUser user = (SysUser) SecurityUtils.getSubject().getPrincipal();
+        SysUser user = (SysUser) SecurityManagerUtils.getSessionAttribute(SysConstants.SYS_LOGIN_KEY);
         do {
             if (entity.getId() != null && entity.getId() > 0) {
                 SysUser existEntity = this.getBaseService().getById(entity.getId());

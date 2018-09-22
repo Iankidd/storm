@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2abef353-240a-4c31-bc24-a4d280a9de18" name="Default" comment="新增菜单管理">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/SecurityManagerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/filter/AuthorizeFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/filter/AuthorizeFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/web/LoginUserUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysUserController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/eureka-server/target/" />
@@ -23,10 +29,10 @@
     <session id="-1572135592">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="59" />
+          <entry key="project.closed" value="63" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.10" value="8" />
+          <entry key="project.open.time.10" value="9" />
           <entry key="project.open.time.11" value="13" />
           <entry key="project.open.time.114" value="1" />
           <entry key="project.open.time.12" value="4" />
@@ -41,17 +47,17 @@
           <entry key="project.open.time.509" value="1" />
           <entry key="project.open.time.6" value="4" />
           <entry key="project.open.time.7" value="5" />
-          <entry key="project.open.time.8" value="8" />
-          <entry key="project.open.time.9" value="7" />
-          <entry key="project.opened" value="65" />
+          <entry key="project.open.time.8" value="9" />
+          <entry key="project.open.time.9" value="9" />
+          <entry key="project.opened" value="69" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="126" />
+          <entry key="class" value="130" />
           <entry key="css" value="1" />
           <entry key="html" value="197" />
-          <entry key="java" value="707" />
+          <entry key="java" value="719" />
           <entry key="js" value="29" />
           <entry key="json" value="3" />
           <entry key="jsp" value="1" />
@@ -59,33 +65,33 @@
           <entry key="pom" value="9" />
           <entry key="properties" value="15" />
           <entry key="ts" value="1" />
-          <entry key="xml" value="178" />
-          <entry key="yml" value="71" />
+          <entry key="xml" value="181" />
+          <entry key="yml" value="72" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="126" />
+          <entry key="CLASS" value="130" />
           <entry key="CSS" value="1" />
           <entry key="HTML" value="197" />
-          <entry key="JAVA" value="707" />
+          <entry key="JAVA" value="719" />
           <entry key="JSON" value="3" />
           <entry key="JSP" value="1" />
           <entry key="JavaScript" value="29" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="15" />
           <entry key="TypeScript" value="1" />
-          <entry key="XML" value="187" />
-          <entry key="YAML" value="71" />
+          <entry key="XML" value="190" />
+          <entry key="YAML" value="72" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="class" value="1" />
           <entry key="css" value="6" />
-          <entry key="dummy" value="11" />
+          <entry key="dummy" value="24" />
           <entry key="html" value="4676" />
-          <entry key="java" value="6840" />
+          <entry key="java" value="7129" />
           <entry key="js" value="328" />
           <entry key="json" value="20" />
           <entry key="properties" value="144" />
@@ -99,10 +105,10 @@
           <entry key="CLASS" value="1" />
           <entry key="CSS" value="6" />
           <entry key="HTML" value="4676" />
-          <entry key="JAVA" value="6840" />
+          <entry key="JAVA" value="7129" />
           <entry key="JSON" value="20" />
           <entry key="JavaScript" value="328" />
-          <entry key="PLAIN_TEXT" value="91" />
+          <entry key="PLAIN_TEXT" value="104" />
           <entry key="Properties" value="144" />
           <entry key="XML" value="823" />
           <entry key="YAML" value="426" />
@@ -171,12 +177,42 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/application.yml">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysUserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
+            <state relative-caret-position="191">
+              <caret line="128" column="75" selection-start-line="128" selection-start-column="75" selection-end-line="128" selection-end-column="75" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/config/ShiroConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-163">
+              <caret line="238" column="23" lean-forward="true" selection-start-line="238" selection-start-column="23" selection-end-line="238" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/filter/AuthorizeFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="62" column="80" selection-start-line="62" selection-start-column="80" selection-end-line="62" selection-end-column="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service-shiro/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="64" column="39" lean-forward="true" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -195,9 +231,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>aop</find>
-      <find>txAdviceAdvisor</find>
-      <find>dataSource</find>
       <find>transactionManager</find>
       <find>TxAdvice</find>
       <find>Transaction</find>
@@ -225,6 +258,9 @@
       <find>sysServiceErrorLogService</find>
       <find>sysOperateLogService</find>
       <find>sysUserLoginService</find>
+      <find>SessionManager</find>
+      <find>sessionDAO</find>
+      <find>SecurityUtils</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -236,11 +272,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/common/nav.html" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_style.html" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/resources/static/css/style.css" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/resources/static/language/datatables_chinese.json" />
-        <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_edit.html" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/resources/mapper/SysMenuMapper.xml" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/service/SysUserService.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -259,7 +290,6 @@
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/mapper/SysRefRoleMenuMapper.java" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/service/impl/SysMenuServiceImpl.java" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/config/TransactionAspect.java" />
-        <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysMenu/sysMenu_list.html" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysMenu/sysMenu_edit.html" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/application.yml" />
@@ -277,7 +307,6 @@
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_list.html" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/setRoles.html" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/web/ReflectUtils.java" />
-        <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysUserController.java" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysOperateLogController.java" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/static/js/common.js" />
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/service/impl/SysOperateLogServiceImpl.java" />
@@ -286,6 +315,13 @@
         <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/service/impl/SysUserLoginServiceImpl.java" />
         <option value="$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysOperateLog/sysOperateLog_list.html" />
         <option value="$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/config/ShiroConfig.java" />
+        <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/SessionUtil.java" />
+        <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/ShiroUtil.java" />
+        <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/SecurityManagerUtils.java" />
+        <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/IndexController.java" />
+        <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysUserController.java" />
+        <option value="$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java" />
+        <option value="$PROJECT_DIR$/storm-framework/pom.xml" />
         <option value="$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/filter/AuthorizeFilter.java" />
       </list>
     </option>
@@ -322,57 +358,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="service-quartz" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="service-redis" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="service-shiro" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="storm-framework" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="storm-framework" type="616d4139:PackageViewModuleNode" />
-              <item name="org.storm.framework" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="storm-framework" type="616d4139:PackageViewModuleNode" />
-              <item name="org.storm.framework" type="1f31426a:PackageElementNode" />
-              <item name="base" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="storm-framework" type="616d4139:PackageViewModuleNode" />
-              <item name="org.storm.framework" type="1f31426a:PackageElementNode" />
-              <item name="sys" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="storm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="storm" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Production'; set:Production; class com.intellij.psi.search.scope.ProjectProductionScope">
           <expand>
@@ -447,7 +432,55 @@
             </path>
             <path>
               <item name="storm" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="storm" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="service-shiro" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="storm" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="service-shiro" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="storm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="storm" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-oss" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-shiro" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-shiro" type="616d4139:PackageViewModuleNode" />
+              <item name="org.storm.service.shiro" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-shiro" type="616d4139:PackageViewModuleNode" />
+              <item name="org.storm.service.shiro" type="1f31426a:PackageElementNode" />
+              <item name="config" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="storm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service-shiro" type="616d4139:PackageViewModuleNode" />
+              <item name="org.storm.service.shiro" type="1f31426a:PackageElementNode" />
+              <item name="filter" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
@@ -684,7 +717,11 @@
       <workItem from="1536999815672" duration="24148000" />
       <workItem from="1537053279646" duration="1497000" />
       <workItem from="1537055795413" duration="11699000" />
-      <workItem from="1537099474507" duration="5728000" />
+      <workItem from="1537099474507" duration="5739000" />
+      <workItem from="1537323100559" duration="2434000" />
+      <workItem from="1537432697998" duration="62000" />
+      <workItem from="1537432821036" duration="22000" />
+      <workItem from="1537539252035" duration="5030000" />
     </task>
     <task id="LOCAL-00001" summary="集成mybatis分页">
       <created>1534158730692</created>
@@ -751,7 +788,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="502645000" />
+    <option name="totallyTimeSpent" value="510204000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -764,8 +801,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.2863436" visible="true" weight="0.22788204" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.2863436" visible="true" weight="0.24128686" />
       <window_info id="Structure" order="1" sideWeight="0.71365637" side_tool="true" weight="0.21447721" />
       <window_info id="Web" order="2" sideWeight="0.50367105" side_tool="true" weight="0.23257373" />
       <window_info id="Designer" order="3" />
@@ -774,7 +812,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32892805" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.36563876" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932975" weight="0.37004405" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932975" weight="0.39353892" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32892805" />
@@ -811,34 +849,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="新增菜单管理" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/init/init_script.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="52" lean-forward="true" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/model/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="98" selection-start-line="98" selection-end-line="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/service/SysRoleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/service/impl/SysRoleServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -916,27 +926,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/web/LoginUserUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/model/SysMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#545#546#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/config/AdminShiroRealm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="29" selection-start-line="29" selection-end-line="29" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -958,13 +951,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/web/RequestUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2520">
-          <caret line="44" column="38" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -993,10 +979,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="27" column="32" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="32" />
-          <folding>
-            <element signature="e#1035#1036#0" expanded="true" />
-            <element signature="e#1076#1077#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1014,17 +996,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding>
-            <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="e#1055#1056#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/SecurityUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -1032,20 +1003,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/SysConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -1060,12 +1017,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="11" column="57" lean-forward="true" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
-          <folding>
-            <element signature="e#772#773#0" expanded="true" />
-            <element signature="e#813#814#0" expanded="true" />
-            <element signature="e#880#881#0" expanded="true" />
-            <element signature="e#927#928#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1085,13 +1036,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1837">
-          <caret line="140" column="39" selection-start-line="140" selection-start-column="20" selection-end-line="140" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysOperateLog/sysOperateLog_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="37">
@@ -1099,35 +1043,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/config/ShiroConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="264" column="9" lean-forward="true" selection-start-line="264" selection-start-column="9" selection-end-line="264" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/templates/view/sysUser/sysUser_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="154" column="68" selection-start-line="154" selection-start-column="68" selection-end-line="154" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="82" column="43" lean-forward="true" selection-start-line="82" selection-start-column="43" selection-end-line="82" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/filter/AuthorizeFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="e#1267#1268#0" expanded="true" />
-            <element signature="e#1290#1291#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1196,8 +1115,123 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service-oss/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
+        <state relative-caret-position="240">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/crazycake/shiro-redis/3.1.0/shiro-redis-3.1.0.jar!/org/crazycake/shiro/RedisSessionDAO.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="38" column="41" lean-forward="true" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
+          <folding>
+            <element signature="e#7181#7182#0" expanded="true" />
+            <element signature="e#7229#7230#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/SecurityUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="25" column="46" lean-forward="true" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/web/LoginUserUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/SysConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="65" lean-forward="true" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storm-framework/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/SecurityManagerUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#298#299#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#624#625#0" expanded="true" />
+            <element signature="e#680#681#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/controller/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="206" column="7" lean-forward="true" selection-start-line="206" selection-start-column="7" selection-end-line="206" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-shiro/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="64" column="39" lean-forward="true" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/base/util/web/RequestUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-220">
+          <caret line="273" column="47" selection-start-line="273" selection-start-column="47" selection-end-line="273" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/config/AdminShiroRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1323">
+          <caret line="78" column="60" lean-forward="true" selection-start-line="78" selection-start-column="60" selection-end-line="78" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storm-framework/src/main/java/org/storm/framework/sys/controller/SysUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="128" column="75" selection-start-line="128" selection-start-column="75" selection-end-line="128" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/config/ShiroConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-163">
+          <caret line="238" column="23" lean-forward="true" selection-start-line="238" selection-start-column="23" selection-end-line="238" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service-shiro/src/main/java/org/storm/service/shiro/filter/AuthorizeFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="62" column="80" selection-start-line="62" selection-start-column="80" selection-end-line="62" selection-end-column="80" />
         </state>
       </provider>
     </entry>

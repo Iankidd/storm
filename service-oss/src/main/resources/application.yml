@@ -55,19 +55,6 @@ spring:
         content:
           enabled: true
           paths: /js/**
-  #redis配置
-  redis:
-    database: 0
-    host: localhost
-    port: 6379
-    password: 123456
-    timeout: 5000
-    jedis:
-      pool:
-        max-active: 8
-        min-idle: 0
-        max-wait: -1
-        max-idle: 8
   #线程池配置
   threadPool:
     corePoolSize: 5
@@ -77,6 +64,22 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+
+#redis配置
+redis:
+  host: localhost
+  port: 6379
+  password: 123456
+  timeout: 5 #单位：秒
+  pool:
+    #最大活动对象数
+    maxTotal: 10
+    #最大能够保持idel状态的对象数
+    maxIdle: 10
+    #最小能够保持idel状态的对象数
+    minIdle: 3
+    #当池内没有返回对象时，最大等待时间
+    maxWait: 3 #单位：秒
 
 eureka:
   client:

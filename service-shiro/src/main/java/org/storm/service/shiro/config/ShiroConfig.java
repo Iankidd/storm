@@ -36,16 +36,16 @@ public class ShiroConfig {
 
     private static final Logger logger = LoggerFactory.getLogger(ShiroConfig.class);
 
-    @Value("${spring.redis.host}")
+    @Value("${redis.host}")
     private String host;
 
-    @Value("${spring.redis.port}")
+    @Value("${redis.port}")
     private int port;
 
-    @Value("${spring.redis.timeout}")
+    @Value("${redis.timeout}")
     private int timeout;
 
-    @Value("${spring.redis.password}")
+    @Value("${redis.password}")
     private String password;
 
     /**
@@ -126,8 +126,8 @@ public class ShiroConfig {
 
     @Bean(name = "shiroRedisManager")
     public RedisManager redisManager() {
+        logger.info("shiro-redis connect url: " + host + ":" + port);
         RedisManager redisManager = new RedisManager();
-        logger.info("redis connect url: " + host + ":" + port);
         redisManager.setHost(host);
         redisManager.setPort(port);
         redisManager.setTimeout(port);

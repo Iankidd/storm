@@ -527,13 +527,13 @@ public class DateUtils {
      */
     public static Date getDateByStr(String dateStr) {
         SimpleDateFormat formatter = null;
-        if (dateStr.length() == 10)
+        if (dateStr.length() == 10) {
             formatter = new SimpleDateFormat("yyyy-MM-dd");
-        else if (dateStr.length() == 16)
+        } else if (dateStr.length() == 16) {
             formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        else if (dateStr.length() == 19)
+        } else if (dateStr.length() == 19) {
             formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        else {
+        } else {
             System.out.println("日期字符串格式错误!");
             return null;
         }
@@ -647,42 +647,47 @@ public class DateUtils {
      */
     public static String toChinese(Object object) {
         String dateStr = null;
-        if (object instanceof Date)
+        if (object instanceof Date) {
             dateStr = getStrYMDByDate((Date) object);
-        else if (object instanceof String)
+        } else if (object instanceof String) {
             dateStr = (String) object;
-        else
+        } else {
             return dateStr;
+        }
         String[] cnArray = {"〇", "一", "二", "三", "四", "五", "六", "七", "八", "九"};
         String year = dateStr.split("-")[0];
         String month = dateStr.split("-")[1];
         String date = dateStr.split("-")[2];
         dateStr = "";
-        for (int i = 0; i < year.length(); i++)
+        for (int i = 0; i < year.length(); i++) {
             dateStr += cnArray[Integer.valueOf(String.valueOf(year.charAt(i)))];
+        }
         dateStr += "年";
-        if ("10".equals(month))
+        if ("10".equals(month)) {
             dateStr += "十";
-        else {
+        } else {
             int num = Integer.valueOf(String.valueOf(month.charAt(1)));
-            if ("0".equals(String.valueOf(month.charAt(0))))
+            if ("0".equals(String.valueOf(month.charAt(0)))) {
                 dateStr += cnArray[num];
-            else
+            } else {
                 dateStr += "十" + cnArray[num];
+            }
         }
         dateStr += "月";
-        if ("10".equals(date))
+        if ("10".equals(date)) {
             dateStr += "十";
-        else {
+        } else {
             String temp = String.valueOf(date.charAt(0));
-            if ("1".equals(temp))
+            if ("1".equals(temp)) {
                 dateStr += "十";
-            else if ("2".equals(temp))
+            } else if ("2".equals(temp)) {
                 dateStr += "二十";
-            else if ("3".equals(temp))
+            } else if ("3".equals(temp)) {
                 dateStr += "三十";
-            if (!"0".equals(String.valueOf(date.charAt(1))))
+            }
+            if (!"0".equals(String.valueOf(date.charAt(1)))) {
                 dateStr += cnArray[Integer.valueOf(String.valueOf(date.charAt(1)))];
+            }
         }
         dateStr += "日";
         return dateStr;
@@ -697,12 +702,13 @@ public class DateUtils {
     @SuppressWarnings("deprecation")
     public static String getWeek(Object object) {
         Date date = null;
-        if (object instanceof Date)
+        if (object instanceof Date) {
             date = (Date) object;
-        else if (object instanceof String)
+        } else if (object instanceof String) {
             date = getDateByStr((String) object);
-        else
+        } else {
             return "";
+        }
         String[] cnWeek = {"日", "一", "二", "三", "四", "五", "六"};
         return "星期" + cnWeek[date.getDay()];
     }
@@ -755,7 +761,7 @@ public class DateUtils {
     public static String getPreTime(Date date) {
         long time = date.getTime();
         Long result = 0L;
-        result = (new Date().getTime() - time);
+        result = (System.currentTimeMillis() - time);
         result = result / 1000L;
         if (result < 60L) {
             return result + "秒前";

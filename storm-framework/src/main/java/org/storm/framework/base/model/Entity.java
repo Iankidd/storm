@@ -90,11 +90,14 @@ public class Entity implements Serializable {
     /**
      * 判断是否同一实例
      */
+    @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) {
             return true;
-        if (obj == null || getClass() != obj.getClass())
+        }
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
+        }
         Entity entity = (Entity) obj;
         return id == null ? entity.id == null : id.equals(entity.id);
     }
@@ -102,6 +105,7 @@ public class Entity implements Serializable {
     /**
      * @return 如果id属性为null，则返回super.hashCode()，否则返回id的hashCode
      */
+    @Override
     public int hashCode() {
         return id == null ? super.hashCode() : id.hashCode();
     }

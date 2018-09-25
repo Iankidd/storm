@@ -180,8 +180,9 @@ public abstract class BaseController<Te extends Entity, Ts extends BaseService<T
             } catch (IOException e1) {
                 e1.printStackTrace();
             } finally {
-                if (writer != null)
+                if (writer != null) {
                     writer.close();
+                }
             }
             return null;
         }
@@ -193,8 +194,9 @@ public abstract class BaseController<Te extends Entity, Ts extends BaseService<T
     }
 
     private String getFileMB(long byteFile) {
-        if (byteFile == 0)
+        if (byteFile == 0) {
             return "0MB";
+        }
         long mb = 1024 * 1024;
         return "" + byteFile / mb + "MB";
     }

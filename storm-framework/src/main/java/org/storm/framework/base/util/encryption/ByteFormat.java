@@ -44,8 +44,9 @@ public class ByteFormat {
             int high = Character.digit(hex[i * 2], 16);
             int low = Character.digit(hex[i * 2 + 1], 16);
             int value = (high << 4) | low;
-            if (value > 127)
+            if (value > 127) {
                 value -= 256;
+            }
             raw[i] = (byte) value;
         }
         return raw;
@@ -115,11 +116,13 @@ public class ByteFormat {
                 out.append(hex_buf[1]);
                 out.append(' ');
 
-                if (j == ROW_QTR1 || j == ROW_HALF || j == ROW_QTR2)
+                if (j == ROW_QTR1 || j == ROW_HALF || j == ROW_QTR2) {
                     out.append(' ');
+                }
 
-                if (save_buf[j] < 0x20 || save_buf[j] > 0x7E)
+                if (save_buf[j] < 0x20 || save_buf[j] > 0x7E) {
                     save_buf[j] = (byte) '.';
+                }
             }
 
             String saveStr = new String(save_buf, 0, j);
@@ -146,18 +149,21 @@ public class ByteFormat {
                 out.append((char) hex_buf[1]);
                 out.append(' ');
 
-                if (j == ROW_QTR1 || j == ROW_HALF || j == ROW_QTR2)
+                if (j == ROW_QTR1 || j == ROW_HALF || j == ROW_QTR2) {
                     out.append(' ');
+                }
 
-                if (save_buf[j] < 0x20 || save_buf[j] > 0x7E)
+                if (save_buf[j] < 0x20 || save_buf[j] > 0x7E) {
                     save_buf[j] = (byte) '.';
+                }
             }
 
             for ( /*j INHERITED*/ ; j < ROW_BYTES; j++) {
                 save_buf[j] = (byte) ' ';
                 out.append("   ");
-                if (j == ROW_QTR1 || j == ROW_HALF || j == ROW_QTR2)
+                if (j == ROW_QTR1 || j == ROW_HALF || j == ROW_QTR2) {
                     out.append(" ");
+                }
             }
 
             String saveStr = new String(save_buf, 0, j);

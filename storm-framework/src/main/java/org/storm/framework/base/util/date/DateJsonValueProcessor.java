@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateJsonValueProcessor implements JsonValueProcessor {
-    public final static String[] exincludes = {"properties", "class", "resources"};
+    public final static String[] EXINCLUDES = {"properties", "class", "resources"};
     public static final String DEFAULT_DATE_PATTERN = "yyyy-MM-dd";
     private SimpleDateFormat dateFormat;
 
@@ -25,11 +25,13 @@ public class DateJsonValueProcessor implements JsonValueProcessor {
     }
 
 
+    @Override
     public Object processArrayValue(Object value, JsonConfig jsonConfig) {
         return process(value);
     }
 
 
+    @Override
     public Object processObjectValue(String key, Object value,
                                      JsonConfig jsonConfig) {
         return process(value);
@@ -62,8 +64,9 @@ public class DateJsonValueProcessor implements JsonValueProcessor {
     public static JsonConfig configJson(String[] excludes,
                                         String datePattern) {
         JsonConfig jsonConfig = new JsonConfig();
-        if (excludes != null)
+        if (excludes != null) {
             jsonConfig.setExcludes(excludes);
+        }
         jsonConfig.setIgnoreDefaultExcludes(true);
         jsonConfig.setCycleDetectionStrategy(CycleDetectionStrategy.LENIENT);
         jsonConfig.registerJsonValueProcessor(Date.class,

@@ -17,11 +17,13 @@ public class SysConstants {
      */
     public enum EStatus {
         Valid {
+            @Override
             public String getName() {
                 return "有效";
             }
         },
         InValid {
+            @Override
             public String getName() {
                 return "无效";
             }
@@ -36,11 +38,13 @@ public class SysConstants {
 
     public enum EYesNo {
         Yes {
+            @Override
             public String getName() {
                 return "是";
             }
         },
         No {
+            @Override
             public String getName() {
                 return "否";
             }
@@ -55,11 +59,13 @@ public class SysConstants {
 
     public enum DeleteState {
         NO {
+            @Override
             public String getName() {
                 return "否";
             }
         },
         Yes {
+            @Override
             public String getName() {
                 return "是";
             }
@@ -82,26 +88,31 @@ public class SysConstants {
      */
     public enum ELogLevel {
         DEBUG {
+            @Override
             public String getName() {
                 return "DEBUG";
             }
         },
         INFO {
+            @Override
             public String getName() {
                 return "INFO";
             }
         },
         WARN {
+            @Override
             public String getName() {
                 return "WARN";
             }
         },
         ERROR {
+            @Override
             public String getName() {
                 return "ERROR";
             }
         },
         FATAL {
+            @Override
             public String getName() {
                 return "FATAL";
             }
@@ -116,16 +127,19 @@ public class SysConstants {
 
     public enum EmailTaskStatus {
         Standby {
+            @Override
             public String getName() {
                 return "待发送";
             }
         },
         Fail {
+            @Override
             public String getName() {
                 return "发送失败";
             }
         },
         Success {
+            @Override
             public String getName() {
                 return "发送成功";
             }

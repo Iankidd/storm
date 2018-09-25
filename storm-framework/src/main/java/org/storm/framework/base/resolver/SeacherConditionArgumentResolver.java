@@ -30,7 +30,9 @@ public class SeacherConditionArgumentResolver implements HandlerMethodArgumentRe
                 int index = Integer.parseInt(name.substring(8, 9));
                 String secendName = name.substring(getCharPosition(name, "\\[", 2) + 1, getCharPosition(name, "\\]", 2));
                 try {
-                    if (condition.getColumns().get(index) == null) condition.getColumns().add(new Column());
+                    if (condition.getColumns().get(index) == null) {
+                        condition.getColumns().add(new Column());
+                    }
                 } catch (IndexOutOfBoundsException e) {
                     condition.getColumns().add(new Column());
                 }
@@ -69,7 +71,9 @@ public class SeacherConditionArgumentResolver implements HandlerMethodArgumentRe
                 int index = Integer.parseInt(name.substring(6, 7));
                 String secendName = name.substring(getCharPosition(name, "\\[", 2) + 1, getCharPosition(name, "\\]", 2));
                 try {
-                    if (condition.getOrders().get(index) == null) condition.getOrders().add(new Order());
+                    if (condition.getOrders().get(index) == null) {
+                        condition.getOrders().add(new Order());
+                    }
                 } catch (IndexOutOfBoundsException e) {
                     condition.getOrders().add(new Order());
                 }
@@ -86,32 +90,36 @@ public class SeacherConditionArgumentResolver implements HandlerMethodArgumentRe
             /*
              * 设置 SearchCondition 的draw属性;
              */
-            else if (name.equalsIgnoreCase("draw")) {
-                if (StringUtil.isNotEmpty(webRequest.getParameter("draw")))
+            else if ("draw".equalsIgnoreCase(name)) {
+                if (StringUtil.isNotEmpty(webRequest.getParameter("draw"))) {
                     condition.setDraw(Integer.parseInt(webRequest.getParameter("draw")));
-                else return null;
+                } else {
+                    return null;
+                }
             }
 
             /*
              * 设置SearchCondition 的length属性;
              */
-            else if (name.equalsIgnoreCase("length")) {
-                if (StringUtil.isNotEmpty(webRequest.getParameter("length")))
+            else if ("length".equalsIgnoreCase(name)) {
+                if (StringUtil.isNotEmpty(webRequest.getParameter("length"))) {
                     condition.setLength(Integer.parseInt(webRequest.getParameter("length")));
+                }
             }
 
             /*
              * 设置SearchCondition 的start属性;
              */
-            else if (name.equalsIgnoreCase("start")) {
-                if (StringUtil.isNotEmpty(webRequest.getParameter("start")))
+            else if ("start".equalsIgnoreCase(name)) {
+                if (StringUtil.isNotEmpty(webRequest.getParameter("start"))) {
                     condition.setStart(Integer.parseInt(webRequest.getParameter("start")));
+                }
             }
 
             /*
              * 设置SearchCondition 的start属性;
              */
-            else if (name.equalsIgnoreCase("search")) {
+            else if ("search".equalsIgnoreCase(name)) {
                 String secendName = name.substring(getCharPosition(name, "\\[", 2) + 1, getCharPosition(name, "\\]", 2));
                 switch (secendName) {
                     case "regex":
@@ -144,7 +152,9 @@ public class SeacherConditionArgumentResolver implements HandlerMethodArgumentRe
         int mIdx = 0;
         while (slashMatcher.find()) {
             mIdx++;
-            if (mIdx == index) break;
+            if (mIdx == index) {
+                break;
+            }
         }
         return slashMatcher.start();
     }

@@ -17,8 +17,9 @@ public class EntityUtil implements Serializable {
         String sTemp;
         for (int i = 0; i < bArray.length; i++) {
             sTemp = Integer.toHexString(0xFF & bArray[i]);
-            if (sTemp.length() < 2)
+            if (sTemp.length() < 2) {
                 sb.append(0);
+            }
             sb.append(sTemp.toUpperCase());
         }
         return sb.toString();

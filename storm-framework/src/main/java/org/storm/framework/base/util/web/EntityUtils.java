@@ -52,7 +52,7 @@ public class EntityUtils {
             for (int i = 0; i < propertyDescriptor.length; i++) {
                 PropertyDescriptor descriptor = propertyDescriptor[i];
                 String propertyName = descriptor.getName();
-                if (propertyName.equalsIgnoreCase("class")) {
+                if ("class".equalsIgnoreCase(propertyName)) {
                     continue;
                 }
                 try {
@@ -74,7 +74,7 @@ public class EntityUtils {
         for (int i = 0; i < propertyDescriptor.length; i++) {
             PropertyDescriptor descriptor = propertyDescriptor[i];
             String propertyName = descriptor.getName();
-            if (propertyName.equalsIgnoreCase("class")) {
+            if ("class".equalsIgnoreCase(propertyName)) {
                 continue;
             }
             dataMap.put(propertyName, descriptor.getPropertyType());
@@ -201,7 +201,7 @@ public class EntityUtils {
             for (int i = 0; i < propertyDescriptor.length; i++) {
                 PropertyDescriptor descriptor = propertyDescriptor[i];
                 String propertyName = descriptor.getName();
-                if (propertyName.equalsIgnoreCase("class")) {
+                if ("class".equalsIgnoreCase(propertyName)) {
                     continue;
                 }
                 String value = null;

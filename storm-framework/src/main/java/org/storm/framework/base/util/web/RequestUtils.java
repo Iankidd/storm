@@ -95,7 +95,7 @@ public class RequestUtils {
             String paramName = (String) enumeration.nextElement();
             String paramValue = getParameter(request, paramName);
             if (StringUtils.isNotEmpty(paramName) && StringUtils.isNotEmpty(paramValue)) {
-                if (paramValue.equalsIgnoreCase("null")) {
+                if ("null".equalsIgnoreCase(paramValue)) {
                     continue;
                 }
                 String tmp = paramName.trim().toLowerCase();
@@ -125,7 +125,7 @@ public class RequestUtils {
             String paramName = (String) enumeration.nextElement();
             String paramValue = getParameter(request, paramName);
             if (StringUtils.isNotEmpty(paramName)) {
-                if (paramValue.equalsIgnoreCase("null")) {
+                if ("null".equalsIgnoreCase(paramValue)) {
                     continue;
                 }
 
@@ -153,7 +153,7 @@ public class RequestUtils {
             String paramName = (String) enumeration.nextElement();
             String paramValue = getParameter(request, paramName);
             if (StringUtils.isNotEmpty(paramName) && StringUtils.isNotEmpty(paramValue)) {
-                if (paramValue.equalsIgnoreCase("null")) {
+                if ("null".equalsIgnoreCase(paramValue)) {
                     continue;
                 }
                 String tmp = paramName.trim().toLowerCase();
@@ -288,7 +288,7 @@ public class RequestUtils {
         }
         if (StringUtils.isBlank(ipAddress) || ipAddress.length() == 0 || "unknown".equalsIgnoreCase(ipAddress)) {
             ipAddress = request.getRemoteAddr();
-            if (ipAddress.equals("127.0.0.1")) {
+            if ("127.0.0.1".equals(ipAddress)) {
                 // 根据网卡取本机配置的IP
                 InetAddress inet = null;
                 try {

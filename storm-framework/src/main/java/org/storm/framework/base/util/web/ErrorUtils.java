@@ -34,8 +34,9 @@ public class ErrorUtils {
         StringBuilder sf = new StringBuilder(4096);
         sf.append(e.toString()).append("\n");
         StackTraceElement[] trace = e.getStackTrace();
-        for (int i = 0; i < trace.length; i++)
+        for (int i = 0; i < trace.length; i++) {
             sf.append("\tat ").append(trace[i]).append("\n");
+        }
         return sf.toString();
     }
 

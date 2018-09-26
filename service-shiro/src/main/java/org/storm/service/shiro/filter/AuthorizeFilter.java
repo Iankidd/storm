@@ -83,8 +83,9 @@ public class AuthorizeFilter extends AccessControlFilter {
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 } finally {
-                    if (writer != null)
+                    if (writer != null) {
                         writer.close();
+                    }
                 }
             } else {
                 WebUtils.issueRedirect(servletRequest, servletResponse, "/index.action");

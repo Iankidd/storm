@@ -42,9 +42,7 @@ public class DateJsonValueProcessor implements JsonValueProcessor {
         if (value != null) {
             if (value.getClass().getName().equals(Date.class.getName())
                     || value.getClass().getName().equals(Timestamp.class.getName())) {
-                String result = dateFormat.format((Date) value);
-
-                return result;
+                return dateFormat.format((Date) value);
             }
         }
 

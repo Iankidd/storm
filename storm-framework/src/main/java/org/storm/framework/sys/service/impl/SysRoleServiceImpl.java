@@ -1,7 +1,5 @@
 package org.storm.framework.sys.service.impl;
 
-import org.apache.ibatis.session.ExecutorType;
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.storm.framework.base.mapper.BaseMapper;
@@ -40,14 +38,14 @@ public class SysRoleServiceImpl extends BaseServiceImpl<SysRole> implements SysR
 
     @Override
     public void saveMenusForRole(long roleId, List<Long> menuIds) {
-        SysRefRoleMenu SysRefRoleMenu = null;
+        SysRefRoleMenu sysRefRoleMenu = null;
         List<SysRefRoleMenu> list = new ArrayList<>();
         if (menuIds != null) {
             for (Long resId : menuIds) {
-                SysRefRoleMenu = new SysRefRoleMenu();
-                SysRefRoleMenu.setSysRoleId(roleId);
-                SysRefRoleMenu.setSysMenuId(resId);
-                list.add(SysRefRoleMenu);
+                sysRefRoleMenu = new SysRefRoleMenu();
+                sysRefRoleMenu.setSysRoleId(roleId);
+                sysRefRoleMenu.setSysMenuId(resId);
+                list.add(sysRefRoleMenu);
             }
         }
         long t1 = System.currentTimeMillis();

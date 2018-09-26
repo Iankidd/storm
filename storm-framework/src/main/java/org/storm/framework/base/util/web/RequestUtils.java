@@ -256,11 +256,11 @@ public class RequestUtils {
      * @return 值数组
      */
     public static long[] getLongValues(HttpServletRequest request, String paramName) {
-        String[] StringValues = (String[]) request.getParameterValues(paramName);
-        if (StringValues != null) {
-            long[] longValues = new long[StringValues.length];
-            for (int i = 0; i < StringValues.length; i++) {
-                longValues[i] = Long.parseLong(StringValues[i]);
+        String[] stringValues = (String[]) request.getParameterValues(paramName);
+        if (stringValues != null) {
+            long[] longValues = new long[stringValues.length];
+            for (int i = 0; i < stringValues.length; i++) {
+                longValues[i] = Long.parseLong(stringValues[i]);
             }
             return longValues;
         } else {

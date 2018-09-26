@@ -693,26 +693,6 @@ public class DateUtils {
         return dateStr;
     }
 
-    /**
-     * 返回星期几
-     *
-     * @param object Date对象或者字符串,yyyy-MM-dd
-     * @return 星期五
-     */
-    @SuppressWarnings("deprecation")
-    public static String getWeek(Object object) {
-        Date date = null;
-        if (object instanceof Date) {
-            date = (Date) object;
-        } else if (object instanceof String) {
-            date = getDateByStr((String) object);
-        } else {
-            return "";
-        }
-        String[] cnWeek = {"日", "一", "二", "三", "四", "五", "六"};
-        return "星期" + cnWeek[date.getDay()];
-    }
-
     public static Date get00_00_00Date(Date date) {
         return getDateByStr(getStrYMDByDate(date));
     }
@@ -722,13 +702,17 @@ public class DateUtils {
     }
 
     public static Date getDateFirstDayOfMonth(Date date) {
-        Date d1 = new Date(date.getYear(), date.getMonth(), 0);
-        return getDateByStr(getStrYMDHMSByDate(date).substring(0, 8) + "01 00:00:00");
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        c.add(Calendar.MONTH, 0);
+        c.set(Calendar.DAY_OF_MONTH, 1);
+        return getDateByStr(getStrYMDHMSByDate(c.getTime()).substring(0, 8) + "01 00:00:00");
     }
 
     public static Date getDateLastDayOfMonth(Date date) {
-        Date d1 = new Date(date.getYear(), date.getMonth(), 0);
-        return getDateByStr(getStrYMDHMSByDate(date).substring(0, 8) + d1.getDate() + " 23:59:59");
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        return getDateByStr(getStrYMDHMSByDate(date).substring(0, 8) + c.getActualMaximum(Calendar.DAY_OF_MONTH) + " 23:59:59");
     }
 
     public static Date getDateFirstDayOfYear(Date date) {
@@ -861,5 +845,4 @@ public class DateUtils {
     private DateUtils() {
 
     }
-
 }
